@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Модуль 6: СКД (система контролю доступу) | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Модуль 6: СКД (система контролю доступу)</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../../../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details open><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="cur" href="../../../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../../../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../../../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details><summary>Додаткові матеріали</summary><ul><li><a class="" href="../../../shared/glossary.html">Глосарій</a></li><li><a class="" href="../../../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../../../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../../../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../../../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../../../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1 id="модуль-6-скд-система-контролю-доступу">Модуль 6: СКД (система
+контролю доступу)</h1>
+<p><strong>Модуль 6 з 9</strong> · Урок 15 хв · Практика 15 хв</p>
+<h2 id="що-ви-зможете-після-уроку">Що ви зможете після уроку</h2>
+<ul>
+<li>Порахувати точки проходу на об'єкті, підібрати під них зчитувачі і
+зрозуміти, яке живлення і який захист по пожежці їм потрібні.</li>
+<li>Обрати інтерфейс зв'язку зчитувача з контролером - Wiegand, RS-485
+або OSDP - і пояснити замовнику, чому обрали саме його.</li>
+<li>Не потрапити в типові пастки монтажу СКД: від переплутаних проводів
+до картки звільненого співробітника, яка продовжує відкривати
+двері.</li>
+</ul>
+<p>Співробітник прикладає картку до зчитувача біля входу. Двері мовчать.
+Поруч замовник, руки схрещені, дивиться на вас. Охоронець за стійкою
+знизує плечима: "у нас так уже тиждень, я думав, само пройде". Само не
+проходить. Причина майже завжди в одному з чотирьох вузлів системи або в
+переплутаних проводах Wiegand - розберемо, де шукати, і заодно закриємо
+те, що зазвичай спливає вже після здачі об'єкта.</p>
+<p>Базові терміни СКД - зчитувач, контролер, замок, Wiegand - дивіться в
+глосарії. Тут про те, як ці вузли працюють разом на одних дверях, і про
+помилки, через які потім переробляють те, що начебто вже здали.</p>
+<h2 id="скільки-це-коштує-і-що-заробляє-інсталятор">Скільки це коштує і
+що заробляє інсталятор</h2>
+<p>Чек клієнта за СКД на одні двері складається з: обладнання
+(контролер, зчитувач, замок, кнопка виходу, блок живлення), монтажу з
+підключенням, налаштування і короткого навчання замовника - як видавати
+картки і додавати нових людей.</p>
+<table>
+<thead>
+<tr>
+<th>Стаття</th>
+<th>Сума, грн</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Закупівля комплекту інсталятором</td>
+<td><mark class="todo">[ЗАПОВНИТИ: закупівля комплекту СКД на одні двері, грн]</mark></td>
+</tr>
+<tr>
+<td>Ціна комплекту для клієнта</td>
+<td><mark class="todo">[ЗАПОВНИТИ: ціна комплекту СКД для клієнта, грн]</mark></td>
+</tr>
+<tr>
+<td>Робота інсталятора за одні двері</td>
+<td><mark class="todo">[ЗАПОВНИТИ: вартість робіт, грн]</mark></td>
+</tr>
+</tbody>
+</table>
+<p>Заробіток інсталятора на одних дверях = (ціна комплекту для клієнта -
+закупівля комплекту інсталятором) + робота інсталятора за одні
+двері.</p>
+<h3 id="вправа-на-пять-хвилин">Вправа на п'ять хвилин</h3>
+<p>Підставте свої цифри в таблицю і порахуйте: скільки заробите на одних
+дверях і на об'єкті з трьома дверима. Окремо порахуйте, яка частина
+заробітку - за обладнання, а яка - за роботу руками.</p>
+<p>СКД - окремий рядок у кошторисі, не перетинається з
+відеоспостереженням і сигналізацією. Замовник, якому ви вже поставили
+камери, рано чи пізно запитає про доступ - краще, щоб ви самі вміли це
+рахувати і монтувати, а не відправляли його до субпідрядника.</p>
+<h2 id="з-чого-складається-скд">З чого складається СКД</h2>
+<p>Ланцюжок "приклав картку - замок відкрився" тримається на чотирьох
+вузлах.</p>
+<ul>
+<li><strong>Контролер</strong> - мозок системи. Отримує код картки від
+зчитувача, звіряє зі своєю пам'яттю і вирішує, відкривати двері чи
+ні.</li>
+<li><strong>Зчитувач</strong> - стоїть біля дверей, знімає код з картки,
+брелока або пальця і передає контролеру.</li>
+<li><strong>Замок</strong> - електромагнітний або електромеханічний. За
+командою контролера знімає блокування.</li>
+<li><strong>Кнопка виходу</strong> - стоїть усередині приміщення,
+відкриває замок без картки, щоб людина могла вийти зсередини в будь-який
+момент.</li>
+</ul>
+<p>Не відкриваються двері - перевіряйте по цьому ланцюжку від зчитувача
+до замка, а не хапайтеся одразу за викрутку біля контролера.</p>
+<h2 id="точка-проходу---одиниця-обліку-в-скд">Точка проходу - одиниця
+обліку в СКД</h2>
+<p>Точка проходу - місце, де система вирішує, пускати людину чи ні:
+двері, хвіртка, турнікет, шлагбаум, ворота.</p>
+<p>У комплект точки проходу входить: один або два зчитувачі, замок,
+кнопка виходу, дотягувач, датчик дверей (геркон), джерело живлення.</p>
+<ul>
+<li><strong>Одностороння точка</strong> - зчитувач зовні, вихід за
+кнопкою. Система знає, хто зайшов, але не знає, хто вийшов.</li>
+<li><strong>Двостороння точка</strong> - зчитувачі з обох сторін, вхід і
+вихід фіксуються обидва. Це, як і раніше, одна точка проходу, але два
+зчитувачі, і їх потрібно закладати в кошторис окремим рядком.</li>
+</ul>
+<p>Контролери продаються на 1, 2 або 4 двері. Рахуйте не тільки точки
+проходу, а й зчитувачі: на чотиридверний контролер з двостороннім
+проходом влізе не 4 двері, а менше - дивіться в паспорті, скільки
+зчитувачів контролер тягне фізично.</p>
+<p>Пройдіть об'єкт заздалегідь і по кожній точці вирішіть: потрібен там
+контроль виходу чи вистачить кнопки.</p>
+<h2 id="яку-картку-дати-замовнику---типи-ідентифікаторів">Яку картку
+дати замовнику - типи ідентифікаторів</h2>
+<p>Картка - це просто носій номера, який зчитувач передає контролеру.
+Розбиратися в типах карток потрібно не з цікавості, а тому що від цього
+залежить, скільки разів доведеться переробляти перепустки на
+об'єкті.</p>
+<ul>
+<li><strong>Картки низької частоти</strong> - стара, проста технологія,
+код майже не захищений і легко копіюється на болванку в переході з
+ключами. Дешево, але для серверної або каси це діра в безпеці.</li>
+<li><strong>Картки високої частоти</strong> - новіші, підтримують
+шифрування ділянки пам'яті, скопіювати складніше. Дорожче, але для
+об'єктів з грошима або даними це норма, а не опція "якщо
+доплатите".</li>
+<li><strong>Брелоки</strong> - той самий чип, що в картці, у корпусі на
+кільце для ключів. Читаються тим самим зчитувачем, що й картка тієї
+самої частоти.</li>
+<li><strong>Мітки</strong> (стикери) - той самий принцип, клеяться на
+телефон або бейдж, коли картку незручно носити окремо.</li>
+<li><strong>Телефон як ідентифікатор</strong> - смартфон передає код по
+Bluetooth або NFC замість картки. Працює, тільки якщо це підтримують і
+зчитувач, і контролер, і зазвичай хмарний сервіс - звичайна система на
+Wiegand з телефоном не запрацює.</li>
+</ul>
+<p>Головне тут - не технологія сама по собі, а сумісність з тим, що вже
+на руках у замовника. Видано триста карток одного типу, а ви поставили
+зчитувач під інший - ви не продали апгрейд, ви створили собі проблему.
+Замовник скаже: "навіщо міняти триста перепусток, якщо раніше все
+працювало". І буде правий.</p>
+<p>Перед закупівлею візьміть у замовника одну картку з об'єкта і
+піднесіть до тестового зчитувача. П'ять хвилин на об'єкті економлять
+день на переробку.</p>
+<h2 id="живлення-скд---окремий-вузол-а-не-дрібниця">Живлення СКД -
+окремий вузол, а не дрібниця</h2>
+<p>Замок і контролер часто живлять від одного блока живлення - так
+коротший кабель і менше деталей у коробці. На об'єкті побільше це
+стріляє.</p>
+<p>Замок - найпрожерливіший елемент точки проходу: у момент відкриття
+він тягне струм помітно більше, ніж контролер і зчитувач разом узяті. На
+одному слабкому блоці живлення при спрацюванні замка напруга просідає,
+контролеру не вистачає живлення - він перезавантажується або втрачає
+зв'язок зі зчитувачем. З боку це "система глючить": двері то
+відкриваються, то ні, хоча проводка в порядку.</p>
+<p>Звідси правило: у замка - свій блок живлення або окремий вихід із
+запасом по струму, у контролера - свій. На точці з високими вимогами
+(серверна, каса, склад із цінностями) у блок живлення ставлять ще
+акумулятор - щоб при відключенні електрики система працювала, а не
+відкрила всі двері одразу або не заблокувала вихід людям.</p>
+<p>Охорона на об'єкті, де це не врахували, формулює проблему коротко:
+"вона сьогодні знову залипає ввечері, коли ми світло в усій будівлі
+вмикаємо". Це і є просідання напруги, тільки побачене не з того боку
+проводу.</p>
+<h2 id="аварійне-відкриття-і-пожежна-безпека">Аварійне відкриття і
+пожежна безпека</h2>
+<p>СКД стоїть на дверях не для того, щоб у разі пожежі люди в них
+застрягли. Тут два обов'язкових вузли.</p>
+<p>Перший - кнопка аварійного виходу всередині приміщення. Вона розриває
+коло живлення замка і відкриває двері без логіки контролера, без жодної
+картки. Забули поставити - отримали типову помилку монтажу, про яку
+нижче.</p>
+<p>Другий - розмикання живлення замка за сигналом пожежної сигналізації.
+Спрацювала пожежна система - замки на шляхах евакуації знеструмлюються,
+двері відкриваються самі, без людини і картки. Тому там майже завжди
+ставлять електромагнітний замок: він тримає двері, тільки поки подано
+живлення, і зняття живлення одразу їх звільняє (мовою інсталяторів -
+"фейл-сейф"). Електромеханічний у виконанні "фейл-секьюр" тримає двері
+замкненими без живлення - для шляхів евакуації це небезпечно і зазвичай
+заборонено проєктом або пожежним наглядом.</p>
+<p>Інспектор перевіряє саме це: чи знеструмлюється замок при сигналі
+пожежної сигналізації. Ні - акт не підписують, переробка лягає на
+інсталятора.</p>
+<h2
+id="wiegand-rs-485-і-osdp---чим-зчитувач-говорить-із-контролером">Wiegand,
+RS-485 і OSDP - чим зчитувач говорить із контролером</h2>
+<p>Три способи, якими зчитувач передає код контролеру. Переплутаєте межі
+їх застосування - потім пояснюйте замовнику, чому зчитувач одного
+виробника не дружить з контролером іншого.</p>
+<h3 id="wiegand">Wiegand</h3>
+<ul>
+<li>Чотири проводи: дані 0 (D0), дані 1 (D1), живлення, земля.</li>
+<li>Канал односторонній: зчитувач передає код, контролер у відповідь
+мовчить.</li>
+<li>Формати: 26 біт (найпоширеніший), а також 34, 37, 48 біт. У
+26-бітному форматі під номер картки відведено 16 біт - це номери до
+65535, плюс 8 біт коду об'єкта.</li>
+<li>Якщо номер картки довший, ніж вміщається у форматі, зайві розряди
+обрізаються. Дві різні картки можуть перетворитися для контролера на
+одну й ту саму.</li>
+<li>Довжина лінії - зазвичай до 100 метрів, далі робота не
+гарантується.</li>
+<li>Немає шифрування і немає контролю лінії: до проводів можна
+підключитися, перехопити і повторити код, а контролер не помітить, що
+зчитувач зняли зі стіни.</li>
+<li>Підключайте проводи строго за підписом і схемою контролера.
+Переплутаєте дані з живленням - зчитувач не запрацює або згорить на
+місці.</li>
+</ul>
+<h3 id="rs-485">RS-485</h3>
+<ul>
+<li>Це не протокол, а фізична лінія зв'язку: вита пара, проводи A і B,
+обмін в обидва боки.</li>
+<li>До 1200 метрів і до 32 пристроїв на одному сегменті лінії.</li>
+<li>По одній лінії можна підключити кілька зчитувачів і контролерів - на
+великому об'єкті це економить кабель.</li>
+<li>Який протокол іде по цій лінії, вирішує виробник. Часто протокол
+закритий, тому зчитувач одного бренду може не запрацювати з контролером
+іншого.</li>
+</ul>
+<h3 id="osdp">OSDP</h3>
+<ul>
+<li>Відкритий стандарт, працює поверх лінії RS-485. Створювався як
+заміна Wiegand.</li>
+<li>Канал двосторонній: контролер керує світлодіодом і зумером
+зчитувача, зчитувач відповідає про свій стан.</li>
+<li>Контроль лінії: контролер бачить, якщо зчитувач відключили або
+кабель обірвали.</li>
+<li>Secure Channel - шифрування AES-128: перехопити і повторити код не
+вийде.</li>
+<li>Кілька зчитувачів на одній лінії, номер картки передається цілком,
+без обрізки.</li>
+</ul>
+<h2 id="як-обрати-інтерфейс">Як обрати інтерфейс</h2>
+<table>
+<thead>
+<tr>
+<th>Ситуація на об'єкті</th>
+<th>Що обирати</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Одні-двоє дверей, відстань до 100 метрів, звичайний офіс</td>
+<td>Wiegand: дешевше, простіше, підтримується майже скрізь</td>
+</tr>
+<tr>
+<td>Відстань від зчитувача до контролера більше 100 метрів</td>
+<td>RS-485 або OSDP</td>
+</tr>
+<tr>
+<td>Багато зчитувачів уздовж однієї траси</td>
+<td>RS-485 або OSDP: одна лінія замість окремого кабелю до кожного</td>
+</tr>
+<tr>
+<td>Потрібен захист від перехоплення коду і підміни зчитувача</td>
+<td>OSDP із Secure Channel</td>
+</tr>
+<tr>
+<td>Зчитувач і контролер різних виробників</td>
+<td>OSDP як відкритий стандарт або Wiegand; закритий протокол по RS-485
+- ризик, що вони не подружаться</td>
+</tr>
+<tr>
+<td>Біометричний термінал</td>
+<td>дивіться наступний розділ</td>
+</tr>
+</tbody>
+</table>
+<h2 id="чому-біометрія-не-завжди-працює-по-wiegand">Чому біометрія не
+завжди працює по Wiegand</h2>
+<ol type="1">
+<li>Біометричний термінал передає контролеру не відбиток, а номер
+користувача - ніби це картка.</li>
+<li>Розрядність. Номери користувачів у терміналі бувають довші, ніж
+вміщається у вибраному форматі Wiegand. У 26-бітному форматі це номери
+до 65535. Зайве обрізається, і дві різні людини отримують для контролера
+один і той самий номер.</li>
+<li>Формат потрібно узгодити заздалегідь. Термінал і контролер мають
+бути налаштовані на один і той самий формат - 26, 34 або 37 біт. Інакше
+контролер отримує сміття замість номера.</li>
+<li>Канал односторонній. Термінал не дізнається рішення контролера: не
+можна показати на його екрані "доступ заборонено" і не можна
+відпрацювати розклад на його стороні.</li>
+<li>Відбитки і обличчя заносяться в термінал через його власну програму
+по мережі, а не по Wiegand. Тобто до термінала все одно потрібен
+мережевий кабель, навіть якщо сам код доступу потім іде по Wiegand.</li>
+</ol>
+<p>При біометрії закладайте мережу до термінала і заздалегідь узгоджуйте
+формат Wiegand з контролером - або одразу беріть OSDP або мережеву
+інтеграцію. Інакше на об'єкті з'ясується: обладнання куплено, стоїть на
+стіні, а разом не працює.</p>
+<h2 id="базова-логіка-допуску">Базова логіка допуску</h2>
+<p>Контролер вирішує, пускати людину чи ні, за простою логікою:</p>
+<ul>
+<li>у пам'яті контролера зберігається список карток, яким дозволено
+доступ;</li>
+<li>кожна картка прив'язана до конкретних дверей або групи дверей -
+картка прибиральниці може не підходити до серверної;</li>
+<li>опційно до картки можна прив'язати розклад, наприклад "тільки в
+робочі години з 8:00 до 20:00".</li>
+</ul>
+<p>Якщо код картки є в списку, прив'язка збігається з цими дверима і
+розклад (якщо він заданий) допускає прохід у цей час - контролер подає
+команду на відкриття замка.</p>
+<h2
+id="хочемо-відкривати-двері-телефоном---а-стоїть-старий-контролер">"Хочемо
+відкривати двері телефоном" - а стоїть старий контролер</h2>
+<p>Ситуація, яка спливає майже на кожному другому офісному об'єкті.
+Замовник подивився рекламу, показав директору і каже: "хочемо, щоб
+співробітники двері телефоном відкривали, картки їм навіщо тягати". А на
+об'єкті - старий автономний контролер без мережі, що працює по Wiegand
+зі звичайними картками.</p>
+<p>Чесна відповідь: телефон передає код по Bluetooth або NFC на
+зчитувач, який це вміє, а рішення звіряється через хмарний сервіс або
+контролер із мережевим портом. Старий автономний контролер у цій схемі
+не бере участі - йому нема куди підключитися, і прошивкою це не
+додати.</p>
+<p>Далі два чесних варіанти, а не один красивий:</p>
+<ul>
+<li>замінити зчитувач і контролер на моделі з підтримкою телефона і
+мережі - окремий рядок у кошторисі, і його варто показати одразу, а не
+після згоди на "швидко і недорого";</li>
+<li>залишити старий контролер як є, а телефон запропонувати окремим
+простим рівнем - наприклад, для гостьового входу, - не чіпаючи основну
+СКД із картками.</li>
+</ul>
+<p>Найгірший варіант - пообіцяти телефон на старому обладнанні і
+героїчно намагатися його туди впхати. Дешевше одразу сказати: "на цьому
+контролері телефон не запрацює, ось що міняти і скільки це коштує".</p>
+<h2 id="співробітник-звільнився-а-картка-працює">"Співробітник
+звільнився, а картка працює"</h2>
+<p>Дзвінок від замовника через півроку після здачі: "людина звільнилася
+в п'ятницю, а в понеділок зайшла в офіс за старою перепусткою, охорона в
+паніці". Картка залишилася у колишнього співробітника - вона не
+прив'язана до особи, для контролера це просто код у списку
+дозволених.</p>
+<p>Правило, яке варто проговорити замовнику ще на здачі: картка - не
+посвідчення особи, а ключ, і поки код числиться в пам'яті контролера,
+двері відкриють будь-кому з цим кодом на руках. Тому:</p>
+<ul>
+<li>ведіть список карток із прив'язкою до співробітника - кому видана,
+номер, дата;</li>
+<li>при звільненні або втраті картки код прибирають із контролера того
+самого дня, не чекаючи повернення пластику;</li>
+<li>якщо список ніхто не вів, простіше знести його цілком і завести
+заново з прив'язкою до людей, ніж гадати, які коди ще актуальні.</li>
+</ul>
+<p>Скажіть замовнику прямо: без списку карток СКД не захищає об'єкт, а
+створює ілюзію захисту - це гірше, ніж відкриті двері без системи.</p>
+<h2 id="типові-помилки-монтажу-скд">Типові помилки монтажу СКД</h2>
+<ol type="1">
+<li>Переплутана полярність замка.</li>
+<li>Обрано не той тип замка для дверей - не враховано, куди вони
+відкриваються, а на шляхах евакуації замість електромагнітного стоїть
+"фейл-секьюр".</li>
+<li>Забута кнопка аварійного відкриття або розмикання замка за пожежною
+сигналізацією.</li>
+<li>Поганий контакт на зчитувачі - або зчитувач, який не читає картки
+замовника, тому що куплений під іншу частоту.</li>
+</ol>
+<h2 id="головне">Головне</h2>
+<ol type="1">
+<li>Точка проходу - одиниця обліку в СКД: рахуйте не двері, а точки
+проходу, зчитувачі, тип картки, яка вже на руках у замовника, і окреме
+живлення для замка.</li>
+<li>Wiegand ближчий і простіший, але без захисту і з обрізкою довгих
+номерів; OSDP працює далі по RS-485 і захищений шифруванням Secure
+Channel.</li>
+<li>Біометрія по Wiegand-26 часто не працює через те, що на номер
+відведено 16 біт: усе, що більше 65535, обрізається, і різні пальці
+приходять до контролера одним і тим самим кодом.</li>
+<li>Аварійне відкриття, знеструмлення замка за пожежною сигналізацією і
+список карток із прив'язкою до співробітників - не опції для просунутих,
+а те, без чого СКД не працює по-справжньому.</li>
+</ol>
+<p><strong>Далі:</strong> <a href="practice.html">Практика модуля 6</a> -
+15 хвилин.</p>
+<hr />
+<p><a href="../../00-course-overview.html">До огляду курсу</a> · <a
+href="../03-video-surveillance/lesson.html">Попередній модуль</a> · <a
+href="../07-intercoms/lesson.html">Наступний модуль</a></p>
+<div class="pager"><a href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html"><small>← Назад</small>Чек-лист самоперевірки: Модуль 5</a><a class="n" href="../../../course-1-basics/modules/06-access-control/practice.html"><small>Далі →</small>Практика: складання ланцюжка підключення СКД</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>

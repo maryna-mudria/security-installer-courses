@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Модуль 7: СКД Sunell | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Модуль 7: СКД Sunell</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../../../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="" href="../../../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../../../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../../../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details open><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="cur" href="../../../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details><summary>Додаткові матеріали</summary><ul><li><a class="" href="../../../shared/glossary.html">Глосарій</a></li><li><a class="" href="../../../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../../../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../../../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../../../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../../../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1 id="модуль-7-скд-sunell">Модуль 7: СКД Sunell</h1>
+<p><strong>Модуль 7 з 8</strong> · Урок 9 хв · Практика 12 хв</p>
+<h2 id="що-ви-зможете-після-уроку">Що ви зможете після уроку</h2>
+<ul>
+<li>Пояснити замовнику, чим СКД в одній екосистемі з відео відрізняється
+від СКД, яка стоїть окремо.</li>
+<li>Розібрати на прикладі інциденту, скільки часу зв'язка допуску і
+відео економить порівняно з двома окремими системами.</li>
+<li>Скласти список того, що обов'язково зафіксувати в акті здачі об'єкта
+зі СКД.</li>
+</ul>
+<p>Картка загубилась у понеділок вранці. Хтось увійшов за нею в офіс о
+8:14, і про це дізналися лише через годину, коли власник картки помітив
+пропажу. Замовник телефонує і питає одне: "хто заходив?" Відповідь на це
+питання може зайняти п'ять хвилин або пів дня - залежно від того, як у
+вас налаштована СКД відносно відео.</p>
+<p>Базові вузли СКД - контролер, зчитувач, замок, кнопка виходу - та
+інтерфейс Wiegand і базова логіка допуску "картка → список → рішення"
+вже розібрані в Модулі 4 курсу 1. Тут ці теми не повторюються: якщо
+деталі стерлися з пам'яті, поверніться туди перед продовженням. У цьому
+уроці - про те, що з'являється, коли ту саму СКД ставлять не окремо, а в
+парі з відео Sunell на тих самих дверях.</p>
+<h2 id="як-скд-вбудовується-в-екосистему">Як СКД вбудовується в
+екосистему</h2>
+<p>У Sunell контролер СКД керується через те саме або тісно пов'язане
+програмне забезпечення, що й камери з NVR. Через це подія допуску - хто
+і коли пройшов через двері - зберігається поряд із відео з камери, що
+дивиться на ці ж двері.</p>
+<p>Ключове слово тут - "поряд", а не "автоматично". Ефект єдиної
+екосистеми з'являється тільки тоді, коли камеру і точку доступу свідомо
+прив'язали одна до одної в налаштуваннях - вказали, яка камера
+відповідає за які двері. Поставити СКД і камеру фізично поруч на об'єкті
+недостатньо: без цієї прив'язки в системі це дві незалежні одна від
+одної штуки, які просто випадково дивляться в одну точку.</p>
+<p>Прив'язку роблять один раз при налаштуванні об'єкта. Забудете -
+отримаєте на здачі об'єкта дві окремі вкладки, які нічим одна з одною не
+пов'язані, і замовник спитає, навіщо він тоді платив за "єдину
+систему".</p>
+<p>Ще один нюанс, про який варто пам'ятати: зв'язка допуску і відео не
+замінює правильний монтаж камери. Якщо камера над дверима стоїть так, що
+бачить тільки маківку людини, а не обличчя, - подія допуску прив'яжеться
+до відео чесно, тільки на цьому відео нічого не розгледіти. Тема з
+Модуля 6 про кут і освітлення діє тут так само, як на будь-якій іншій
+точці: користь від зв'язки СКД і відео тримається на тому, що камера
+реально бачить на вході.</p>
+<h2
+id="розбір-інциденту-чому-звязка-економить-не-хвилини-а-годину">Розбір
+інциденту: чому зв'язка економить не хвилини, а годину</h2>
+<p>Повернімося до загубленої картки. Розберемо цю ситуацію в двох
+варіантах - без зв'язки і зі зв'язкою - щоб було видно, де саме
+економиться час.</p>
+<p><strong>Без зв'язки, дві окремі системи.</strong> Замовник відкриває
+журнал СКД, знаходить подію "прохід дозволено" о 8:14 за карткою номер
+такий-то. Журнал каже "хто" тільки в сенсі номера картки, а не обличчя.
+Далі потрібно окремо відкрити архів відеоспостереження, згадати чи
+вирахувати точний час, перемотати архів до 8:14, знайти потрібну камеру
+зі списку в іншому інтерфейсі і тільки тоді побачити, хто фізично
+пройшов у двері. Кожен крок - це перемикання між вікнами, паролями, а
+часом і різними комп'ютерами, якщо ПЗ СКД і відео взагалі стоять на
+різних машинах.</p>
+<p><strong>Зі зв'язкою, одна екосистема.</strong> Замовник відкриває той
+самий журнал допуску, бачить подію о 8:14 - і поруч із записом одразу є
+посилання на фрагмент відео з камери, прив'язаної до цих дверей, за той
+самий момент. Один клік - і видно обличчя людини, яка зайшла за чужою
+карткою.</p>
+<p>Різниця не в тому, що без зв'язки завдання нерозв'язне - розв'язне,
+тим самим журналом і тим самим архівом. Різниця в кількості кроків і в
+тому, скільки людей і часу на це піде: п'ять хвилин одного клацання
+проти пів години пошуку в двох різних місцях, поки замовник нервово
+перепитує в телефон "ну що там, знайшли?".</p>
+<p>Ця ж логіка працює і в зворотний бік, не тільки на розбір проблем.
+Охорона, яка щоранку переглядає, хто прийшов раніше за графік чи хто
+заходив у зону складу без потреби, робить це одним поглядом у той самий
+журнал з відео поруч, а не звіркою двох незалежних систем щодня
+вручну.</p>
+<h2 id="як-пояснити-цю-користь-замовнику-який-не-бачить-різниці">Як
+пояснити цю користь замовнику, який не бачить різниці</h2>
+<p>Замовник рідко сам формулює запит як "хочу СКД і відео в одній
+екосистемі" - для нього це абстракція. Формулюйте користь через його ж
+мову: не "інтегрована платформа", а "коли щось трапиться, вам не
+доведеться шукати по двох різних програмах - відкриваєте один журнал і
+одразу бачите відео".</p>
+<p>Найкраще це пояснюється саме на прикладі, схожому на загублену
+картку: розкажіть коротку історію - "уявіть, зникла картка, хтось нею
+скористався, вам треба з'ясувати хто. Без зв'язки шукатимете годину по
+двох архівах. Зі зв'язкою - один клік". Абстрактна перевага "інтеграції"
+замовника не чіпляє, а конкретна годинна різниця в конкретній ситуації -
+чіпляє.</p>
+<h2 id="чого-звязка-не-вирішує-сама-по-собі">Чого зв'язка не вирішує
+сама по собі</h2>
+<p>Зв'язка СКД і відео - не хвилинна кнопка "інтеграція" в меню,
+увімкнута і забута. Вона вирішує конкретну задачу - швидкий доступ до
+відео за подією допуску, - і більше нічого.</p>
+<p>Вона не замінює резервне живлення на точці доступу: якщо при
+відключенні електрики і контролер, і камера залишаються без живлення
+одночасно, розбиратися після інциденту вже нема в чому - ні журналу, ні
+відео за цей проміжок часу немає. Вона не замінює список карток,
+прив'язаних до співробітників, - подія в журналі однаково покаже тільки
+номер картки, а не ім'я, якщо цей номер ніде не підписаний. І вона не
+замінює регулярну перевірку, що прив'язка камери до дверей взагалі не
+злетіла після оновлення ПЗ чи заміни обладнання - раз на кілька місяців
+варто відкрити журнал і переконатися, що відео за подіями таки
+підтягується.</p>
+<p>Продавайте зв'язку чесно - як зручність, що економить час на
+конкретному кроці, а не як універсальну страховку від усіх проблем СКД
+одразу.</p>
+<h2 id="що-записати-в-акт-при-здачі-обєкта-зі-скд">Що записати в акт при
+здачі об'єкта зі СКД</h2>
+<p>Акт здачі - це не формальність для бухгалтерії, а страховка на
+випадок майбутньої суперечки "а хто винен, що не працює". У акт зі СКД
+варто внести:</p>
+<ul>
+<li>список усіх точок проходу з номером і розташуванням (наприклад
+"точка 1 - головний вхід, точка 2 - серверна"), а не просто загальну
+кількість дверей;</li>
+<li>перелік виданих карток або інших ідентифікаторів з прив'язкою до
+конкретних співробітників на момент здачі, а не порожній список
+"додасться пізніше";</li>
+<li>підтвердження, що аварійне відкриття і розмикання замка за сигналом
+пожежної сигналізації перевірені і працюють - це те, що інспектор і суд
+шукатимуть в першу чергу, якщо станеться пожежа;</li>
+<li>факт прив'язки камер до точок доступу, якщо СКД і відео в одній
+екосистемі - саме той пункт, який часто забувають зафіксувати, а потім
+довго з'ясовують, чому "єдина система" не єдина;</li>
+<li>підтвердження, що замовнику передані і змінені паролі адміністратора
+на ПЗ СКД, а не залишені заводські;</li>
+<li>підтвердження, що представника замовника навчили видавати нові
+картки, видаляти звільнених співробітників і переглядати журнал подій, і
+контакт саме цієї відповідальної особи - без конкретного імені
+відповідальність розмивається між усіма й нікого.</li>
+</ul>
+<p>Без цього списку в акті перша ж суперечка через півроку - "а хто
+вносив зміни в СКД, чому не працює аварійне відкриття" - обертається
+проти інсталятора, навіть якщо на монтажі все було зроблено
+правильно.</p>
+<h2 id="контролери-sunell-що-перевірити-на-обєкті">Контролери Sunell: що
+перевірити на об'єкті</h2>
+<p>Окрема лінійка Sunell для СКД - контролери SN-AC1102A (2 двері) і
+SN-AC1104A (4 двері). За даташитом Sunell вони тримають 42 000 карток і
+200 000 подій у журналі, на двері припадає два зчитувачі Wiegand (вхід і
+вихід), кнопка виходу, датчик дверей і реле замка. Нюансів підключення
+на практиці більше, ніж цифр у даташиті. Загальна картина нюансів
+протоколів - у <a
+href="../../../shared/integration-pitfalls.html">окремому матеріалі</a>,
+тут тільки те, що ми бачили на живому контролері Sunell.</p>
+<ul>
+<li><strong>Заводський пароль залишається.</strong> На контролері, який
+ми перевіряли, заводський пароль зв'язку не був змінений, а сам
+контролер стояв в одній пласкій мережі з камерами і комп'ютерами.
+Змініть пароль і винесіть контролери в окремий VLAN (Модуль 5 курсу
+1).</li>
+<li><strong>Серійний номер з наліпки може не збігтися з
+реальним.</strong> Контролер мовчить на команди з неправильним серійним
+номером: ні помилки, ні відповіді. Читайте номер з самого пристрою і
+записуйте його в акт.</li>
+<li><strong>Перевірте адресу сервера в мережевих налаштуваннях.</strong>
+У режимі клієнта контролер сам підключається до сервера. На нашому
+контролері цей режим був вимкнений. На вашому відкрийте мережеві
+налаштування і переконайтеся, що там порожньо або стоїть адреса вашого
+сервера, а не чужа.</li>
+<li><strong>Фіксована адреса.</strong> Контролер, якому змінилася
+адреса, програма втрачає. Закріпіть адресу за контролером.</li>
+</ul>
+<p>Усі інші параметри контролера (порти, час відгуку, шифрування
+пакетів) беріть з паспорта вашої моделі. Тут їх не наводимо, бо
+перевірені тільки чотири пункти вище.</p>
+<h2 id="головне">Головне</h2>
+<ol type="1">
+<li>Ефект єдиної екосистеми СКД і відео дає не сусідство обладнання на
+об'єкті, а свідома прив'язка камери до точки доступу в налаштуваннях -
+без неї це просто дві окремі системи поруч.</li>
+<li>На прикладі розбору інциденту різниця видна найкраще: без зв'язки
+замовник шукає відповідь по двох окремих архівах, зі зв'язкою - одним
+кліком біля події журналу.</li>
+<li>В акт здачі об'єкта зі СКД входять точки проходу, список карток,
+перевірка аварійного відкриття й пожежної інтеграції, прив'язка камер і
+передані паролі - без цього список претензій через півроку ляже на
+інсталятора.</li>
+<li>Перед здачею перевірте на контролері заводський пароль, серійний
+номер, адресу сервера і фіксовану адресу.</li>
+</ol>
+<p><strong>Далі:</strong> <a href="practice.html">Практика модуля 7</a> -
+12 хвилин.</p>
+<hr />
+<p><a href="../../00-course-overview.html">До огляду курсу</a> · <a
+href="../06-analytics/lesson.html">Попередній модуль</a> · <a
+href="../08-troubleshooting-practicum/lesson.html">Наступний
+модуль</a></p>
+<div class="pager"><a href="../../../course-2-sunell/modules/06-analytics/checklist.html"><small>← Назад</small>Чек-лист: Модуль 6</a><a class="n" href="../../../course-2-sunell/modules/07-access-control/practice.html"><small>Далі →</small>Практика: користь єдиної екосистеми СКД і відео</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>

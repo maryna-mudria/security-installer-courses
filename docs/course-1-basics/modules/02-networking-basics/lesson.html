@@ -1,0 +1,358 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Модуль 2: Базові мережі для інсталятора | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Модуль 2: Базові мережі для інсталятора</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../../../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details open><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="cur" href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="" href="../../../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../../../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../../../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details><summary>Додаткові матеріали</summary><ul><li><a class="" href="../../../shared/glossary.html">Глосарій</a></li><li><a class="" href="../../../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../../../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../../../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../../../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../../../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1 id="модуль-2-базові-мережі-для-інсталятора">Модуль 2: Базові мережі
+для інсталятора</h1>
+<p><strong>Модуль 2 з 9</strong> · Урок 15 хв · Практика 20 хв</p>
+<h2 id="що-ви-зможете-після-уроку">Що ви зможете після уроку</h2>
+<ul>
+<li>Знайти камеру в мережі за IP- або MAC-адресою, навіть якщо її адреса
+невідома, і перевірити, чи вона в одній підмережі з реєстратором.</li>
+<li>Зібрати типову схему підключення на об'єкті - камери, PoE-комутатор,
+NVR - і вирішити, що робити, якщо камера далі 100 метрів.</li>
+<li>Обтиснути роз'єм RJ-45 за схемою T568B, вибрати кабель без помилок і
+порахувати бюджет PoE-комутатора.</li>
+</ul>
+<p>Кабель прокладено, камера висить на стіні, індикатор живлення горить.
+Ви відкриваєте реєстратор - камери в списку немає. Замовник стоїть
+поруч, і питання одне: чому не працює.</p>
+<h2 id="навіщо-інсталятору-мережа">Навіщо інсталятору мережа</h2>
+<p>IP-камера і NVR - мережеві пристрої. Працюють вони тому, що
+перебувають в одній мережі і вміють знаходити одне одного за адресою, а
+не тому, що кабель встромлений у роз'єм і горить лампочка живлення.
+Провід тут лише транспорт, домовлятися пристрої мають самі - і якщо ця
+розмова не відбулася, ідеально прокладена траса не допоможе.</p>
+<h2 id="ip-адреса-і-маска-підмережі">IP-адреса і маска підмережі</h2>
+<p>Терміни IP-адреса і маска підмережі вже розбирали в загальному
+глосарії курсу. Тут - як цим користуватися руками, на об'єкті.</p>
+<p>Уявіть адресу будинку: вулиця і номер. У сусідів збігається вулиця -
+до них рукою подати. У мешканця іншого району вулиця інша, і напряму не
+дійдете.</p>
+<p>З IP-адресою так само. Вона виглядає як чотири числа через крапку,
+наприклад 192.168.1.10. Маска підмережі каже, яка частина числа -
+«вулиця», спільна для всіх у мережі, а яка - «номер будинку», свій у
+кожного пристрою.</p>
+<p>Найчастіше трапляється маска 255.255.255.0: перші три числа адреси -
+«вулиця», останнє - «номер будинку». Збігаються ці три числа у двох
+пристроїв - вони сусіди і бачать одне одного напряму. Не збігаються -
+між ними ніби ціле місто, і підключення до одного комутатора тут нічого
+не вирішує.</p>
+<p>Камера 192.168.1.10 і NVR 192.168.1.20 з маскою 255.255.255.0 -
+сусіди: 192.168.1 збігається, NVR камеру знайде.</p>
+<p>Камера 192.168.1.10 і NVR 192.168.2.20 з тією самою маскою - уже ні.
+192.168.1 і 192.168.2 - різні вулиці. Поки хтось не виправить адресу
+руками, для NVR цієї камери ніби не існує.</p>
+<h2 id="як-знайти-камеру-якщо-її-ip-невідомий">Як знайти камеру, якщо її
+IP невідомий</h2>
+<p>Буває так: камера вже висить, а яка в неї адреса - ніхто не пам'ятає.
+Попередній підрядник налаштовував мережу і пішов, папірець з адресами
+загубився, на реєстраторі тиша.</p>
+<p>Насамперед ставиться утиліта пошуку від виробника обладнання:
+розсилає по мережі широкомовний запит, і кожна камера, яка почула,
+відповідає своїм IP, MAC-адресою (заводський номер мережевої карти, він
+не повторюється і, на відміну від IP, ніколи не змінюється) і моделлю.
+Утиліту ставлять на ноутбук, ноутбук встромляють у той самий комутатор,
+де сидять камери, і за кілька секунд перед вами список усього, що
+відгукнулося. Залишається звірити MAC-адресу з наклейкою на корпусі
+камери - вона є завжди.</p>
+<p>Нова камера або скинута до заводських налаштувань покаже заводську
+IP-адресу - зазвичай із того самого діапазону 192.168.1, який ми вже
+розбирали. Виробник прописує її на заводі, щоб у будь-якої камери з
+коробки була передбачувана стартова адреса. Далі адресу руками
+піднімають під мережу замовника - на об'єктному сленгу це так і
+називають, «підняти IP».</p>
+<p>Якщо камеру налаштовував хтось інший і утиліта її не знаходить,
+допомагає скидання: кнопка reset усередині корпуса або на кабельній
+косі, затискаєте на час з інструкції до моделі - і камера повернеться до
+заводської адреси.</p>
+<p>Ще варіант - керований комутатор із таблицею MAC-адрес: він пам'ятає,
+до якого порту підключено який пристрій. Знаходите у веб-інтерфейсі MAC
+камери і бачите номер порту. Рятує, коли камер багато, а кабелі
+прокладені без підписів.</p>
+<h2 id="навіщо-інсталятору-poe-комутатор">Навіщо інсталятору
+PoE-комутатор</h2>
+<p>Термін комутатор (світч) вже дано в глосарії. Тут - чому для
+відеоспостереження потрібен саме PoE-комутатор.</p>
+<p>Комутатор з'єднує кілька пристроїв в одну мережу: до нього кабелями
+UTP підключаються камери, NVR та інше мережеве обладнання об'єкта.
+Звичайний комутатор ганяє через порт лише дані - камері все одно
+потрібен окремий провід живлення і блок живлення поруч.</p>
+<p>PoE-комутатор передає тим самим кабелем ще й живлення: один кабель
+UTP від комутатора до камери - і дані пішли, і лампочка загорілася, без
+окремого шнура і розетки під стелею. На камері під козирком даху або на
+опорі біля паркану це не дрібниця: тягнути туди окреме живлення - зайвий
+день роботи і зайва штроба в стіні, а PoE знімає питання одразу.</p>
+<h2 id="типові-схеми-підключення-на-обєкті">Типові схеми підключення на
+об'єкті</h2>
+<p>На більшості об'єктів схема одна й та сама: камери кабелями UTP
+заходять у PoE-комутатор, а комутатор одним кабелем підключається до
+NVR. Камер більше, ніж портів на одному комутаторі - додають ще один
+PoE-комутатор і з'єднують їх через uplink-порт (порт для з'єднання
+комутаторів між собою), який на PoE-комутаторах часто виділений окремо і
+живлення не дає.</p>
+<p>Підмережу для камер краще тримати окремою від мережі замовника, а не
+садити все в одну спільну. В офісній мережі постійно щось відбувається:
+ноутбуки підключаються і відключаються, хтось роздає вайфай з телефона,
+IT-відділ змінює адреси. Кожна така подія - потенційний конфлікт з
+адресою камери, яка має працювати без вихідних. Впаде офісний інтернет
+замовника - камери на своїй підмережі все одно продовжать писати на
+NVR.</p>
+<p>Друга причина - її іноді прямо називає служба безпеки замовника:
+камери в мережі з робочими комп'ютерами - значить, до відеопотоку
+теоретично дістанеться будь-хто, хто потрапив у цю мережу, через
+заражений ноутбук або дірку в офісному wifi. Окрема підмережа знімає цей
+ризик.</p>
+<p>На практиці це означає: у NVR два мережевих інтерфейси, якщо таке
+передбачено, або окремий комутатор без виходу в офісну мережу взагалі.
+Правило на пам'ять: комутатор з камерами встромлений у той самий порт,
+що й офісний комп'ютер, - значить, ви вже не в окремій підмережі, що б
+там не було прописано на папері.</p>
+<h2 id="як-обтиснути-rj-45-за-схемою-t568b">Як обтиснути RJ-45 за схемою
+T568B</h2>
+<p>Загальне поняття обтиснення вже дали в глосарії. Нижче - порядок дій,
+який інсталятор повторює руками, поки не починає робити це на
+автоматі.</p>
+<ol type="1">
+<li>Відміряйте потрібну довжину кабелю із запасом і обріжте рівно -
+зайвий сантиметр завжди краще, ніж нестача, через яку шматок доведеться
+тягнути через усю трасу заново.</li>
+<li>Стриппером або ножем кримпера зніміть ізоляцію приблизно на 2-3 см.
+Жили всередині тонкі, різкий ривок ножем їх надрізає - обтиснення на
+вигляд вийде робочим, а контакт зникне через місяць.</li>
+<li>Розплетіть чотири скручені пари і випряміть їх пальцями.</li>
+<li>Розкладіть усі вісім провідників в один ряд по порядку кольорів
+схеми T568B: біло-помаранчевий, помаранчевий, біло-зелений, синій,
+біло-синій, зелений, біло-коричневий, коричневий.</li>
+<li>Вирівняйте кінці по одній лінії і обріжте так, щоб залишилася рівна
+ділянка близько 1-1.5 см.</li>
+<li>Вставте проводи в роз'єм RJ-45 у цьому самому порядку, стежачи, щоб
+кожен дійшов до упору і не помінявся місцями із сусіднім - у прозорому
+роз'ємі це видно на просвіт одразу.</li>
+<li>Вставте роз'єм у кримпер і обтисніть натисканням: контакти мають
+прорізати ізоляцію і зафіксувати проводи, а фіксатор - притиснути
+оболонку кабелю.</li>
+<li>Перевірте кабель тестером - на об'єкті це називають «прозвонити»
+кабель. Усі вісім жил мають проходити і бути обтиснуті в правильному
+порядку. Пропустите крок - розбиратиметеся з обривом уже нагорі драбини,
+з камерою в одній руці і телефоном замовника в іншій.</li>
+</ol>
+<h2 id="який-кабель-брати">Який кабель брати</h2>
+<p>Вибір кабелю вирішує, чи доживе система до кінця гарантії, а не
+тільки до дня здачі.</p>
+<p>Категорія. Cat5e вистачає і на 100 Мбіт/с, і на PoE - для більшості
+камер цього достатньо із запасом. Cat6 беруть під гігабіт і коли в
+проєкті закладено запас на майбутнє обладнання.</p>
+<p>Довжина сегмента. До 100 метрів разом з патч-кордами на обох кінцях.
+Далі - тільки через проміжне обладнання, про нього в наступному
+розділі.</p>
+<p>Мідь чи CCA. Для PoE годиться тільки суцільна мідь, торгуватися тут
+нема про що. CCA - це омідений алюміній: жила виглядає мідною зовні, а
+всередині алюміній, який гірше проводить, сильніше гріється і роняє
+напругу на довгій трасі. Камера на такій лінії поводиться дивно саме
+тоді, коли навантаження вище, - вночі, коли вмикається
+підсвічування.</p>
+<p>Один такий випадок: замовник телефонує після здачі об'єкта - «камери
+самі перезавантажуються, по одній, вночі, а вдень усе нормально». На
+об'єкті з'ясовується - інсталятор заради економії взяв CCA замість міді.
+Вдень, поки не працює підсвічування, напруги вистачає впритик. Вночі
+підсвічування додає навантаження, падіння напруги на алюмінієвій жилі
+стає критичним, і камера йде в перезавантаження. Замовник уже вирішив,
+що камери браковані: «Міняйте на нормальні, раз ці самі вимикаються».
+Переконувати довелося окремо. А переробка - не заміна метра проводу:
+кабель уже в кабель-каналі і в стяжках під стелею, без пошкодження
+оздоблення його не витягнути. По факту - нова бухта і весь монтаж по цій
+ділянці заново, від комутатора до кожної камери.</p>
+<p>Екран. UTP - без екрана, для приміщень. FTP або STP - для вулиці і
+трас поруч із силовими кабелями. Екран заземлюють з одного боку:
+незаземлений працює гірше, ніж його відсутність - наведення збирає, а
+нікуди їх не відводить.</p>
+<p>Оболонка для вулиці. Зовнішній кабель роблять з УФ-стійкою оболонкою,
+а для підвісу - з несучим тросом.</p>
+<h2 id="що-робити-якщо-до-камери-більше-100-метрів">Що робити, якщо до
+камери більше 100 метрів</h2>
+<p>Сто метрів - обмеження самого кабелю UTP, не PoE і не камери. Сигнал
+у мідній парі розвалюється після цієї межі, і товщий кабель не
+допоможе.</p>
+<p>Перший і найчастіший варіант - проміжний комутатор у гермобоксі
+(герметичний вуличний корпус), посаджений прямо на трасі, на стовпі або
+на стіні будівлі, на півдорозі. До нього приходить один сегмент до 100
+метрів від центрального комутатора, а від нього - наступні сегменти,
+знову в межах тих самих 100 метрів. Комутатор у боксі може отримувати
+PoE від центрального вузла або мати свій блок живлення, якщо поруч є
+електрика.</p>
+<p>Другий варіант - оптика з медіаконвертерами. Волокно не обмежене
+сотнею метрів і тримає сигнал на великі відстані. На обох кінцях лінії
+ставиться медіаконвертер: з одного боку звичайний UTP від комутатора, з
+іншого - оптика. Мінус - оптика не передає живлення, камері на
+віддаленому кінці все одно потрібне своє джерело PoE або блок
+живлення.</p>
+<p>Четвертий варіант - подовжений режим PoE, який є в частини
+комутаторів. Порт перемикається в режим, що тягне до 250 метрів по тому
+самому кабелю, але швидкість падає приблизно до 10 Мбіт/с. Одній камері
+Full HD цього вистачає, двом уже ні, і для аналітики теж малувато.</p>
+<p>П'ятий - радіоканал між двома точками. Береться там, де кабель не
+прокласти взагалі: через дорогу, через річку, на окремий будинок. Пара
+направлених антен дивиться одна на одну в прямій видимості. Дощ і сніг
+з'їдають частину швидкості, а гілка, що виросла на лінії погляду, ламає
+канал повністю.</p>
+<h3 id="оптика-одномод-чи-багатомод">Оптика: одномод чи багатомод</h3>
+<p>Якщо вибрали оптику, є два типи волокна. Багатомодове дешевше і
+розраховане на сотні метрів у межах будівлі чи території. Одномодове
+дорожче, але тримає кілометри. Обидва кінці лінії мають бути одного
+типу, і медіаконвертери теж підбираються під свій тип волокна.</p>
+<p>Третій варіант - PoE-подовжувач: ставиться приблизно посередині траси
+і повторює сигнал і живлення далі. Звучить просто і часто виходить
+найдешевше, але це зайва точка відмови - блок у гермобоксі, який може
+відсиріти або вийти з ладу через якийсь час на вулиці. Комутатор або
+оптика надійніші, у них є підтримка виробника, а подовжувач нерідко
+залишається сиротою без документації.</p>
+<h2 id="poe-стандарти-і-бюджет">PoE: стандарти і бюджет</h2>
+<h3 id="три-стандарти">Три стандарти</h3>
+<ul>
+<li><strong>802.3af (PoE)</strong> - до 15,4 Вт з порту, до пристрою
+доходить близько 12,95 Вт. Вистачає звичайній камері без підігріву.</li>
+<li><strong>802.3at (PoE+)</strong> - до 30 Вт з порту, до пристрою -
+близько 25,5 Вт. Потрібен поворотним камерам і камерам з
+підігрівом.</li>
+<li><strong>802.3bt (PoE++)</strong> - до 60 і до 90 Вт з порту. Для
+потужних поворотних камер та інформаційних панелей.</li>
+</ul>
+<p>Пасивний PoE - не стандарт, а просто провід під напругою: вона
+подається на порт постійно, без узгодження з тим, що на іншому кінці.
+Встромите туди не те обладнання - спалите його в момент підключення.</p>
+<h3 id="бюджет-комутатора">Бюджет комутатора</h3>
+<p>У PoE-комутатора є загальний бюджет потужності на всі порти одразу -
+це не потужність одного порту, помножена на їх кількість. Вісім портів
+по 30 Вт не означає бюджет 240 Вт: у паспорті комутатора стоїть своя
+цифра, і вона зазвичай менша.</p>
+<p>Рахується просто: скласти споживання всіх камер і додати запас 20-30
+відсотків. Вночі вмикається інфрачервоне підсвічування, взимку -
+підігрів, і споживання зростає саме тоді, коли система
+найпотрібніша.</p>
+<p>Приклад: 8 камер по 8 Вт - це 64 Вт, із запасом 30 відсотків потрібен
+бюджет комутатора близько 85 Вт.</p>
+<h2 id="камера-по-wi-fi-коли-можна">Камера по Wi-Fi: коли можна</h2>
+<p>Замовник питає про це на кожному другому об'єкті: "а можна без
+кабелю". Можна, але з умовами.</p>
+<p>Wi-Fi знімає прокладання кабелю для даних, але не знімає живлення:
+камері все одно потрібна розетка поруч або окремий провід. Виходить, що
+від двох проводів ви позбулися одного.</p>
+<p>Далі йде надійність. Радіоканал ділиться між усіма пристроями і
+залежить від стін, сусідських мереж і погоди на вулиці. Камера, яка
+вдень показує рівно, вночі може розсипатися, бо ввімкнулося
+ІЧ-підсвічування, потік виріс, а канал уже зайнятий.</p>
+<p>Де це допустимо: одна-дві камери в квартирі чи невеликому будинку,
+тимчасове встановлення, точка, куди кабель справді не прокласти без
+ремонту.</p>
+<p>Де ні: об'єкт, де запис має бути безперервним, будь-яка кількість
+камер від трьох, вулиця з відстанню до роутера через капітальну
+стіну.</p>
+<p>Скажіть це замовнику словами наперед. Інакше через місяць претензія
+буде до вас, а не до Wi-Fi.</p>
+<h2 id="5-причин-чому-не-працює-звязок">5 причин, чому "не працює
+зв'язок"</h2>
+<p>Якщо камера і NVR не бачать одне одного, майже завжди справа в одній
+з п'яти речей:</p>
+<ol type="1">
+<li>Переплутана схема обтиснення - проводи в роз'ємі RJ-45 стоять не по
+порядку T568B.</li>
+<li>Кабель довший за 100 метрів, а проміжне обладнання - комутатор,
+оптика або подовжувач - не поставлено.</li>
+<li>Пристрої сидять у різних підмережах - не збігаються перші числа
+IP-адреси, які визначає маска.</li>
+<li>Кабель встромлений не в той порт комутатора - у порт без PoE або у
+вимкнений порт.</li>
+<li>Кримпер зламаний або обтиснення зроблено криво - контакти роз'єму не
+торкаються жил кабелю.</li>
+</ol>
+<h2 id="головне">Головне</h2>
+<ol type="1">
+<li>Пристрої бачать одне одного, тільки якщо сидять в одній мережі - це
+вирішують перші числа IP-адреси і маска підмережі, а не факт підключення
+до одного комутатора.</li>
+<li>Кабель вибирають за категорією і довжиною сегмента, але для PoE
+годиться тільки суцільна мідь - CCA гріється і роняє напругу, через що
+камера перезавантажується саме вночі, під навантаженням.</li>
+<li>Сто метрів - межа самого кабелю UTP, а не PoE чи камери. Далі
+ставлять проміжний комутатор у гермобоксі або оптику з
+медіаконвертерами, і в обох випадках живлення на дальній кінець
+підводять окремо.</li>
+<li>Бюджет PoE-комутатора рахують за сумою споживання камер із запасом
+20-30 відсотків, тому що взимку і вночі навантаження зростає, а не
+падає.</li>
+</ol>
+<p><strong>Далі:</strong> <a href="practice.html">Практика модуля 2</a> -
+20 хвилин.</p>
+<hr />
+<p><a href="../../00-course-overview.html">До огляду курсу</a> · <a
+href="../01-intro-profession/lesson.html">Попередній модуль</a> · <a
+href="../03-video-surveillance/lesson.html">Наступний модуль</a></p>
+<div class="pager"><a href="../../../course-1-basics/modules/01-intro-profession/self-test.html"><small>← Назад</small>Самотест: чи можна пропустити Модуль 1</a><a class="n" href="../../../course-1-basics/modules/02-networking-basics/practice.html"><small>Далі →</small>Практика: Модуль 2</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>

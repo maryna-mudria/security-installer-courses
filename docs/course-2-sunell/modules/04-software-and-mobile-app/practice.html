@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Практика: категорії функцій ПЗ та мобільного застосунку | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Практика: категорії функцій ПЗ та мобільного застосунку</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../../../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="" href="../../../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../../../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../../../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details open><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="cur" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details><summary>Додаткові матеріали</summary><ul><li><a class="" href="../../../shared/glossary.html">Глосарій</a></li><li><a class="" href="../../../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../../../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../../../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../../../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../../../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1
+id="практика-категорії-функцій-пз-та-мобільного-застосунку">Практика:
+категорії функцій ПЗ та мобільного застосунку</h1>
+<p><strong>Модуль 4 з 8</strong> · 15 хв · Письмово</p>
+<h2 id="що-робимо">Що робимо</h2>
+<p>Зіставите п'ять реальних задач замовника з категоріями функцій
+ПК-клієнта і мобільного застосунку з уроку.</p>
+<h2 id="задачі-замовника">Задачі замовника</h2>
+<ol type="1">
+<li>"Хочу подивитися, що відбувається на складі прямо зараз, з
+телефону."</li>
+<li>"Хочу знайти запис за минулий вівторок о 15:00."</li>
+<li>"Хочу зберегти шматок запису, щоб надіслати в поліцію."</li>
+<li>"Хочу, щоб телефон пищав, якщо хтось підійшов до воріт вночі."</li>
+<li>"Хочу додати нову камеру в систему після того, як її фізично
+підключили."</li>
+</ol>
+<h2 id="завдання">Завдання</h2>
+<p>Для кожної задачі замовника письмово вкажіть:</p>
+<ol type="1">
+<li>Якій категорії функції ПК-клієнта або мобільного застосунку з уроку
+вона відповідає.</li>
+<li>Одним реченням - чому саме ця категорія підходить, а не
+сусідня.</li>
+</ol>
+<p>Додатково дайте письмову відповідь на два питання:</p>
+<ol start="3" type="1">
+<li>Замовник зі Задачі 1 телефонує зі скаргою, що застосунок не показує
+камери, поки він у відрядженні. З чого почнете перевірку, перш ніж їхати
+на об'єкт?</li>
+<li>Замовник каже: "У архіві вчорашнє відео гальмувало, а зараз наживо
+все чітко - у вас щось зламалося?" Що ви йому відповісте?</li>
+</ol>
+<h2 id="що-здати">Що здати</h2>
+<ul>
+<li>Список із п'яти пунктів у форматі "задача - категорія функції -
+обґрунтування".</li>
+<li>Письмові відповіді на два додаткові питання.</li>
+</ul>
+<p><strong>Далі:</strong> <a href="checklist.html">Чек-лист модуля 4</a> -
+2 хвилини.</p>
+<hr />
+<p><a href="../../00-course-overview.html">До огляду курсу</a> · <a
+href="../03-nvr-setup/lesson.html">Попередній модуль</a> · <a
+href="../05-smart-functions/lesson.html">Наступний модуль</a></p>
+<div class="pager"><a href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html"><small>← Назад</small>Модуль 4: ПЗ та мобільний застосунок</a><a class="n" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html"><small>Далі →</small>Чек-лист самоперевірки: Модуль 4</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>

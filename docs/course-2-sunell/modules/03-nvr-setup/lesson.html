@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Модуль 3: NVR Sunell | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Модуль 3: NVR Sunell</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../../../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="" href="../../../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../../../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../../../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details open><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="cur" href="../../../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details><summary>Додаткові матеріали</summary><ul><li><a class="" href="../../../shared/glossary.html">Глосарій</a></li><li><a class="" href="../../../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../../../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../../../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../../../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../../../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1 id="модуль-3-nvr-sunell">Модуль 3: NVR Sunell</h1>
+<p><strong>Модуль 3 з 8</strong> · Урок 9 хв · Практика 15 хв</p>
+<h2 id="що-ви-зможете-після-уроку">Що ви зможете після уроку</h2>
+<ul>
+<li>Додати камеру Sunell на канал NVR за IP-адресою і відрізнити
+справжнє підключення від чорного екрана з написом "немає сигналу".</li>
+<li>Обрати між постійним записом і записом за рухом для конкретної
+камери на об'єкті та пояснити замовнику, чому саме так, а не
+навпаки.</li>
+<li>Порахувати, скільки днів архіву реально влізе на диск NVR, і
+пояснити замовнику, чому перезапис старих записів - нормальний режим
+роботи, а не привід дзвонити з претензією.</li>
+</ul>
+<p>Замовник телефонує через два тижні після здачі об'єкта: "У вас там
+записи зникають, апаратура бракована?" Ви приїжджаєте, дивитесь - диск
+просто заповнився, і NVR почав писати нові кадри поверх найстаріших, як
+йому й належить за задумом. Ніхто заздалегідь не сказав замовнику,
+скільки днів архіву він насправді купив і що станеться, коли ці дні
+закінчаться. Розберемо і це, і саме підключення камери до NVR
+Sunell.</p>
+<h2 id="про-емулятор-у-цьому-модулі">Про емулятор у цьому модулі</h2>
+<p>Для практики використовується той самий HTML-емулятор веб-інтерфейсу
+NVR, що і в курсі 1: <a
+href="../../../emulators/nvr-web-ui.html">Відкрити емулятор NVR</a>. Він
+показує узагальнений інтерфейс реєстратора - вкладки "Канали", "Запис",
+"Архів", "Мережа" - а не точну копію реального інтерфейсу Sunell. Логіка
+налаштування та сама: додати камеру на канал, обрати режим запису,
+переглянути архів. Оформлення й розташування пунктів меню на справжньому
+NVR Sunell виглядатиме інакше - ми поки що не тримали в руках реальний
+реєстратор цього виробника, і як тільки такий доступ з'явиться, цей
+розділ і емулятор оновимо.</p>
+<h2 id="що-вже-розібрано-в-курсі-1">Що вже розібрано в курсі 1</h2>
+<p>Що таке NVR і що таке канал - вже пояснено в <a
+href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Модулі
+3 курсу 1</a>, тут це не повторюємо. Там же критерії вибору режиму
+запису давалися тільки на прикладах - зараз виведемо загальне правило,
+яким можна користуватися на будь-якому об'єкті, а не тільки в наведених
+там сценаріях.</p>
+<h2 id="постійний-запис-чи-запис-за-рухом">Постійний запис чи запис за
+рухом</h2>
+<p>Правило просте: рахуйте не "наскільки цінна ця зона", а "як часто там
+взагалі щось відбувається".</p>
+<p>В'їзд з постійним потоком машин, торговий зал у робочі години,
+коридор з активним рухом людей - активність там постійна, і постійний
+запис не переплачує за зайве: диск однаково заповнюється майже
+щохвилини.</p>
+<p>Рідкісний вхід, склад, куди хтось заходить раз на годину, задній двір
+- там запис за рухом економить місце по-справжньому: диск пише лише
+тоді, коли в кадрі щось ворушиться, а решту часу мовчить, і потрібні
+моменти все одно потрапляють в архів.</p>
+<p>Якщо не впевнені щодо конкретної камери - починайте з запису за рухом
+і перемикайте на постійний, якщо замовник поскаржиться, що якихось
+моментів у архіві не вистачає. Не навпаки: перемикати з постійного на
+економніший режим уже після скарги пізно - момент, який пропустили,
+назад не повернути.</p>
+<h2 id="камера-не-зявляється-на-каналі">Камера не з'являється на
+каналі</h2>
+<p>Додали камеру на канал, а замість картинки - чорний екран або напис
+на кшталт "немає сигналу". Перевіряйте по порядку, а не навмання.</p>
+<ul>
+<li><strong>Різні підмережі.</strong> NVR і камера повинні сидіти в
+одній підмережі - перші три числа IP-адреси і маска мають збігатися. Це
+та сама помилка, яку розбирали в <a
+href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Модулі
+2 курсу 1</a>: камера на <code>192.168.2.10</code>, а NVR раптом лишився
+на заводській <code>192.168.1.200</code> - для NVR такої камери ніби не
+існує, хоча кабель на місці і лампочка на камері горить.</li>
+<li><strong>Логін і пароль камери.</strong> NVR підключається до камери
+не тільки за IP-адресою, а й за обліковими даними. Якщо на камері
+змінили заводський пароль, а в налаштуваннях каналу NVR лишився старий -
+підключення відхиляється, і на екрані буде помилка авторизації, а не
+просто чорний екран. Виправляється в тому самому місці, де додавали
+камеру на канал: оновити пароль і зберегти.</li>
+<li><strong>Зайнятий канал.</strong> Буває, канал, на який намагаєтеся
+додати нову камеру, вже зайнятий іншою - хтось додав туди камеру раніше
+і забув або переплутав номер каналу. Перевірте список каналів цілком, а
+не тільки той, з яким працюєте зараз: вільний номер знайдеться, і
+плутанина зникне.</li>
+</ul>
+<p>Кабель, живлення і довжина траси теж впливають на підключення, але ці
+причини вже розібрані в <a
+href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Модулі
+2 курсу 1</a> - там же і решта причин, чому "не працює зв'язок".</p>
+<h2
+id="скільки-днів-архіву-вийде-і-чому-перезапис---це-нормально">Скільки
+днів архіву вийде і чому перезапис - це нормально</h2>
+<p>Формулу обсягу диска вже давали в <a
+href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Модулі
+3 курсу 1</a>: обсяг у ГБ дорівнює бітрейту в Мбіт/с, помноженому на
+10,5, на кількість днів і на кількість камер. Тут та сама формула працює
+у зворотний бік - рахуємо не диск під потрібні дні, а дні під уже
+готовий диск.</p>
+<p>Дні архіву = обсяг диска в ГБ, поділений на (бітрейт у Мбіт/с × 10,5
+× кількість камер).</p>
+<p>Приклад: диск на 4 ТБ, тобто приблизно 4000 ГБ, 8 камер по 4 Мбіт/с.
+Знаменник: 4 × 10,5 × 8 = 336. Днів архіву: 4000 / 336, тобто приблизно
+11-12 днів. Якщо замовник розраховував на місяць архіву з таким диском -
+краще сказати про це до здачі, а не після того, як він сам виявить
+різницю, шукаючи запис місячної давності.</p>
+<p>Коли диск заповнюється, NVR не зупиняє запис і не видає помилку - він
+переходить у циклічний режим і починає перезаписувати найстаріші дані
+найновішими. Це закладена в реєстратор поведінка, а не збій і не ознака
+бракованого диска: система спроєктована так, щоб запис ніколи не
+зупинявся сам по собі через брак місця. Проблема виникає тільки тоді,
+коли замовник дізнається про це не від вас, а від того, що потрібного
+запису місячної давності просто не існує.</p>
+<h2 id="що-показати-замовнику-при-здачі">Що показати замовнику при
+здачі</h2>
+<p>На здачі об'єкта варто пройти по NVR разом із замовником, а не просто
+сказати "все працює":</p>
+<ul>
+<li>відкрити перегляд кожного підключеного каналу і показати, що
+зображення живе, а не завис на статичному кадрі;</li>
+<li>відкрити архів і відтворити один запис, щоб замовник побачив, як
+шукати за датою і часом самостійно;</li>
+<li>назвати режим запису кожної камери і пояснити чому обрано саме такий
+- постійний чи за рухом;</li>
+<li>назвати чесну цифру: скільки днів архіву реально зберігається на
+цьому диску за поточних налаштувань, і що станеться, коли ці дні мине -
+диск почне перезаписувати старе.</li>
+</ul>
+<p>Ця розмова займає п'ять хвилин, а знімає майбутній дзвінок з
+претензією "у вас все ламається". Записуйте ці цифри - режим запису по
+кожному каналу і кількість днів архіву - у документ передачі об'єкта: за
+півроку ні ви, ні замовник не пригадаєте це напам'ять, а папір не
+забуває.</p>
+<h2 id="що-зазвичай-запитують-першого-разу">Що зазвичай запитують
+першого разу</h2>
+<ul>
+<li>Скільки камер помістяться на один NVR? Залежить від кількості
+каналів конкретної моделі - завжди беріть модель із запасом каналів, а
+не впритул під поточну кількість камер.</li>
+<li>Чому в архіві не знаходиться потрібний запис? Перевірте, чи взагалі
+був увімкнений запис для цього каналу в потрібний момент і в потрібному
+режимі: якщо камера писала лише за рухом, а в кадрі нічого не
+відбувалося, запису просто не буде, і це не помилка реєстратора.</li>
+<li>Що робити, якщо камера довго працювала, а потім зникла з каналу
+сама? Найчастіше або в камери змінилася IP-адреса - наприклад, після
+перезавантаження роутера з динамічною видачею адрес, - або хтось інший у
+мережі отримав ту саму адресу. Перевіряйте адресу камери заново, а не
+одразу міняйте обладнання.</li>
+<li>Чи можна на одних каналах тримати постійний запис, а на інших - за
+рухом? Так, режим запису задається окремо для кожного каналу, а не для
+всього NVR одразу. На в'їзді, де активність постійна, ставте постійний
+запис, а на рідкісному службовому вході тим часом хай пише за рухом -
+обидва режими прекрасно уживаються на одному реєстраторі.</li>
+</ul>
+<h2 id="головне">Головне</h2>
+<ol type="1">
+<li>NVR і камера підключаються тільки за трьох умов одразу: одна
+підмережа, правильні логін і пароль камери в налаштуваннях каналу, і сам
+канал вільний - типова помилка ховається в одному з цих трьох пунктів, а
+не в браку самої камери.</li>
+<li>Дні архіву рахуються тією самою формулою, що й обсяг диска в курсі
+1, тільки у зворотний бік, і цю цифру варто озвучити замовнику до здачі,
+а не після того, як потрібного запису не знайдеться.</li>
+<li>Перезапис старих записів після заповнення диска - закладена
+поведінка NVR, а не збій: система пише далі замість того, щоб
+зупинитися, і про це замовника теж варто попередити заздалегідь.</li>
+</ol>
+<p><strong>Далі:</strong> <a href="practice.html">Практика модуля 3</a> -
+15 хвилин.</p>
+<hr />
+<p><a href="../../00-course-overview.html">До огляду курсу</a> · <a
+href="../02-camera-setup/lesson.html">Попередній модуль</a> · <a
+href="../04-software-and-mobile-app/lesson.html">Наступний модуль</a></p>
+<div class="pager"><a href="../../../course-2-sunell/modules/02-camera-setup/checklist.html"><small>← Назад</small>Чек-лист самоперевірки: Модуль 2</a><a class="n" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html"><small>Далі →</small>Практика: налаштування NVR Sunell</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>

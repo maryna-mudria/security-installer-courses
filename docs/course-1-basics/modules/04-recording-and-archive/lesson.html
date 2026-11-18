@@ -1,0 +1,268 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Модуль 4: Запис, потік і архів | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Модуль 4: Запис, потік і архів</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../../../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details open><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="cur" href="../../../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="" href="../../../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../../../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../../../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details><summary>Додаткові матеріали</summary><ul><li><a class="" href="../../../shared/glossary.html">Глосарій</a></li><li><a class="" href="../../../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../../../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../../../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../../../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../../../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1 id="модуль-4-запис-потік-і-архів">Модуль 4: Запис, потік і
+архів</h1>
+<p><strong>Модуль 4 з 9</strong> · Урок 10 хв · Практика 20 хв</p>
+<h2 id="що-ви-зможете-після-уроку">Що ви зможете після уроку</h2>
+<ul>
+<li>Обрати бітрейт і кодек під задачу камери і пояснити, чому не більше
+і не менше.</li>
+<li>Розвести потоки камери так, щоб архів був чітким, а перегляд з
+телефона не гальмував.</li>
+<li>Порахувати диск під потрібну кількість днів архіву і чесно сказати
+замовнику, скільки це коштує.</li>
+<li>Завести камеру в реєстратор, налаштувати режим запису і перевірити,
+що відео справді пишеться.</li>
+</ul>
+<p>Камера обрана і висить на місці. Далі починається те, через що
+замовник телефонує вам за місяць: "архів зник за три дні", "наживо все
+чітко, а вчорашній запис гальмує", "чому диск уже повний". Усе це
+вирішується на цьому кроці, а не на монтажі.</p>
+<h2 id="бітрейт-і-кодек">Бітрейт і кодек</h2>
+<p>Бітрейт - це скільки "важить" відеопотік кожну секунду запису. Чим
+він вищий, тим більше місця відео займає на диску реєстратора.</p>
+<p>Роздільна здатність і бітрейт пов'язані, але плутати їх не можна.
+Висока роздільна здатність із затиснутим бітрейтом дає чітку картинку в
+статиці, яка розмазується кашею за будь-якого руху в кадрі. А бітрейт на
+максимумі при низькій роздільній здатності просто з'їдає місце на диску,
+не додаючи жодного пікселя деталей.</p>
+<table>
+<thead>
+<tr>
+<th>Роздільна здатність</th>
+<th>Орієнтовний бітрейт</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1920×1080</td>
+<td>2000-4000 кбіт/с</td>
+</tr>
+<tr>
+<td>2560×1440</td>
+<td>4000-6000 кбіт/с</td>
+</tr>
+<tr>
+<td>3840×2160</td>
+<td>6000-10000 кбіт/с</td>
+</tr>
+</tbody>
+</table>
+<p>Чим вищий бітрейт, тим менше днів архіву влізе на той самий диск.
+Тому бітрейт обирають під задачу камери, а не із запасом "про всяк
+випадок" - такий запас потім обернеться диском, забитим за три дні
+замість двох тижнів.</p>
+<p>Окремо в налаштуваннях відео сидить кодек - спосіб стиснення потоку.
+H.264 звичний і сумісний майже з будь-яким старим обладнанням, H.265 за
+тієї самої картинки важить менше, але не кожен старий реєстратор його
+потягне. На новому об'єкті інсталятор ставить H.265 не роздумуючи, на
+об'єкті зі старим парком техніки - спочатку перевіряє сумісність.</p>
+<p>У багатьох камер поруч стоїть ще один варіант кодека з плюсом у назві
+- виробники називають його по-різному. Суть одна: камера помічає, що
+сцена не змінюється, і різко ріже потік на нерухомій картинці. На
+порожньому складі вночі це дає економію в рази. На в'їзді, де цілий день
+їздять машини, виграшу майже немає, а сумісність зі старим реєстратором
+стає гіршою.</p>
+<h2 id="cbr-чи-vbr">CBR чи VBR</h2>
+<p>У налаштуваннях потоку поруч із бітрейтом стоїть режим: CBR або
+VBR.</p>
+<p><strong>CBR</strong> - постійний бітрейт. Камера жене рівно стільки,
+скільки ви задали, незалежно від того, що в кадрі. Порожня стіна вночі і
+натовп на вході важать однаково.</p>
+<p><strong>VBR</strong> - змінний бітрейт. На спокійній сцені камера
+віддає менше, на русі піднімає до заданої стелі.</p>
+<p>Що коли брати. CBR - коли потрібен передбачуваний розрахунок диска і
+стабільне навантаження на мережу: сказали 4 Мбіт/с, значить рівно
+стільки і буде щодня. VBR - коли хочете зекономити місце на об'єкті, де
+більшість часу нічого не відбувається, і готові до того, що глибина
+архіву стрибатиме залежно від того, наскільки насичений був тиждень.</p>
+<p>На практиці рахувати диск простіше з CBR, а економити місце - з VBR.
+На об'єкті зі щільним рухом різниця між ними невелика.</p>
+<h2 id="три-потоки-однієї-камери">Три потоки однієї камери</h2>
+<p>Сучасна камера віддає не один потік, а кілька одночасно, і кожен під
+свою задачу. У налаштуваннях вони так і називаються: потік 1, потік 2,
+потік 3.</p>
+<ul>
+<li><strong>Основний потік</strong> - висока роздільна здатність і
+високий бітрейт. Іде на реєстратор і лягає в архів. Це те, що ви
+дивитиметесь, коли щось сталося.</li>
+<li><strong>Додатковий потік</strong> - низька роздільна здатність і
+малий бітрейт. Його віддають на віддалений перегляд: мобільний
+застосунок, сітку каналів на моніторі реєстратора, перегляд через
+слабкий канал.</li>
+<li><strong>Третій потік</strong> - середній, під аналітику та окремі
+задачі, якщо камера і реєстратор його підтримують.</li>
+</ul>
+<p>Навіщо це знати. Замовник дзвонить і каже: "на телефоні картинка
+мила, ви поставили погану камеру". Насправді телефон дивиться додатковий
+потік, і це нормально: гнати повний потік через мобільний інтернет
+неможливо. Архів при цьому пишеться основним, у повній чіткості.</p>
+<p>Буває і навпаки: у сітці з дев'яти каналів на моніторі все чітко, а
+на повний екран картинка розсипається. Це означає, що реєстратор показує
+сітку додатковим потоком, а на повному екрані перемикається на основний,
+якому не вистачає бітрейту.</p>
+<p>Правило на об'єкті: основний потік налаштовуєте під архів, додатковий
+- під канал зв'язку замовника. І перевіряєте обидва перед здачею, а не
+тільки той, що на моніторі.</p>
+<h2 id="скільки-потрібно-диска">Скільки потрібно диска</h2>
+<p>Просте правило: 1 Мбіт/с - це приблизно 10,5 ГБ на добу на одну
+камеру.</p>
+<p>Формула: обсяг у ГБ = бітрейт у Мбіт/с × 10,5 × кількість днів ×
+кількість камер.</p>
+<p>Приклад: 4 камери по 4 Мбіт/с на 14 днів - це 4 × 4 × 10,5 × 14,
+тобто близько 2350 ГБ, під це береться диск не менше 3 ТБ.</p>
+<p>Запис за рухом зменшує обсяг, але наскільки - залежить від того, як
+часто в кадрі реально щось відбувається. На в'їзді, де машини їздять
+весь день, економії майже не буде.</p>
+<p>Диск беріть із запасом, а не впритул: реєстратор, який працює на
+межі, починає перезаписувати архів раніше, ніж обіцяли замовнику.</p>
+<h2 id="резервна-копія---це-не-raid">Резервна копія - це не RAID</h2>
+<p>На більших об'єктах у реєстраторі або сервері кілька дисків, зібраних
+у масив. Масив рятує від одного: помер диск - система працює далі, дані
+на місці.</p>
+<p>Від чого він не рятує: від видалення записів руками, від крадіжки
+самого реєстратора, від пожежі в тій самій кімнаті, від того, що хтось
+вимкнув запис місяць тому і ніхто не помітив.</p>
+<p>Якщо замовнику потрібен архів, який точно переживе неприємність, це
+окреме рішення: копія потрібних фрагментів на інший пристрій або в інше
+приміщення. Проговоріть це словами, коли він каже "хочу, щоб записи
+точно збереглися" - інакше він вирішить, що масив дисків уже це
+забезпечив.</p>
+<h2 id="запис-за-рухом-і-його-пастки">Запис за рухом і його пастки</h2>
+<p>Запис за рухом звучить як безкоштовний спосіб заощадити місце на
+диску: камера пише, тільки коли в кадрі щось ворушиться, а решту часу
+мовчить. Насправді у цієї економії є ціна, і платить її зазвичай той,
+кому запис знадобився в найневідповідніший момент.</p>
+<p>Детектор руху реагує на зміну пікселів у кадрі, а не на сенс того, що
+відбувається. Дощ на об'єктиві, гілка на вітрі, тінь від хмари, мошкара
+біля ІЧ-підсвічування вночі - все це змушує детектор писати годинами,
+забиваючи диск хибними шматками, поки подія губиться серед сотень файлів
+"спрацювало на гілку".</p>
+<p>Зворотний бік: якщо чутливість затиснули, щоб не спрацьовувала на дощ
+і гілки, детектор так само пропустить людину, яка пройшла в дальньому
+кутку кадру повільно і тихо - саме того, кого камеру і ставили
+ловити.</p>
+<p>Передзапис закриває частину цієї проблеми. Детектор спрацьовує не
+миттєво - йому потрібна частка секунди, щоб розпізнати зміну і дати
+команду писати. Без передзапису перший кадр події - вже не початок дії,
+а її середина: людина вже відчинила двері, вже взяла те, за чим прийшла.
+Передзапис тримає в буфері кілька секунд картинки перед моментом
+спрацювання і приклеює їх до початку ролика: видно, що відбувалося перед
+тим, як спрацював детектор, а не тільки після.</p>
+<p>На вході, касі й воротах передзапис вмикають завжди, а чутливість
+детектора налаштовують на місці, за реальною погодою, а не залишають
+заводські налаштування.</p>
+<h2 id="nvr-і-dvr">NVR і DVR</h2>
+<ul>
+<li>NVR приймає відео від IP-камер по мережі і записує його на
+диск.</li>
+<li>DVR приймає відео від аналогових камер коаксіальним кабелем і
+записує його на диск.</li>
+</ul>
+<h2 id="підключення-камери-і-перший-перегляд">Підключення камери і
+перший перегляд</h2>
+<ol type="1">
+<li>Підключити камеру кабелем UTP до PoE-порту NVR або PoE-комутатора -
+камера одразу отримує живлення і мережу.</li>
+<li>Зайти у веб-інтерфейс камери через браузер, щоб перевірити і
+налаштувати її. У цьому курсі для практики використовується емулятор
+веб-інтерфейсу камери - він виглядає і працює так само, як
+справжній.</li>
+<li>Перевірити або налаштувати мережеві параметри камери: IP-адресу і
+маску підмережі, щоб камера була в одній мережі з NVR.</li>
+<li>Додати камеру в NVR, вказавши її IP-адресу на потрібному
+каналі.</li>
+<li>Відкрити перегляд каналу на NVR і переконатися, що картинка з камери
+з'явилася.</li>
+<li>Перевірити дату, час і часовий пояс камери - якщо вони виставлені
+невірно, мітки часу в архіві будуть брехати, і при розборі інциденту
+буде складно знайти потрібний момент запису.</li>
+</ol>
+<h2 id="головне">Головне</h2>
+<ol type="1">
+<li>Бітрейт обирають під задачу камери: висока роздільна здатність із
+затиснутим бітрейтом розсипається саме на русі, а завищений бітрейт
+з'їдає диск, не додаючи деталей.</li>
+<li>Камера віддає кілька потоків одночасно: основний іде в архів,
+додатковий - на телефон і в сітку каналів. Скарга "на телефоні мило"
+майже завжди про додатковий потік, а не про погану камеру.</li>
+<li>Диск рахують за формулою бітрейт × 10,5 × дні × камери і беруть із
+запасом. Масив дисків рятує від смерті диска, але не замінює резервну
+копію.</li>
+</ol>
+<p><strong>Далі:</strong> <a href="practice.html">Практика модуля 4</a> -
+20 хвилин в емуляторах.</p>
+<hr />
+<p><a href="../../00-course-overview.html">До огляду курсу</a> · <a
+href="../03-video-surveillance/lesson.html">Попередній модуль</a> · <a
+href="../06-access-control/lesson.html">Наступний модуль</a></p>
+<div class="pager"><a href="../../../course-1-basics/modules/03-video-surveillance/checklist.html"><small>← Назад</small>Чек-лист самоперевірки: Модуль 3</a><a class="n" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html"><small>Далі →</small>Практика: потоки, диск і запис</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>

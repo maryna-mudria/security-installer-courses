@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="" href="../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="" href="../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="" href="../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="" href="../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="" href="../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="" href="../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="" href="../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="" href="../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="" href="../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="" href="../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="" href="../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="" href="../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details open><summary>Додаткові матеріали</summary><ul><li><a class="" href="../shared/glossary.html">Глосарій</a></li><li><a class="cur" href="../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1
+id="підводні-камені-протоколів-що-перевірити-поки-не-здали-обєкт">Підводні
+камені протоколів: що перевірити, поки не здали об'єкт</h1>
+<p>Матеріал для обох курсів. Читайте після модуля 5 і модуля 6 курсу 1:
+паролі, VLAN, VPN, Wiegand і OSDP там вже розібрані, тут вони не
+повторюються.</p>
+<p>Усе нижче взяте з реальних інтеграцій: контролери і термінали різних
+виробників підключали до серверного ПЗ, і кожен пункт колись стався на
+живому пристрої. Де правило взяте з документації виробника, а не з
+перевірки, про це написано.</p>
+<h2 id="що-таке-протокол-і-чому-інсталятору-це-треба">Що таке протокол і
+чому інсталятору це треба</h2>
+<p>Протокол - це мова, якою два пристрої домовляються між собою.
+Зчитувач говорить із контролером по Wiegand або OSDP. Контролер говорить
+із сервером по мережі: або власною мовою виробника через TCP-порт, або
+через HTTP-запити (API), або через хмару виробника. Камера з
+реєстратором говорить через ONVIF або власний протокол.</p>
+<p>Ви не пишете ці протоколи, але вони ламаються на вашому об'єкті, і
+першим про це дізнаєтесь ви. Типова картина: пристрій горить зеленим,
+пінг іде, а події в програмі не з'являються. Або з'являються, але з
+часом, що відстає на шість годин. Або картку заблокували, а двері все
+одно відчиняються.</p>
+<p>Усі нюанси нижче зводяться до одного: "з'єднано" не означає "працює".
+Перевіряйте шлях від картки в руці до рядка в журналі, а не лампочку на
+корпусі.</p>
+<h2 id="заводські-значення-не-довіряйте-жодному">Заводські значення: не
+довіряйте жодному</h2>
+<p>Пароль за замовчуванням - це вже ваша відповідальність (Модуль 5).
+Паролем справа не обмежується. Заводським буває все, що пристрій отримує
+з коробки.</p>
+<p>На одному з перевірених терміналів заводський часовий пояс був
+китайський. Після кожної синхронізації з NTP годинник випереджав
+київський на 6 годин узимку і на 5 влітку. Записати адресу NTP-сервера
+не вистачило: пояс і правило літнього часу треба було виставити окремо,
+і тільки після цього час став правильним і втримався довше години. У
+документації виробника для іншого контролера заводською адресою сервера
+в режимі клієнта вказана чужа доменна адреса. Контролер з такою адресою
+раз за разом пробує додзвонитися назовні.</p>
+<p>Що робити: на кожному пристрої відкрийте розділ мережі й часу і
+прочитайте, що там стоїть, а не що ви очікуєте там побачити. Змініть
+пароль, пояс, адресу сервера, перевірте літній час.</p>
+<h2 id="етикетка-не-доказ">Етикетка не доказ</h2>
+<p>Наліпка на корпусі каже одне, прошивка всередині може казати інше. На
+живому контролері серійний номер з наліпки не збігся з тим, що пристрій
+повідомляє про себе. Такий контролер мовчить на всі команди з
+неправильним серійником: ні помилки, ні відповіді. Мовчання плутають зі
+зламаним кабелем і шукають не там.</p>
+<p>Є й друга пастка: кількість дверей контролер не повідомляє, її
+програма бере з назви моделі. Позначку на корпусі переплутали, і в
+програмі двері рахуються не так.</p>
+<p>Що робити: серійний номер і модель беріть з самого пристрою, а не з
+наліпки, і записуйте обидва в акт.</p>
+<h2 id="та-сама-модель-інша-прошивка-інша-поведінка">Та сама модель,
+інша прошивка, інша поведінка</h2>
+<p>Одна й та сама HTTP-команда на двох терміналах однієї лінійки дала
+різний результат: один відповів у JSON, інший проігнорував запит і
+відповів в XML. Третій відмовився показати свої можливості і тим самим
+залишив програму в невіданні. Тут тонка різниця: "не підтримується" і
+"невідомо" - різні слова. Якщо пристрій не відповів на питання про
+функцію, це не означає, що функції немає.</p>
+<p>Іноді відрізняються не прошивки, а покоління пристрою: старе
+покоління на запит "знайти картку за номером" ігнорувало умову і
+повертало всі картки підряд. Видалення "за цим номером" зачепило б
+усіх.</p>
+<p>Що робити: в акт записуйте модель і версію прошивки. Перед обіцянкою
+замовнику "ця функція працюватиме" перевірте її на тій самій моделі з
+тією самою прошивкою, не на сусідній.</p>
+<h2 id="час-найтихіша-поломка">Час: найтихіша поломка</h2>
+<p>Неправильний час нічого не ламає шумно. Він тихо псує дані.</p>
+<ul>
+<li>Події в журналі мають неправильний час, і розбір інциденту "хто
+зайшов о 8:14" ні до чого не приводить.</li>
+<li>Термінал, в якому годинник відстає чи випереджає більше ніж на
+кілька хвилин, може пропускати події: програма відсуває вибірку, і
+записи "з майбутнього" втрачаються.</li>
+<li>Термін дії картки зберігається у двох форматах залежно від того, де
+її створили: на екрані термінала чи програмою. Якщо годинник термінала
+не збігається з поясом об'єкта, програма не може прочитати дату, і
+користувача пропускає.</li>
+<li>Деякі пристрої записують у журнал локальний час із позначкою UTC,
+інші зберігають його без поясу взагалі.</li>
+</ul>
+<p>Що робити: перед тим, як заводити картки, виставте пояс, NTP і
+правило літнього часу. Через годину після першої синхронізації загляньте
+і подивіться на годинник ще раз: у одному випадку час скидався саме
+після першого періоду NTP. "NTP ок" у меню нічого не доводить.</p>
+<h2 id="зєднання-є-а-роботи-немає">З'єднання є, а роботи немає</h2>
+<p>Чотири випадки з практики:</p>
+<ol type="1">
+<li><strong>Мовчазний потік подій.</strong> Термінал надсилав події в
+програму довгим HTTP-з'єднанням. Після ввімкнення "фото при проході"
+події і знімок пішли іншим каналом, а перший канал замовк повністю, хоча
+з'єднання лишалося відкритим. Програма 26 годин не бачила жодної події.
+Люди заходили, термінал записував, у журналі порожньо.</li>
+<li><strong>З'єднання, яке закривається.</strong> Контролер, який ми
+перевіряли за документацією виробника, закриває з'єднання без запитів
+приблизно через 60 секунд. Програма мусить питати його щонайбільше раз
+на 30-45 секунд. Орієнтир з документації, на вашій моделі
+перевірте.</li>
+<li><strong>Двері "Online" без зв'язку.</strong> В одній системі
+контролер не мав зв'язку, а двері в іншому ПЗ показувалися як "Online" і
+приймали команду "відчинити".</li>
+<li><strong>Втрачені події.</strong> Контролер надсилає нові події в уже
+відкрите з'єднання без підтвердження. Мережа блимнула, частину подій не
+отримано. Повний журнал лишається в самому контролері, і програма мусить
+звірити з ним після збою.</li>
+</ol>
+<p>Що робити: перевіряйте весь шлях. Піднесіть картку до зчитувача,
+побачте подію в програмі. Потім вимкніть контролер або мережу і
+переконайтеся, що програма показала "поза мережею" і підняла тривогу.
+Потім увімкніть і подивіться, що з'єднання повернулося само.</p>
+<h2 id="одна-картка-пять-записів-номера">Одна картка, п'ять записів
+номера</h2>
+<p>Той самий номер картки у різних системах виглядає по-різному:
+десятковий (DEC) або шістнадцятковий (HEX), байти в прямому або
+зворотному порядку, 24-бітний номер Wiegand-26 або довший. У хмарному
+кабінеті одного виробника частина карток показувалася як DEC, хоча
+контролер отримував HEX: це одне число, записане по-різному, а причину
+виробник не підтвердив. В іншій системі картку, імпортовану з чужої
+програми, записали як вісім шістнадцяткових знаків із розвернутими
+байтами.</p>
+<p>Що робити: разом зі списком карток записуйте формат номера: DEC чи
+HEX, порядок байтів, довжину Wiegand. Без цього через півроку ніхто не
+зіставить картку на столі з рядком у системі.</p>
+<h2 id="блокування-яке-не-блокує">Блокування, яке не блокує</h2>
+<p>Права доступу змінюються командами, і команда може бути прийнята, але
+нічого не зробити.</p>
+<ul>
+<li>На старому терміналі прапорець "картка недійсна" не зупиняв картку:
+двері відчинялися. Допомогло лише статус "заморожена". Читання прапорця
+теж було ненадійним: усі записи показували "недійсна", навіть
+дійсні.</li>
+<li>В одній системі запис правила групи доступу повернув "успішно" і не
+зберіг правила: треба було викликати іншу команду.</li>
+<li>Команди "видалити користувача" і "видалити відбиток" лише запускають
+видалення, а програма мусить дочекатися його кінця.</li>
+<li>Очищення прав порожнім списком у схемі приймається, але на реальному
+контролері не підтверджене.</li>
+</ul>
+<p>Що робити: коли додали, змінили або забрали права - не довіряйте
+відповіді "готово". Піднесіть картку до зчитувача.</p>
+<h2 id="мережа-пять-дрібниць-що-ламають-усе">Мережа: п'ять дрібниць, що
+ламають усе</h2>
+<ul>
+<li><strong>Фіксована адреса.</strong> Контролер, якому DHCP видав нову
+адресу, програма просто втрачає. Один адрес на один пристрій, і
+записаний в акті.</li>
+<li><strong>Пошук пристроїв працює лише в одній підмережі.</strong>
+Програма-інсталятор знаходить пристрої широкомовним запитом. Інша
+підмережа або правило брандмауера, і "пристроїв не знайдено", хоча
+кабель цілий.</li>
+<li><strong>Самопідписаний сертифікат.</strong> Пристрої використовують
+власний сертифікат для HTTPS. Програма запам'ятовує його відбиток. Після
+оновлення прошивки, скидання чи заміни пристрою відбиток змінюється, і
+програма зупиняє роботу, поки адміністратор не підтвердить новий.
+Відбиток записуйте при налаштуванні.</li>
+<li><strong>Блокування облікового запису.</strong> Кілька разів поспіль
+введений неправильний пароль, і пристрій блокує обліковий запис.
+Програма не повторює відмовлений вхід, і ви бачите "відмовлено" на
+пристрої, що працює. Змінили пароль на пристрої - одразу змініть його в
+програмі.</li>
+<li><strong>Нічого з цього не виставляйте в інтернет.</strong> Власні
+протоколи контролерів майже не мають шифрування: пароль зв'язку може йти
+відкритим текстом, а службові команди читають і скидають його. Захист
+тут мережевий: окремий VLAN, доступ лише з сервера, VPN (Модуль 5).</li>
+</ul>
+<h2 id="хмарні-інтеграції-працюють-не-так-як-локальні">Хмарні інтеграції
+працюють не так, як локальні</h2>
+<p>Деякі виробники взагалі не дають локального протоколу: пристрій
+прив'язаний до хмари, а програма говорить із хмарою. Звідси кілька
+питань, які треба поставити до монтажу, а не після:</p>
+<ul>
+<li>У який регіональний проєкт хмари прив'язаний пристрій і хто ним
+володіє? Пристрій не в тому регіоні для інтеграції невидимий.</li>
+<li>Чи додана зовнішня IP-адреса сервера до дозволених у виробника? Без
+цього запити відхиляються.</li>
+<li>Чи вміє хмарне API відкривати двері дистанційно? У одному з API
+такої команди немає: охоронець не відчинить двері кнопкою зі стороннього
+ПЗ, тільки через застосунок виробника. Скажіть це замовнику до
+підписання акта.</li>
+<li>Коли хмара недоступна, всі двері виглядають "недосяжними", хоча на
+місці вони працюють. Це не поломка об'єкта.</li>
+</ul>
+<h2 id="лінія-зчитувача-що-не-видно-в-налаштуваннях">Лінія зчитувача: що
+не видно в налаштуваннях</h2>
+<p>Wiegand, RS-485 і OSDP розібрані в Модулі 6. Тут тільки те, що з
+нього випадає.</p>
+<ul>
+<li>Wiegand передає номер відкритим текстом. Захист від клонування
+залежить від картки, а не від проводу: карти класу Mifare Classic
+клонуються, захищеними вважаються DESFire EV2 і EV3 та CPU-картки. Це
+оцінка за документацією.</li>
+<li>Прив'язка портів Wiegand до дверей залежить від моделі. У одного
+контролера на двоє дверей чотири порти розподіляються як "вхід і вихід
+першої двері, вхід і вихід другої". У четверодверної моделі порти 1-4 -
+це тільки входи чотирьох дверей. Для виходу там ставлять RS-485.</li>
+<li>Для RS-485 в документації виробників стоїть до 1200 метрів на одній
+витій парі. Це стандарт інтерфейсу, а не гарантія для вашого кабелю:
+орієнтир, перевіряйте на місці.</li>
+<li>На деяких контролерах Wiegand-зчитувач у клієнті завжди показується
+"поза мережею". Це норма: стан "в мережі" там показується лише для
+зчитувачів RS-485.</li>
+</ul>
+<h2 id="що-записати-і-перевірити-при-здачі">Що записати і перевірити при
+здачі</h2>
+<ul class="task-list">
+<li><label><input type="checkbox" />модель і версія прошивки кожного
+пристрою записані в акт, серійні номери зняті з пристрою, а не з
+наліпки</label></li>
+<li><label><input type="checkbox" />заводські пароль, часовий пояс,
+адреса сервера прочитані і змінені</label></li>
+<li><label><input type="checkbox" />пояс, NTP і літній час виставлені,
+годинник перевірено ще раз через годину</label></li>
+<li><label><input type="checkbox" />кожному пристрою дано одну постійну
+адресу, вона в акті</label></li>
+<li><label><input type="checkbox" />відбиток сертифіката (якщо пристрій
+його має) записаний</label></li>
+<li><label><input type="checkbox" />формат номера картки записаний разом
+зі списком карток</label></li>
+<li><label><input type="checkbox" />картка піднесена до зчитувача:
+дозволена проходить, заборонена ні, заблокована ні, прострочена ні, на
+потрібних дверях</label></li>
+<li><label><input type="checkbox" />подію з проходу видно в програмі за
+секунди, з правильним часом</label></li>
+<li><label><input type="checkbox" />пристрій вимкнено або відключено від
+мережі: програма показала "поза мережею" і підняла тривогу, після
+підключення з'єднання повернулося саме</label></li>
+<li><label><input type="checkbox" />якщо інтеграція хмарна: відомо, хто
+володіє проєктом хмари, зовнішня адреса додана, замовник знає про
+можливі обмеження дистанційного відкривання</label></li>
+</ul>
+<h2 id="головне">Головне</h2>
+<ol type="1">
+<li>Заводське значення - це припущення виробника, а не факт про ваш
+об'єкт: пароль, пояс, адресу сервера, серійник читайте з пристрою.</li>
+<li>Відповідь "готово" від пристрою не доводить, що команда спрацювала:
+перевіряйте карткою на дверях.</li>
+<li>Час, формат номера картки і прошивка мовчки змінюють результат, тож
+записуйте їх в акт.</li>
+<li>Перед здачею рознесіть "з'єднано" і "працює": подія має дійти від
+зчитувача до журналу, а відключення мало бути помічене.</li>
+</ol>
+<hr />
+<p><a href="../course-1-basics/00-course-overview.html">До огляду курсу
+1</a> · <a href="glossary.html">Глосарій</a></p>
+<div class="pager"><a href="../shared/glossary.html"><small>← Назад</small>Глосарій</a><a class="n" href="../shared/first-object-checklist.html"><small>Далі →</small>Перший реальний об&#x27;єкт: чек-лист</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>

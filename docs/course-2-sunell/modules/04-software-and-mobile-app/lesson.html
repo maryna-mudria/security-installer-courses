@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Модуль 4: ПЗ та мобільний застосунок | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Модуль 4: ПЗ та мобільний застосунок</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../../../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="" href="../../../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../../../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../../../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details open><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="cur" href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details><summary>Додаткові матеріали</summary><ul><li><a class="" href="../../../shared/glossary.html">Глосарій</a></li><li><a class="" href="../../../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../../../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../../../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../../../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../../../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1 id="модуль-4-пз-та-мобільний-застосунок">Модуль 4: ПЗ та мобільний
+застосунок</h1>
+<p><strong>Модуль 4 з 8</strong> · Урок 9 хв · Практика 15 хв</p>
+<h2 id="що-ви-зможете-після-уроку">Що ви зможете після уроку</h2>
+<ul>
+<li>Назвати категорії функцій ПК-клієнта і мобільного застосунку Sunell
+та зіставити конкретну задачу замовника з потрібною категорією.</li>
+<li>Пояснити замовнику, що потрібно для віддаленого перегляду через
+інтернет і що станеться із записами, коли інтернет пропаде.</li>
+<li>Пояснити замовнику різницю між живим переглядом і архівом та
+розібратися, чому push-сповіщення іноді не приходять.</li>
+</ul>
+<p>Замовник у відрядженні за кордоном відкриває застосунок на телефоні -
+камер немає, крутиться колесо завантаження. Дзвонить панічно: "Усе
+злетіло, поки мене немає." Причина найчастіше банальна: вдома на кілька
+хвилин зникло світло, роутер піднявся пізніше за NVR, і поки локальна
+мережа не встановилася заново, застосунок бачить тишу замість картинки.
+Записи при цьому нікуди не поділися - NVR писав на диск весь цей час,
+незалежно від того, є в цю мить інтернет чи ні.</p>
+<h2 id="про-цей-модуль">Про цей модуль</h2>
+<p>У цього модуля немає емулятора і немає прив'язки до конкретних
+екранів конкретної версії ПЗ чи застосунку Sunell. Тут розбираються
+категорії функцій, які зазвичай є в подібному ПЗ та застосунку -
+конкретне розташування кнопок ви побачите в реальному застосунку, коли
+він з'явиться під рукою.</p>
+<h2 id="категорії-функцій-пк-клієнта">Категорії функцій ПК-клієнта</h2>
+<ul>
+<li>Перегляд у реальному часі з кількох камер одночасно - основний
+робочий екран, на ньому видно, що відбувається прямо зараз, а не те, що
+вже сталося.</li>
+<li>Відтворення і пошук в архіві за датою, часом і каналом - розділ, де
+шукають уже минулі події, а не поточну картинку.</li>
+<li>Експорт фрагмента запису у файл - збереження конкретного відрізка
+архіву окремим файлом, наприклад, щоб передати запис поліції чи службі
+безпеки замовника.</li>
+<li>Керування списком пристроїв - додавання і видалення камер та NVR,
+підключених до клієнта, а також їхніх мережевих параметрів.</li>
+<li>Налаштування сповіщень - які події показувати користувачу і як саме
+про них повідомляти.</li>
+</ul>
+<h2 id="категорії-функцій-мобільного-застосунку">Категорії функцій
+мобільного застосунку</h2>
+<ul>
+<li>Віддалений перегляд камер з телефону - той самий живий перегляд, що
+й на ПК-клієнті, тільки поза офісом чи домом і через мобільний
+інтернет.</li>
+<li>Push-сповіщення про події - телефон сам повідомляє про спрацювання
+тривоги чи детектора руху, без потреби відкривати застосунок і дивитися
+вручну.</li>
+<li>Віддалене відтворення архіву - пошук і перегляд минулих записів
+прямо з телефону, без ноутбука під рукою.</li>
+<li>Віддалене відкриття дверей або хвіртки - трапляється, якщо
+застосунок пов'язаний зі СКД чи домофонією на об'єкті.</li>
+</ul>
+<h2
+id="що-потрібно-для-віддаленого-перегляду-і-що-буде-коли-інтернет-зникне">Що
+потрібно для віддаленого перегляду і що буде, коли інтернет зникне</h2>
+<p>Віддалений перегляд працює тільки тоді, коли інтернет є одночасно з
+двох боків.</p>
+<p>З боку NVR: реєстратор повинен мати вихід в інтернет і бути доступним
+ззовні - зазвичай через хмарний сервіс виробника, до якого NVR сам
+підключається і "стукається" з локальної мережі, без потреби відкривати
+порти на роутері вручну. Якщо на об'єкті інтернету немає взагалі або NVR
+ще не підключений до цього сервісу, віддалений перегляд не запрацює, хоч
+би яким потужним був телефон замовника.</p>
+<p>З боку телефону: потрібен інтернет достатньої якості для відеопотоку,
+а не просто "є значок мережі". Слабкий мобільний сигнал чи
+перевантажений вайфай у готелі дають той самий ефект, що й проблема на
+об'єкті - зображення підвисає або не завантажується, хоча з NVR усе
+гаразд.</p>
+<p>Коли інтернет на об'єкті зникає, віддалений перегляд і застосунок
+втрачають зв'язок з NVR - це очікувано. Але запис на диск не залежить
+від інтернету: NVR пише локально, поки в нього є живлення і диск не
+заповнений, і продовжує писати весь час, поки тривала відсутність
+зв'язку. Щойно інтернет повертається, застосунок знову бачить камери, а
+архів за час відключення на місці - його просто не було видно віддалено,
+поки не було зв'язку. Це варто пояснити замовнику наперед: зникнення
+інтернету означає паузу в дистанційному контролі, а не втрату
+записів.</p>
+<h2 id="чому-push-сповіщення-іноді-не-приходять">Чому push-сповіщення
+іноді не приходять</h2>
+<p>Три типові причини, і жодна з них не пов'язана з поломкою
+обладнання:</p>
+<ul>
+<li><strong>Телефон "приспав" застосунок.</strong> Сучасні телефони
+економлять батарею і зупиняють фонову роботу застосунків, які довго не
+відкривали. Застосунок для відеоспостереження саме такий - його
+відкривають рідко, а сповіщення повинні приходити постійно. Рішення: у
+налаштуваннях телефону додати застосунок у виключення з режиму сну чи
+оптимізації батареї.</li>
+<li><strong>Вимкнені дозволи на сповіщення.</strong> Якщо при першому
+запуску застосунку замовник випадково відхилив запит на дозвіл сповіщень
+- вони не прийдуть, навіть якщо на NVR все налаштовано правильно.
+Перевіряється в системних налаштуваннях телефону, у розділі дозволів
+конкретного застосунку.</li>
+<li><strong>Події просто не було.</strong> Детектор не спрацював, бо
+чутливість занадто занижена, аналітика не налаштована на потрібну зону,
+або в кадрі справді нічого не відбувалося такого, що система вважає
+подією. Це не збій сповіщень - це відсутність приводу їх надіслати.</li>
+</ul>
+<p>Коли замовник скаржиться на відсутні сповіщення, перевірку варто
+починати з телефону замовника, а не з підозри на несправність NVR чи
+камери. Попросіть замовника відкрити застосунок на очах у вас і показати
+саме ті три налаштування - тоді причина видно за хвилину, замість того
+щоб гадати по телефону.</p>
+<h2 id="як-пояснити-замовнику-різницю-між-живим-переглядом-і-архівом">Як
+пояснити замовнику різницю між живим переглядом і архівом</h2>
+<p>Живий перегляд - це "що відбувається прямо зараз". Його якість і
+швидкість залежать від інтернету в цю саму мить з обох боків - на NVR і
+на телефоні. Якщо в момент перегляду мобільний інтернет слабкий,
+картинка гальмуватиме чи розпадеться на квадратики, і це не має жодного
+стосунку до якості запису на диску.</p>
+<p>Архів - це "що вже сталося". Він зберігається на диску NVR у тому
+вигляді, у якому був записаний, і не залежить від того, яким був
+інтернет у момент самої зйомки. Інтернет потрібен тільки зараз, щоб
+дістати цей запис віддалено - точно так само, як він потрібен, щоб
+подивитися живий перегляд.</p>
+<p>Типова плутанина: замовник каже "вчорашнє відео в архіві гальмувало,
+а зараз наживо все чітко - у вас щось зламалося?" Насправді запис на
+диску зробився нормально в момент події, а гальмувало саме відтворення
+через інтернет під час перегляду - тобто якість зв'язку в момент, коли
+замовник дивився запис, а не в момент, коли той писався.</p>
+<h2 id="що-зазвичай-запитують-першого-разу">Що зазвичай запитують
+першого разу</h2>
+<ul>
+<li>Чи можна дивитися камери без інтернету взагалі? Так, у локальній
+мережі - підключившись до того самого вайфаю чи кабелю, що і NVR,
+застосунок бачить камери напряму, без хмарного сервісу і без інтернету
+назовні. Це корисно знати, коли замовник каже "у нас інтернет
+ненадійний" - локальний перегляд працює завжди, навіть коли зовнішній
+канал лежить.</li>
+<li>Чи можна дивитися з кількох телефонів одночасно? Зазвичай так,
+обмеження - не в застосунку, а в тому, скільки одночасних підключень
+тримає сам NVR чи камера. Якщо картинка починає гальмувати при кількох
+глядачах одразу, причина найчастіше саме тут, а не в застосунку.</li>
+<li>Скільки живуть push-сповіщення в архіві самого застосунку? Це
+залежить від того, зберігає їх сервер виробника чи ні - на одних
+платформах історія сповіщень видно тижнями, на інших зникає, щойно
+застосунок закрили. Точну відповідь дає лише конкретна версія ПЗ, тому
+тут краще перевірити на місці, а не обіцяти замовнику наперед.</li>
+<li>Чи треба ставити ПК-клієнт, якщо замовнику вистачає телефону? Ні, це
+не обов'язково. ПК-клієнт зручний, коли потрібно уважно розбирати архів,
+робити експорт для поліції чи керувати великою кількістю камер відразу -
+на маленькому екрані телефону це незручно. Для щоденного "перевірити, що
+все на місці" вистачає й застосунку.</li>
+</ul>
+<h2 id="як-шукати-потрібну-функцію-якщо-не-знаєте-де-вона">Як шукати
+потрібну функцію, якщо не знаєте, де вона</h2>
+<ul>
+<li>Шукайте за логікою "що я хочу зробити": подивитися, що відбувається
+зараз, - розділ живого перегляду; подивитися, що вже сталося, - розділ
+архіву.</li>
+<li>Перевірте розділ пристроїв чи налаштування в самому застосунку - там
+зазвичай ховається керування списком камер.</li>
+<li>Не бійтеся натискати: більшість дій перегляду і навігації нічого не
+ламають і легко скасовуються.</li>
+</ul>
+<h2 id="головне">Головне</h2>
+<ol type="1">
+<li>ПК-клієнт і мобільний застосунок Sunell зазвичай мають однаковий
+набір категорій функцій - живий перегляд, архів, експорт, керування
+пристроями, сповіщення, - а конкретне розташування кнопок відрізняється
+від версії до версії.</li>
+<li>Віддалений перегляд залежить від інтернету по обидва боки одночасно,
+на NVR і на телефоні, але зникнення інтернету не означає втрату записів:
+NVR продовжує писати локально незалежно від зв'язку.</li>
+<li>Push-сповіщення не приходять з трьох типових причин - режим сну
+застосунку, вимкнені дозволи або відсутність самої події, - і починати
+діагностику варто з телефону замовника, а не з підозри на несправність
+NVR.</li>
+</ol>
+<p><strong>Далі:</strong> <a href="practice.html">Практика модуля 4</a> -
+15 хвилин.</p>
+<hr />
+<p><a href="../../00-course-overview.html">До огляду курсу</a> · <a
+href="../03-nvr-setup/lesson.html">Попередній модуль</a> · <a
+href="../05-smart-functions/lesson.html">Наступний модуль</a></p>
+<div class="pager"><a href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html"><small>← Назад</small>Чек-лист самоперевірки: Модуль 3</a><a class="n" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html"><small>Далі →</small>Практика: категорії функцій ПЗ та мобільного застосунку</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>

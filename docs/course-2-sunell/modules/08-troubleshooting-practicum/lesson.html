@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Модуль 8: Практикум з діагностики | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Модуль 8: Практикум з діагностики</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../../../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="" href="../../../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../../../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../../../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details open><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="cur" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details><summary>Додаткові матеріали</summary><ul><li><a class="" href="../../../shared/glossary.html">Глосарій</a></li><li><a class="" href="../../../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../../../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../../../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../../../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../../../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1 id="модуль-8-практикум-з-діагностики">Модуль 8: Практикум з
+діагностики</h1>
+<p><strong>Модуль 8 з 8</strong> · Урок 10 хв · Практика 30 хв</p>
+<h2 id="що-ви-зможете-після-уроку">Що ви зможете після уроку</h2>
+<ul>
+<li>Розпитати замовника по телефону так, щоб зрозуміти масштаб проблеми
+ще до виїзду.</li>
+<li>Пройти алгоритм діагностики з чотирьох кроків по порядку, не
+перескакуючи наперед.</li>
+<li>Зібрати на виїзд за скаргою все потрібне, щоб закрити її за один
+приїзд, а не за два.</li>
+</ul>
+<p>Дзвонить замовник: "У нас усе пропало!" Голос такий, наче на об'єкті
+пожежа, а ви ще навіть не вийшли з дому. За хвилину розмови часто
+виявляється, що "усе" - це одна камера над складом, а причина лежить на
+поверхні: комірник зачепив кабель, розвантажуючи палети.</p>
+<h2 id="спершу-телефон-потім-дорога">Спершу телефон, потім дорога</h2>
+<p>Перш ніж їхати, розпитайте замовника. П'ять хвилин розмови економлять
+годину дороги в один бік і годину назад, якщо причина виявиться
+дрібницею, яку можна було вирішити словами по телефону.</p>
+<p>Питання, які варто поставити одразу:</p>
+<ul>
+<li>Коли саме перестало працювати? Щойно, вранці, чи "уже кілька днів,
+просто помітили зараз" - це різні історії з різною ймовірною
+причиною.</li>
+<li>Що змінювалося на об'єкті перед тим, як зникло зображення чи доступ?
+Ремонт, перестановка меблів, робота електриків, нова wifi-точка,
+вимкнення світла - будь-яка з цих подій могла зачепити кабель або збити
+налаштування.</li>
+<li>Чи є зараз світло на об'єкті і чи пропадало воно нещодавно? Після
+відновлення живлення обладнання іноді піднімається довше, ніж здається,
+а іноді не піднімається саме через старий блок живлення.</li>
+<li>Чи горять індикатори на камері, NVR або контролері? Попросіть
+замовника підійти й подивитися, а краще - зняти коротке відео телефоном
+і надіслати. Погашений індикатор одразу відсікає половину гіпотез:
+справа в живленні чи кабелі, а не в тонкому налаштуванні.</li>
+</ul>
+<p>Якщо замовник каже "не працює одна камера з десяти" - це майже завжди
+локальна проблема з конкретним кабелем чи портом. Якщо "не працює все
+відразу" - швидше за все, річ у комутаторі, живленні всього щита або в
+мережі загалом, а не в кожному пристрої окремо. Ця різниця сама по собі
+підказує, з чого почати ще до виїзду.</p>
+<h2 id="чотири-кроки-які-рятують-час">Чотири кроки, які рятують час</h2>
+<p>Коли причина незрозуміла, не варто гадати навмання чи одразу лізти в
+найскладніше налаштування. Є перевірений порядок, який підходить майже
+під будь-яку проблему з камерою, NVR або СКД. Рухайтесь по ньому строго
+по черзі, від найпростішого рівня до найскладнішого, і не переходьте до
+наступного кроку, поки не переконалися, що попередній справді в
+порядку.</p>
+<ol type="1">
+<li><strong>Фізика.</strong> Кабель підключений, не пошкоджений і
+зафіксований у роз'ємі; пристрій отримує живлення; індикатори показують
+очікуваний стан. Це найдешевша за часом перевірка і найчастіше джерело
+проблем - тому вона й іде першою.</li>
+<li><strong>Мережа.</strong> Той самий принцип, що ви вже розбирали в
+Модулі 2 курсу 1: чи перебувають пристрої в одній підмережі, чи
+підключені вони у правильний порт комутатора - зокрема, у порт із PoE,
+якщо пристрою потрібне живлення по кабелю - і чи не перевищена довжина
+сегмента в 100 метрів до найближчого проміжного вузла.</li>
+<li><strong>Налаштування самого пристрою.</strong> Якщо фізика і мережа
+в порядку, заходьте у веб-інтерфейс камери чи NVR і перевіряйте його
+власні параметри: роздільну здатність і бітрейт, режим запису, прив'язку
+каналу та інші налаштування, які ви розбирали в попередніх модулях цього
+курсу.</li>
+<li><strong>Налаштування ПЗ або застосунку.</strong> Якщо пристрій сам
+собою справний - наприклад, картинка видна прямо в його веб-інтерфейсі,
+- а проблема проявляється тільки в сторонньому ПЗ чи мобільному
+застосунку, шукайте причину саме там: підключення, сповіщення,
+налаштування відображення з Модуля 4 цього курсу.</li>
+</ol>
+<p>Порядок тут принциповий. Почніть одразу копирсатися в застосунку,
+поки насправді просто не докручений роз'єм кабелю - і втратите час, а
+замовник побачить, що ви метушитеся, замість того щоб упевнено рухатися
+по кроках.</p>
+<h2 id="чому-більшість-викликів-закінчуються-на-першому-кроці">Чому
+більшість викликів закінчуються на першому кроці</h2>
+<p>На практиці левова частка виїздів за скаргою "не працює" закривається
+саме на кроці "фізика", ще до того як ви встигаєте відкрити хоч один
+веб-інтерфейс. Найчастіші винуватці: кабель вивалився з роз'єму від
+вібрації чи випадкового ривка, будівельники перерізали трасу під час
+ремонту, зник контакт через недбале обтиснення, яке колись "начебто
+працювало", вимкнули не той автомат у щитку, комутатор перезавантажили і
+забули про це, або просто сів чи згорів блок живлення на пристрої без
+PoE.</p>
+<p>Це не випадковість, а логіка самого обладнання. Якщо камера чи NVR
+хоч раз стартували і працювали правильно, налаштування всередині них
+самі собою не зникають і не псуються. А от кабель, роз'єм і живлення -
+це фізичні речі, які труться, вібрують, окислюються і піддаються
+сторонньому втручанню щодня. Тому досвідчений інсталятор спершу
+перевіряє руками й очима, а вже потім лізе в меню.</p>
+<h2 id="що-взяти-на-виїзд-за-скаргою">Що взяти на виїзд за скаргою</h2>
+<p>Щоб закрити скаргу за один приїзд, а не повертатися вдруге за забутим
+інструментом, візьміть із собою:</p>
+<ul>
+<li>тестер для кабелю, щоб "прозвонити" лінію, і запасні конектори RJ-45
+із кримпером - якщо причина в обтисненні, ви лагодите на місці, а не
+їдете за інструментом другий раз;</li>
+<li>короткий заздалегідь обтиснений патч-корд - підключити напряму й
+одразу виключити кабельну трасу з підозрюваних;</li>
+<li>ноутбук чи телефон з утилітою пошуку пристроїв у мережі - швидко
+перевірити, чи бачить мережа камеру взагалі і яка в неї зараз
+IP-адреса;</li>
+<li>запасний блок живлення під пристрої без PoE, якщо на об'єкті таке
+обладнання є;</li>
+<li>записані заздалегідь дані об'єкта - IP-адреси, логін і пароль від
+NVR чи камери, схему підмереж - якщо ви самі здавали цей об'єкт і вони у
+вас збереглися;</li>
+<li>викрутки й кабельні стяжки на випадок, якщо причина виявиться в
+кріпленні чи в корпусі, який відкрився від вологи чи вітру.</li>
+</ul>
+<p>Половина цього списку на виїзді не знадобиться. Але саме та половина,
+якої не буде в машині, і виявиться потрібною - за законом підлості вона
+завжди пов'язана з тим кроком алгоритму, який здавався найменш імовірним
+по телефону.</p>
+<h2 id="головне">Головне</h2>
+<ol type="1">
+<li>Алгоритм діагностики завжди йде в одному порядку: спершу фізика,
+потім мережа, потім налаштування пристрою, і тільки насамкінець - ПЗ чи
+застосунок.</li>
+<li>Розмова з замовником по телефону до виїзду - коли зникло, що
+змінювалося, чи є світло, чи горять індикатори - часто дає відповідь ще
+до того, як ви сіли в машину.</li>
+<li>Більшість викликів закриваються на кроці "фізика", тому інструмент і
+запасні дрібниці для цього кроку варто возити в машині завжди, а не
+тільки коли про них згадали.</li>
+</ol>
+<p><strong>Далі:</strong> <a href="practice.html">Практика модуля 8</a> -
+30 хвилин.</p>
+<hr />
+<p><a href="../../00-course-overview.html">До огляду курсу</a> · <a
+href="../07-access-control/lesson.html">Попередній модуль</a></p>
+<div class="pager"><a href="../../../course-2-sunell/modules/07-access-control/checklist.html"><small>← Назад</small>Чек-лист: Модуль 7</a><a class="n" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html"><small>Далі →</small>Практика: діагностика типових проблем</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>

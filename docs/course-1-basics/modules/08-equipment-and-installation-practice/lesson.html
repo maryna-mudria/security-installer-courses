@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Модуль 8: Підбір обладнання та практика монтажу | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Модуль 8: Підбір обладнання та практика монтажу</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../../../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="" href="../../../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../../../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details open><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="cur" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../../../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details><summary>Додаткові матеріали</summary><ul><li><a class="" href="../../../shared/glossary.html">Глосарій</a></li><li><a class="" href="../../../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../../../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../../../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../../../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../../../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1 id="модуль-8-підбір-обладнання-та-практика-монтажу">Модуль 8: Підбір
+обладнання та практика монтажу</h1>
+<p><strong>Модуль 8 з 9</strong> · Урок 14 хв · Практика 40 хв</p>
+<h2 id="що-ви-зможете-після-уроку">Що ви зможете після уроку</h2>
+<ul>
+<li>Провести перший виїзд на об'єкт: що дивитися, міряти і
+фотографувати, щоб потім не переробляти.</li>
+<li>Поставити замовнику і собі 5 питань, перетворити відповіді на список
+обладнання і порахувати диск, потік і бюджет PoE.</li>
+<li>Скласти кошторис так, щоб у ньому не спливли забуті витратні
+матеріали, і пройти монтаж покроково.</li>
+</ul>
+<p>Замовник питає: скільки це буде коштувати. А ви поки не знаєте ні
+скільки камер, ні чи потрібна СКД (система контролю доступу), ні чи
+вистачить наявної мережі. Відповідь "цифра зі стелі" відгукнеться на
+монтажі - коли з'ясується, що кабелю не вистачило, а розетки для щита
+немає там, де ви розраховували.</p>
+<h2 id="перший-виїзд-на-обєкт">Перший виїзд на об'єкт</h2>
+<p>Кошторис без виїзду - це ворожіння. Навіть якщо замовник надіслав
+план об'єкта і фотографії з телефону, приїжджайте самі і дивіться
+наживо.</p>
+<p>Що дивитися:</p>
+<ul>
+<li>відстань від передбачуваного місця камери до місця, де стоятиме щит
+або комутатор - від цього залежить довжина кабелю;</li>
+<li>висоту стель і наявність підвісних стель - під ними часто вже є
+місце для траси, але іноді там уже забита вся ніша чужими
+комунікаціями;</li>
+<li>матеріал стін і перекриттів - крізь бетонну плиту кабель просто так
+не протягнути, потрібен перфоратор і штроблення, а це час і гроші;</li>
+<li>чи є розетка 220 вольт поряд з місцем встановлення комутатора або
+реєстратора;</li>
+<li>де закінчується зона відповідальності замовника і починається
+прибудинкова або сусідня територія - камеру на цій межі потім можуть
+змусити зняти.</li>
+</ul>
+<p>Що міряти: реальну відстань по трасі, а не по прямій на око. Кабель
+іде вздовж стін, огинає двері й кути, піднімається і опускається - у
+розмові по телефону це легко забути, а на об'єкті метраж набігає швидко.
+Міряйте рулеткою або лазерним далекоміром, окремо для кожної
+ділянки.</p>
+<p>Що фотографувати: кожну точку встановлення камери з двох ракурсів (що
+буде видно в кадрі і звідки буде видно саму камеру), місце під щит і
+комутатор, вводи кабелю в будівлю, наявну розводку, якщо вона є. Через
+тиждень, коли рахуватимете кошторис, пам'ять підведе, а фотографії -
+ні.</p>
+<p>Які питання поставити замовнику, щоб потім не довелося
+переробляти:</p>
+<ul>
+<li>хто приймає об'єкт і підписує акт - іноді це не та людина, з якою ви
+розмовляєте на місці;</li>
+<li>чи планується ремонт або перепланування найближчим роком - немає
+сенсу тягнути трасу відкрито, якщо через місяць там буде натяжна стеля
+або в стіні поставлять перегородку;</li>
+<li>чи потрібен віддалений перегляд з телефону і скільки людей
+дивитиметься;</li>
+<li>хто обслуговує систему далі - ви за договором, штатний співробітник
+замовника чи ніхто.</li>
+</ul>
+<p>Один інсталятор розповідав таку історію. Замовник на словах описав
+п'ять точок по телефону, інсталятор порахував кошторис не виїжджаючи. На
+монтажі виявилося, що одна зі "стін" - це скляна перегородка: кабель по
+ній відкрито не прокласти, а ховати в короб замовник не хотів з
+міркувань зовнішнього вигляду. Довелося тягнути трасу в обхід - ще 12
+метрів кабелю і дві години роботи, яких у кошторисі не було. Розмова про
+те, хто платить за ці дві години, була неприємною для обох сторін.</p>
+<h2 id="5-питань-для-підбору-обладнання">5 питань для підбору
+обладнання</h2>
+<p>У попередніх модулях ви розібрали мережу (Модуль 2),
+відеоспостереження (Модуль 3), СКД (Модуль 4) і домофонію (Модуль 5)
+окремо. Тут - як зібрати з цього список обладнання під конкретний
+об'єкт.</p>
+<p>Після виїзду у вас на руках заміри і фотографії. Тепер поставте
+замовнику і собі ці п'ять питань.</p>
+<ol type="1">
+<li><p><strong>Скільки точок відеоспостереження потрібно і де
+саме?</strong> Пройдіть по об'єкту і відзначте кожне місце, яке замовник
+хоче бачити: входи, в'їзди, периметр, торговий зал, склад. Кожна така
+точка - окрема камера.</p></li>
+<li><p><strong>Чи потрібна СКД і на скількох дверях?</strong> З'ясуйте,
+чи є двері, куди мають заходити тільки певні люди. Якщо так - порахуйте,
+скільки саме таких дверей: на кожну потрібен свій комплект - зчитувач,
+контролер (або його канал) і замок.</p></li>
+<li><p><strong>Чи потрібна домофонія?</strong> З'ясуйте, чи є вхід, де
+відвідувача спочатку потрібно побачити або почути і тільки потім
+впустити. Якщо на об'єкті вже сидить людина, яка відчиняє двері вручну і
+бачить, хто прийшов, домофонія може не знадобитися.</p></li>
+<li><p><strong>Чи є на об'єкті готова мережа, чи кабель тягнути з
+нуля?</strong> З'ясуйте, чи є вже комутатори і прокладені траси, чи все
+доведеться тягнути заново. Від цього залежить обсяг кабелю і
+комутаційного обладнання - і, як в історії вище, це краще побачити
+своїми очима, а не зі слів.</p></li>
+<li><p><strong>Який клас обладнання потрібен за бюджетом?</strong>
+З'ясуйте орієнтовний бюджет замовника і підберіть клас обладнання:
+базовий рівень для простих завдань з невисокими вимогами до якості,
+середній рівень для більшості типових об'єктів, просунутий рівень для
+завдань з підвищеними вимогами - наприклад, розпізнавання номерів або
+облич на великій відстані. Йдеться про рівень можливостей, а не про
+конкретну марку чи модель.</p></li>
+</ol>
+<h2 id="приклад-від-питань-до-списку-обладнання">Приклад: від питань до
+списку обладнання</h2>
+<p>Припустимо, обхід об'єкта і розмова з замовником дали такі
+відповіді:</p>
+<ul>
+<li>потрібно 6 точок відеоспостереження: 2 на входах, 2 на периметрі, 2
+всередині приміщень;</li>
+<li>потрібна СКД на 2 дверях: головний вхід і вхід у серверну;</li>
+<li>домофонія не потрібна, на вході є охоронець;</li>
+<li>мережа частково є, але кабель потрібно прокласти до 4 нових
+точок;</li>
+<li>бюджет середній.</li>
+</ul>
+<p>З цього виходить такий список:</p>
+<ul>
+<li><strong>6 камер</strong> - по одній на кожну відзначену точку.</li>
+<li><strong>1 реєстратор (NVR) на 8 каналів</strong> - беремо не рівно
+6, а із запасом на майбутнє: якщо замовник пізніше додасть пару камер,
+не доведеться міняти реєстратор.</li>
+<li><strong>1-2 контролери СКД</strong> (або один контролер на кілька
+дверей, якщо модель це підтримує) і <strong>2 зчитувачі</strong> - по
+одному на кожні двері, де потрібна СКД.</li>
+<li><strong>Домофонне обладнання до списку не входить</strong> -
+замовнику воно не потрібне.</li>
+<li>Кабель, конектори і комутаційне обладнання - під обсяг нової
+прокладки, який з'ясували на четвертому питанні, плюс запас, про який
+далі в кошторисі.</li>
+</ul>
+<p><strong>Правило запасу по каналах NVR:</strong> беріть на 2 канали
+більше, ніж камер зараз, якщо замовник не сказав інакше. Дешевше, ніж
+міняти реєстратор через півроку.</p>
+<h2 id="чотири-розрахунки-перед-покупкою">Чотири розрахунки перед
+покупкою</h2>
+<p>Список обладнання - це ще не готове замовлення. Далі - чотири
+розрахунки, які перевіряють, чи впораються обрані позиції із
+завданням.</p>
+<h3 id="1-камери-під-завдання">1. Камери під завдання</h3>
+<p>Пороги щільності пікселів зі шкали DORI ви вже рахували в <a
+href="../03-video-surveillance/lesson.html">Модулі 3</a>: 25 - зафіксувати
+рух, 62 - розгледіти обстановку, 125 - впізнати знайомого, 250 -
+розібрати номер чи обличчя незнайомця.</p>
+<p>Спочатку вирішіть по кожній точці, що саме має показувати камера, і
+тільки потім обирайте роздільну здатність і об'єктив. Камера "просто щоб
+було" і камера "щоб впізнати обличчя біля входу" - різні і за ціною, і
+за налаштуванням, і плутати їх між собою - часта причина, чому замовник
+потім незадоволений записом.</p>
+<h3 id="2-канали-і-потік-реєстратора">2. Канали і потік реєстратора</h3>
+<ul>
+<li>Каналів беруть на 2 більше, ніж камер зараз.</li>
+<li>Крім кількості каналів у реєстратора є ліміт вхідного потоку в
+Мбіт/с. Складіть бітрейти всіх камер і звірте з паспортом: 16 каналів по
+8 Мбіт/с - це 128 Мбіт/с, і не кожен 16-канальний реєстратор це
+прийме.</li>
+<li>Перевірте кількість відсіків під диски: на довгий архів одного диска
+може не вистачити.</li>
+</ul>
+<h3 id="3-диск">3. Диск</h3>
+<p>Формула з <a href="../03-video-surveillance/lesson.html">Модуля 3</a>:
+бітрейт у Мбіт/с × 10,5 × дні × кількість камер. Порахуйте за нею свій
+список і округліть угору до наявного розміру диска.</p>
+<h3 id="4-бюджет-poe">4. Бюджет PoE</h3>
+<p>Суму споживання із запасом 20-30 відсотків ви рахували в <a
+href="../02-networking-basics/lesson.html">Модулі 2</a>. На етапі
+закупівлі додаються ще дві перевірки:</p>
+<ul>
+<li>у комутатора дивіться не кількість портів, а сумарний бюджет
+потужності в паспорті;</li>
+<li>камері з поворотним механізмом або обігрівом потрібен стандарт
+802.3at, звичайній вистачає 802.3af.</li>
+</ul>
+<p>Замовник рідко питає про біти й вати. Але саме через них система
+через місяць або працює, або "чомусь перезаписує архів за три дні" - і
+розбиратися з цим будете ви, а не замовник.</p>
+<h2 id="кошторис-як-рахувати-і-як-подавати-замовнику">Кошторис: як
+рахувати і як подавати замовнику</h2>
+<p>Кошторис з двох рядків "обладнання - робота" виглядає просто, але
+обидві сторони потім про це шкодують. Розбивайте його на позиції.</p>
+<p><strong>Обладнання окремо від роботи.</strong> Замовник має бачити,
+за що він платить: камери, реєстратор, комутатор - окремим рядком,
+монтаж і налаштування - окремим. Так зрозуміло, де можна заощадити
+(наприклад, взяти обладнання класом нижче), а де економія неможлива -
+робота коштує стільки, скільки коштує, незалежно від марки камери.</p>
+<p><strong>Витратні матеріали, які часто вважають "і так
+увійде":</strong></p>
+<ul>
+<li>кабель (із запасом, про який нижче);</li>
+<li>гофра або кабель-канал - захист кабелю там, де він іде
+відкрито;</li>
+<li>короб - там, де гофру сховати не вийде або замовник просить
+акуратніше;</li>
+<li>кріплення: дюбелі, хомути, саморізи;</li>
+<li>конектори під обтиснення, роз'єми;</li>
+<li>бокси - монтажні коробки під з'єднання і обладнання.</li>
+</ul>
+<p>Кожна з цих позицій коштує недорого сама по собі, але на об'єкті з 6
+камер витратні матеріали легко набігають на суму однієї зайвої камери.
+Якщо не виписати їх окремим рядком у кошторисі, вони йдуть не в прибуток
+інсталятора, а в його збиток - купити їх все одно доведеться, тільки вже
+не за рахунок замовника.</p>
+<p><strong>Запас по кабелю.</strong> Міряйте трасу по факту, як у
+розділі про перший виїзд, а до результату закладайте запас на згини й
+обходи: реальна траса майже завжди довша, ніж здавалося на око. Кабель,
+що залишився в бухті після монтажу, - дрібниця. Кабель, якого не
+вистачило посередині прокладки, - це окрема поїздка за ним і втрачений
+день.</p>
+<p>Коли замовник бачить суму і каже "а можна дешевше, там же всього
+чотири камери", у вас є вибір: зрізати витратні матеріали і кріплення -
+а потім пояснювати, чому через місяць камера відвалилася від кронштейна,
+- або показати розбивку по позиціях і пояснити, з чого складається ціна.
+Другий варіант довший на п'ять хвилин розмови, але знімає половину
+майбутніх претензій.</p>
+<h2 id="що-найчастіше-забувають-у-списку">Що найчастіше забувають у
+списку</h2>
+<p>Навіть досвідчений інсталятор іноді проганяє по головах камери і
+забуває про те, що навколо них.</p>
+<ul>
+<li><strong>Джерела живлення.</strong> Якщо камера не по PoE, їй
+потрібен окремий блок живлення - і не один загальний на всі камери, а із
+запасом по струму на кожну лінію.</li>
+<li><strong>Бокси під комутатор на вулиці.</strong> Вуличний комутатор
+без герметичного бокса з підігрівом або хоча б вентиляцією не переживе
+зиму чи конденсат влітку.</li>
+<li><strong>Грозозахист для вуличних трас.</strong> Кабель, що виходить
+на вулицю і йде між будівлями або до камери на окремо стоячій опорі, -
+кандидат на удар блискавки або наведення від розряду поруч.
+Грозозахисники (пристрої, що гасять імпульс перенапруги) ставлять на
+вході і виході такої траси, і це не розкіш, а страховка від згорілого
+комутатора після першої ж грози.</li>
+<li><strong>Диск у реєстратор.</strong> Реєстратор без диска - коробка з
+портами. Диски іноді просто випадають зі списку, тому що "всі ж
+розуміють, що вони потрібні" - а потім на об'єкті з'ясовується, що диска
+немає ні в інсталятора, ні в замовника.</li>
+<li><strong>Патч-корди.</strong> Короткі кабелі від розетки до
+комутатора і від розетки до камери чи реєстратора - дрібниця, яку
+забувають найчастіше саме тому, що вона не виглядає як
+"обладнання".</li>
+</ul>
+<h2 id="випадок-порахували-по-камерах-а-обєкт-виявився-більшим">Випадок:
+порахували по камерах, а об'єкт виявився більшим</h2>
+<p>Знайома ситуація. Замовник називає число камер, інсталятор рахує
+кошторис по головах: скільки камер, стільки портів комутатора,
+стільки-то кабелю за прикидкою без виїзду або після побіжного
+огляду.</p>
+<p>На об'єкті з'ясовується: частину кабелю потрібно тягнути не по
+короткій прямій, а в обхід через два поверхи, тому що прямого шляху
+немає, - це зайві 80 метрів. І камер насправді на два порти більше, ніж
+вміщується в наявний комутатор, а вільних портів на ньому і так було
+впритул під інші завдання замовника. Потрібен другий комутатор.</p>
+<p>Питання "хто за це платить" постає саме тоді, коли переробляти пізно
+і прикро всім. Якщо в договорі і кошторисі не було пункту про те, що
+остаточний обсяг кабелю і комутаційного обладнання уточнюється по факту
+після першого виїзду, платить інсталятор - зі свого прибутку, втрачаючи
+на об'єкті замість того, щоб на ньому заробити. Якщо пункт був, платить
+замовник за додатковий матеріал: це його об'єкт виявився складнішим, ніж
+здавалося по телефону.</p>
+<p>Уникнути цього нескладно: не рахувати кошторис без виїзду, міряти
+трасу по факту, а не на око, і заздалегідь прописати пункт про уточнення
+обсягу після огляду. П'ять хвилин на формулювання в договорі економлять
+потім день на з'ясування, хто винен.</p>
+<h2 id="монтаж-6-кроків-на-практиці">Монтаж: 6 кроків на практиці</h2>
+<p>У Модулі 1 ви вже розібрали загальний порядок робіт на об'єкті. Ось
+як він виглядає на етапі встановлення обладнання за складеним
+списком.</p>
+<ol type="1">
+<li><strong>Розмітка точок</strong> - на місці відзначаєте, де саме
+стоятиме кожна камера, зчитувач та інше обладнання зі списку, звіряючись
+з узгодженими точками встановлення.</li>
+<li><strong>Прокладка кабелю</strong> - від комутатора або щита до
+кожної розміченої точки, за маршрутом, який намітили при огляді
+об'єкта.</li>
+<li><strong>Монтаж кріплень і камер</strong> - кріпите кронштейни,
+короби і корпуси, потім ставите на них камери та інше обладнання.</li>
+<li><strong>Підключення до PoE</strong> - кабель камери йде в PoE-порт
+комутатора або реєстратора, щоб пристрій отримав одночасно живлення і
+мережу.</li>
+<li><strong>Налаштування через веб-інтерфейс</strong> - заходите в
+інтерфейс кожної камери, перевіряєте мережеві параметри, задаєте
+роздільну здатність і бітрейт під завдання цієї точки, додаєте камеру в
+реєстратор і налаштовуєте режим запису.</li>
+<li><strong>Перевірка запису</strong> - відкриваєте перегляд кожного
+каналу на реєстраторі і переконуєтеся, що відео дійсно пишеться в
+потрібному режимі.</li>
+</ol>
+<h2 id="головне">Головне</h2>
+<ol type="1">
+<li>Кошторис без виїзду на об'єкт - ворожіння: міряти трасу,
+фотографувати точки і уточнювати деталі у замовника потрібно до
+розрахунку, а не після.</li>
+<li>Список обладнання будується на 5 питаннях і перевіряється чотирма
+розрахунками: пікселі на метр, потік і канали реєстратора, обсяг диска,
+бюджет PoE.</li>
+<li>У кошторис входять не тільки камери і реєстратор, а й витратні
+матеріали, запас по кабелю і позиції, які найчастіше забувають - від
+блоків живлення до грозозахисту.</li>
+</ol>
+<p><strong>Далі:</strong> <a href="practice.html">Практика модуля 8</a> -
+40 хвилин, в емуляторах.</p>
+<hr />
+<p><a href="../../00-course-overview.html">До огляду курсу</a> · <a
+href="../07-intercoms/lesson.html">Попередній модуль</a> · <a
+href="../09-final-project/lesson.html">Наступний модуль</a></p>
+<div class="pager"><a href="../../../course-1-basics/modules/07-intercoms/checklist.html"><small>← Назад</small>Чек-лист: Модуль 5</a><a class="n" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html"><small>Далі →</small>Практика: підбір обладнання і монтаж на об&#x27;єкті</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>

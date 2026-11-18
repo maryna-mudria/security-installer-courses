@@ -1,0 +1,936 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Демо-реєстратор - емулятор веб-інтерфейсу</title>
+<style>
+  :root {
+    --bg-app: #eef1f5;
+    --bg-panel: #1f2733;
+    --bg-panel-active: #2c3a4f;
+    --bg-work: #ffffff;
+    --bg-field: #f5f7fa;
+    --bg-card: #f7f9fb;
+    --border: #d3dae3;
+    --text-main: #1e2530;
+    --text-muted: #6b7686;
+    --text-on-dark: #cfd8e3;
+    --text-on-dark-active: #ffffff;
+    --accent: #2f6fed;
+    --accent-dark: #1e56c9;
+    --success-bg: #e5f6ea;
+    --success-border: #8fd6a6;
+    --success-text: #1f7a3d;
+    --gray-bg: #eceff2;
+    --gray-border: #cfd6df;
+    --gray-text: #5b6472;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    margin: 0;
+    background: var(--bg-app);
+    color: var(--text-main);
+    font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+    font-size: 14px;
+  }
+
+  .device-frame {
+    max-width: 1040px;
+    margin: 24px auto;
+    background: var(--bg-work);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(20, 30, 50, 0.08);
+  }
+
+  .top-bar {
+    background: var(--bg-panel);
+    color: var(--text-on-dark-active);
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+  }
+
+  .top-bar .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #4caf6a;
+    box-shadow: 0 0 0 2px rgba(76, 175, 106, 0.25);
+  }
+
+  .top-bar small {
+    font-weight: 400;
+    color: var(--text-on-dark);
+    font-size: 12px;
+    margin-left: auto;
+  }
+
+  .layout {
+    display: flex;
+    min-height: 560px;
+  }
+
+  nav.side-menu {
+    width: 200px;
+    flex-shrink: 0;
+    background: var(--bg-panel);
+    padding: 12px 0;
+  }
+
+  nav.side-menu button {
+    display: block;
+    width: 100%;
+    text-align: left;
+    background: transparent;
+    border: none;
+    border-left: 3px solid transparent;
+    color: var(--text-on-dark);
+    padding: 12px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  nav.side-menu button:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: var(--text-on-dark-active);
+  }
+
+  nav.side-menu button.active {
+    background: var(--bg-panel-active);
+    border-left-color: var(--accent);
+    color: var(--text-on-dark-active);
+    font-weight: 600;
+  }
+
+  main.work-area {
+    flex-grow: 1;
+    padding: 24px 28px;
+    background: var(--bg-work);
+  }
+
+  .tab-panel {
+    display: none;
+  }
+
+  .tab-panel.active {
+    display: block;
+  }
+
+  .tab-panel h2 {
+    margin-top: 0;
+    font-size: 18px;
+    color: var(--text-main);
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 10px;
+    margin-bottom: 18px;
+  }
+
+  /* ---------- Канали ---------- */
+
+  .channel-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+  }
+
+  .channel-card {
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    border-radius: 6px;
+    padding: 14px 16px;
+  }
+
+  .channel-card-head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+
+  .channel-card-head strong {
+    font-size: 14px;
+  }
+
+  .status-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid transparent;
+  }
+
+  .status-badge.offline {
+    background: var(--gray-bg);
+    border-color: var(--gray-border);
+    color: var(--gray-text);
+  }
+
+  .status-badge.online {
+    background: var(--success-bg);
+    border-color: var(--success-border);
+    color: var(--success-text);
+  }
+
+  .channel-ip-line {
+    color: var(--text-main);
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+
+  .channel-ip-line span.label {
+    color: var(--text-muted);
+    margin-right: 6px;
+  }
+
+  .add-camera-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 7px 16px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .add-camera-btn:hover {
+    background: var(--accent-dark);
+  }
+
+  .connect-form {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px dashed var(--border);
+  }
+
+  .connect-form.visible {
+    display: block;
+  }
+
+  .connect-form .mini-field {
+    margin-bottom: 8px;
+  }
+
+  .connect-form .mini-field label {
+    display: block;
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-bottom: 3px;
+  }
+
+  .connect-form .mini-field input {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg-field);
+    color: var(--text-main);
+    font-size: 13px;
+    font-family: inherit;
+  }
+
+  .connect-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 4px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: inherit;
+    margin-top: 4px;
+  }
+
+  .connect-btn:hover {
+    background: var(--accent-dark);
+  }
+
+  /* ---------- Запис ---------- */
+
+  .record-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
+
+  .record-row strong {
+    font-size: 14px;
+    width: 120px;
+    flex-shrink: 0;
+  }
+
+  .record-modes {
+    display: flex;
+    gap: 18px;
+    flex-wrap: wrap;
+  }
+
+  .record-modes label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-size: 13px;
+    color: var(--text-main);
+  }
+
+  .record-current {
+    color: var(--text-muted);
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  /* ---------- Архів ---------- */
+
+  table.archive-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 18px;
+  }
+
+  table.archive-table th,
+  table.archive-table td {
+    text-align: left;
+    padding: 9px 10px;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+  }
+
+  table.archive-table th {
+    color: var(--text-muted);
+    font-weight: 600;
+    background: var(--bg-card);
+  }
+
+  .view-btn {
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 5px 12px;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .view-btn:hover {
+    background: var(--accent-dark);
+  }
+
+  .playback-box {
+    display: none;
+    border: 1px solid var(--border);
+    background: repeating-linear-gradient(
+      45deg,
+      #3b4453,
+      #3b4453 10px,
+      #333b48 10px,
+      #333b48 20px
+    );
+    color: #cfd8e3;
+    border-radius: 4px;
+    padding: 20px;
+    text-align: center;
+  }
+
+  .playback-box.visible {
+    display: block;
+  }
+
+  .playback-box .playback-title {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #ffffff;
+  }
+
+  .playback-box .playback-detail {
+    font-size: 13px;
+  }
+
+  /* ---------- Мережа ---------- */
+
+  .field-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 14px;
+  }
+
+  .field-row label {
+    width: 220px;
+    flex-shrink: 0;
+    color: var(--text-muted);
+  }
+
+  .field-row input[type="text"] {
+    width: 260px;
+    padding: 7px 10px;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    background: var(--bg-field);
+    color: var(--text-main);
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  .field-row input:disabled {
+    background: #e9ecf0;
+    color: var(--text-muted);
+    cursor: not-allowed;
+  }
+
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .checkbox-row input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+  }
+
+  .checkbox-row label {
+    color: var(--text-main);
+    cursor: pointer;
+  }
+
+  .save-btn {
+    margin-top: 12px;
+    background: var(--accent);
+    color: #fff;
+    border: none;
+    padding: 9px 22px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+    font-family: inherit;
+  }
+
+  .save-btn:hover {
+    background: var(--accent-dark);
+  }
+
+  .save-message {
+    display: none;
+    margin-top: 12px;
+    padding: 8px 14px;
+    background: var(--success-bg);
+    border: 1px solid var(--success-border);
+    color: var(--success-text);
+    border-radius: 4px;
+    font-size: 13px;
+    max-width: 300px;
+  }
+
+  .save-message.visible {
+    display: block;
+  }
+</style>
+</head>
+<body>
+
+<div class="device-frame">
+  <div class="top-bar">
+    <span class="dot"></span>
+    Демо-регистратор
+    <small>NVR Demo Model - навчальний емулятор</small>
+  </div>
+
+  <div class="layout">
+    <nav class="side-menu">
+      <button type="button" class="tab-btn active" data-tab="channels">Канали</button>
+      <button type="button" class="tab-btn" data-tab="record">Запис</button>
+      <button type="button" class="tab-btn" data-tab="archive">Архів</button>
+      <button type="button" class="tab-btn" data-tab="network">Мережа</button>
+    </nav>
+
+    <main class="work-area">
+
+      <!-- Вкладка: Канали -->
+      <section class="tab-panel active" id="tab-channels">
+        <h2>Канали</h2>
+
+        <div class="channel-grid" id="channel-grid">
+          <!-- Карточки каналов 1-4 генерируются в JS, см. buildChannelCards() -->
+        </div>
+      </section>
+
+      <!-- Вкладка: Запис -->
+      <section class="tab-panel" id="tab-record">
+        <h2>Запис</h2>
+
+        <div id="record-list">
+          <!-- Строки для каналов 1-4 генерируются в JS, см. buildRecordRows() -->
+        </div>
+      </section>
+
+      <!-- Вкладка: Архів -->
+      <section class="tab-panel" id="tab-archive">
+        <h2>Архів</h2>
+
+        <table class="archive-table">
+          <thead>
+            <tr>
+              <th>Дата</th>
+              <th>Час</th>
+              <th>Канал</th>
+              <th>Тривалість</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="archive-body">
+            <!-- Строки-заглушки генерируются в JS, см. buildArchiveRows() -->
+          </tbody>
+        </table>
+
+        <div class="playback-box" id="playback-box">
+          <div class="playback-title">Відтворення запису</div>
+          <div class="playback-detail" id="playback-detail"></div>
+        </div>
+      </section>
+
+      <!-- Вкладка: Мережа -->
+      <section class="tab-panel" id="tab-network">
+        <h2>Мережа</h2>
+
+        <div class="checkbox-row">
+          <input type="checkbox" id="dhcp-checkbox">
+          <label for="dhcp-checkbox">Отримувати адресу автоматично (DHCP)</label>
+        </div>
+
+        <div class="field-row">
+          <label for="ip-address">IP-адрес</label>
+          <input type="text" id="ip-address" value="192.168.1.200" placeholder="192.168.1.200">
+        </div>
+        <div class="field-row">
+          <label for="subnet-mask">Маска підмережі</label>
+          <input type="text" id="subnet-mask" value="255.255.255.0" placeholder="255.255.255.0">
+        </div>
+        <div class="field-row">
+          <label for="gateway">Шлюз</label>
+          <input type="text" id="gateway" value="192.168.1.1" placeholder="192.168.1.1">
+        </div>
+
+        <button type="button" class="save-btn" id="network-save-btn">Зберегти</button>
+        <div class="save-message" id="msg-network">Налаштування збережено</div>
+      </section>
+
+    </main>
+  </div>
+</div>
+
+<script>
+  // ---------- Переключение вкладок ----------
+  // Кнопки в левом меню и панели справа связаны по атрибуту
+  // data-tab / id="tab-<имя>".
+  var tabButtons = document.querySelectorAll(".tab-btn");
+  var tabPanels = document.querySelectorAll(".tab-panel");
+
+  tabButtons.forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var targetTab = btn.getAttribute("data-tab");
+
+      tabButtons.forEach(function (b) {
+        b.classList.toggle("active", b === btn);
+      });
+
+      tabPanels.forEach(function (panel) {
+        panel.classList.toggle("active", panel.id === "tab-" + targetTab);
+      });
+    });
+  });
+
+  // ---------- Стан каналів ----------
+  // Зберігається тільки в памʼяті сторінки.
+
+  var channels = [
+    { id: 1, connected: false, ip: "", recordMode: "off" },
+    { id: 2, connected: false, ip: "", recordMode: "off" },
+    { id: 3, connected: false, ip: "", recordMode: "off" },
+    { id: 4, connected: false, ip: "", recordMode: "off" }
+  ];
+
+  // ---------- Вкладка "Канали" ----------
+
+  var channelGrid = document.getElementById("channel-grid");
+
+  function buildChannelCards() {
+    channelGrid.innerHTML = "";
+
+    channels.forEach(function (ch) {
+      var card = document.createElement("div");
+      card.className = "channel-card";
+      card.id = "channel-card-" + ch.id;
+
+      var head = document.createElement("div");
+      head.className = "channel-card-head";
+
+      var title = document.createElement("strong");
+      title.textContent = "Канал " + ch.id;
+
+      var badge = document.createElement("span");
+      badge.className = "status-badge " + (ch.connected ? "online" : "offline");
+      badge.id = "status-badge-" + ch.id;
+      badge.textContent = ch.connected ? "Підключено" : "Не підключено";
+
+      head.appendChild(title);
+      head.appendChild(badge);
+      card.appendChild(head);
+
+      var body = document.createElement("div");
+      body.id = "channel-body-" + ch.id;
+      card.appendChild(body);
+
+      channelGrid.appendChild(card);
+
+      renderChannelBody(ch.id);
+    });
+  }
+
+  function renderChannelBody(channelId) {
+    var ch = channels[channelId - 1];
+    var body = document.getElementById("channel-body-" + channelId);
+    body.innerHTML = "";
+
+    if (ch.connected) {
+      var ipLine = document.createElement("div");
+      ipLine.className = "channel-ip-line";
+      var label = document.createElement("span");
+      label.className = "label";
+      label.textContent = "IP-адрес:";
+      ipLine.appendChild(label);
+      ipLine.appendChild(document.createTextNode(ch.ip));
+      body.appendChild(ipLine);
+      return;
+    }
+
+    var addBtn = document.createElement("button");
+    addBtn.type = "button";
+    addBtn.className = "add-camera-btn";
+    addBtn.textContent = "Додати камеру";
+    addBtn.addEventListener("click", function () {
+      toggleConnectForm(channelId);
+    });
+    body.appendChild(addBtn);
+
+    var form = document.createElement("div");
+    form.className = "connect-form";
+    form.id = "connect-form-" + channelId;
+
+    form.appendChild(buildMiniField("IP-адрес", "text", "conn-ip-" + channelId, "192.168.1.10" + channelId));
+    form.appendChild(buildMiniField("Логін", "text", "conn-login-" + channelId, "admin"));
+    form.appendChild(buildMiniField("Пароль", "password", "conn-pass-" + channelId, ""));
+
+    var connectBtn = document.createElement("button");
+    connectBtn.type = "button";
+    connectBtn.className = "connect-btn";
+    connectBtn.textContent = "Підключити";
+    connectBtn.addEventListener("click", function () {
+      connectCamera(channelId);
+    });
+    form.appendChild(connectBtn);
+
+    body.appendChild(form);
+  }
+
+  function buildMiniField(labelText, inputType, inputId, placeholder) {
+    var wrap = document.createElement("div");
+    wrap.className = "mini-field";
+
+    var label = document.createElement("label");
+    label.setAttribute("for", inputId);
+    label.textContent = labelText;
+
+    var input = document.createElement("input");
+    input.type = inputType;
+    input.id = inputId;
+    input.placeholder = placeholder;
+
+    wrap.appendChild(label);
+    wrap.appendChild(input);
+    return wrap;
+  }
+
+  function toggleConnectForm(channelId) {
+    var form = document.getElementById("connect-form-" + channelId);
+    form.classList.toggle("visible");
+  }
+
+  function connectCamera(channelId) {
+    var ipInput = document.getElementById("conn-ip-" + channelId);
+    var ip = ipInput.value.trim();
+
+    if (ip === "") {
+      ip = ipInput.placeholder;
+    }
+
+    var ch = channels[channelId - 1];
+    ch.connected = true;
+    ch.ip = ip;
+
+    var badge = document.getElementById("status-badge-" + channelId);
+    badge.className = "status-badge online";
+    badge.textContent = "Підключено";
+
+    renderChannelBody(channelId);
+  }
+
+  // ---------- Вкладка "Запис" ----------
+
+  var recordList = document.getElementById("record-list");
+  var recordModeLabels = {
+    continuous: "Постійний запис",
+    motion: "За рухом",
+    off: "Вимкнено"
+  };
+
+  function buildRecordRows() {
+    recordList.innerHTML = "";
+
+    channels.forEach(function (ch) {
+      var row = document.createElement("div");
+      row.className = "record-row";
+
+      var left = document.createElement("div");
+
+      var title = document.createElement("strong");
+      title.textContent = "Канал " + ch.id;
+      left.appendChild(title);
+
+      var current = document.createElement("div");
+      current.className = "record-current";
+      current.id = "record-current-" + ch.id;
+      current.textContent = "Поточний режим: " + recordModeLabels[ch.recordMode];
+      left.appendChild(current);
+
+      row.appendChild(left);
+
+      var modesWrap = document.createElement("div");
+      modesWrap.className = "record-modes";
+
+      ["continuous", "motion", "off"].forEach(function (modeValue) {
+        var label = document.createElement("label");
+
+        var radio = document.createElement("input");
+        radio.type = "radio";
+        radio.name = "record-mode-" + ch.id;
+        radio.value = modeValue;
+        radio.checked = ch.recordMode === modeValue;
+        radio.addEventListener("change", function () {
+          setRecordMode(ch.id, modeValue);
+        });
+
+        label.appendChild(radio);
+        label.appendChild(document.createTextNode(recordModeLabels[modeValue]));
+        modesWrap.appendChild(label);
+      });
+
+      row.appendChild(modesWrap);
+      recordList.appendChild(row);
+    });
+  }
+
+  function setRecordMode(channelId, modeValue) {
+    var ch = channels[channelId - 1];
+    ch.recordMode = modeValue;
+
+    var current = document.getElementById("record-current-" + channelId);
+    current.textContent = "Поточний режим: " + recordModeLabels[modeValue];
+  }
+
+  // ---------- Вкладка "Архів" ----------
+
+  var archiveEntries = [
+    { date: "2026-09-08", time: "09:14", channel: 1, duration: "00:32:10" },
+    { date: "2026-09-09", time: "13:47", channel: 2, duration: "00:05:42" },
+    { date: "2026-09-10", time: "21:03", channel: 3, duration: "01:12:55" },
+    { date: "2026-09-11", time: "07:26", channel: 1, duration: "00:18:08" },
+    { date: "2026-09-11", time: "19:59", channel: 4, duration: "00:47:31" }
+  ];
+
+  var archiveBody = document.getElementById("archive-body");
+  var playbackBox = document.getElementById("playback-box");
+  var playbackDetail = document.getElementById("playback-detail");
+
+  function buildArchiveRows() {
+    archiveBody.innerHTML = "";
+
+    archiveEntries.forEach(function (entry, index) {
+      var row = document.createElement("tr");
+
+      var dateCell = document.createElement("td");
+      dateCell.textContent = entry.date;
+      row.appendChild(dateCell);
+
+      var timeCell = document.createElement("td");
+      timeCell.textContent = entry.time;
+      row.appendChild(timeCell);
+
+      var channelCell = document.createElement("td");
+      channelCell.textContent = "Канал " + entry.channel;
+      row.appendChild(channelCell);
+
+      var durationCell = document.createElement("td");
+      durationCell.textContent = entry.duration;
+      row.appendChild(durationCell);
+
+      var actionCell = document.createElement("td");
+      var viewBtn = document.createElement("button");
+      viewBtn.type = "button";
+      viewBtn.className = "view-btn";
+      viewBtn.textContent = "Перегляд";
+      viewBtn.addEventListener("click", function () {
+        showPlayback(index);
+      });
+      actionCell.appendChild(viewBtn);
+      row.appendChild(actionCell);
+
+      archiveBody.appendChild(row);
+    });
+  }
+
+  function showPlayback(index) {
+    var entry = archiveEntries[index];
+    playbackDetail.textContent =
+      "Дата: " + entry.date +
+      "  Час: " + entry.time +
+      "  Канал: " + entry.channel +
+      "  Тривалість: " + entry.duration +
+      " (відео недоступне в демо-режимі)";
+    playbackBox.classList.add("visible");
+  }
+
+  // ---------- Вкладка "Мережа" ----------
+
+  var ipInput = document.getElementById("ip-address");
+  var dhcpCheckbox = document.getElementById("dhcp-checkbox");
+  var subnetMaskInput = document.getElementById("subnet-mask");
+  var gatewayInput = document.getElementById("gateway");
+  var networkFields = [ipInput, subnetMaskInput, gatewayInput];
+
+  function applyDhcpState() {
+    var dhcpOn = dhcpCheckbox.checked;
+    networkFields.forEach(function (field) {
+      field.disabled = dhcpOn;
+    });
+  }
+
+  dhcpCheckbox.addEventListener("change", applyDhcpState);
+
+  var networkSaveBtn = document.getElementById("network-save-btn");
+  var networkMessage = document.getElementById("msg-network");
+  var networkHideTimer = null;
+
+  networkSaveBtn.addEventListener("click", function () {
+    networkMessage.classList.add("visible");
+
+    if (networkHideTimer) {
+      clearTimeout(networkHideTimer);
+    }
+    networkHideTimer = setTimeout(function () {
+      networkMessage.classList.remove("visible");
+    }, 3000);
+  });
+
+  // ---------- Начальное состояние при загрузке страницы ----------
+
+  buildChannelCards();
+  buildRecordRows();
+  buildArchiveRows();
+  applyDhcpState();
+
+  /* ---- той самий контракт стану, що в камери й роутера ---- */
+  function nvrPage() {
+    var p = document.querySelector(".tab-panel.active");
+    return p ? p.id.replace(/^tab-/, "") : null;
+  }
+
+  function readState() {
+    var values = {};
+    ["ip-address", "subnet-mask", "gateway"].forEach(function (id) {
+      var el = document.getElementById(id);
+      if (el) values[id] = el.value;
+    });
+    var d = document.getElementById("dhcp-checkbox");
+    if (d) values["dhcp-checkbox"] = d.checked ? "on" : "off";
+    return {
+      page: nvrPage(),
+      values: values,
+      zones: {},
+      tables: {
+        channels: channels.map(function (c) {
+          return { id: c.id, connected: !!c.connected, ip: c.ip, recordMode: c.recordMode };
+        })
+      }
+    };
+  }
+
+  function applyState(st) {
+    if (!st) return null;
+    var v = st.values || {};
+    Object.keys(v).forEach(function (id) {
+      var el = document.getElementById(id);
+      if (!el) return;
+      if (el.type === "checkbox") el.checked = (v[id] === "on");
+      else el.value = v[id];
+    });
+    var t = (st.tables || {}).channels;
+    if (t) {
+      t.forEach(function (c) {
+        var ch = channels[c.id - 1];
+        if (!ch) return;
+        ch.connected = !!c.connected; ch.ip = c.ip || ""; ch.recordMode = c.recordMode || "off";
+      });
+      buildChannelCards();
+      buildRecordRows();
+    }
+    return nvrPage();
+  }
+
+  window.addEventListener("message", function (e) {
+    var d2 = e.data;
+    if (!d2 || typeof d2 !== "object") return;
+    var reply = function (p) {
+      if (e.source) e.source.postMessage(p, e.origin && e.origin !== "null" ? e.origin : "*");
+    };
+    if (d2.type === "emu:getState") {
+      var st = readState();
+      reply({ type: "emu:state", page: st.page, values: st.values, zones: st.zones, tables: st.tables });
+    } else if (d2.type === "emu:setState") {
+      reply({ type: "emu:stateApplied", page: applyState(d2) });
+    } else if (d2.type === "emu:goto" && d2.page) {
+      var b = document.querySelector('.tab-btn[data-tab="' + d2.page + '"]');
+      if (b) b.click();
+      reply({ type: "emu:stateApplied", page: nvrPage() });
+    }
+  });
+
+  if (window.parent && window.parent !== window) {
+    window.parent.postMessage({ type: "emu:ready", device: "nvr" }, "*");
+  }
+
+</script>
+
+</body>
+</html>

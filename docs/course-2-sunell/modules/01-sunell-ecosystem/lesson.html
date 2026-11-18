@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Модуль 1: Екосистема Sunell | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Модуль 1: Екосистема Sunell</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../../../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="" href="../../../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../../../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../../../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details open><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="cur" href="../../../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details><summary>Додаткові матеріали</summary><ul><li><a class="" href="../../../shared/glossary.html">Глосарій</a></li><li><a class="" href="../../../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../../../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../../../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../../../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../../../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1 id="модуль-1-екосистема-sunell">Модуль 1: Екосистема Sunell</h1>
+<p><strong>Модуль 1 з 8</strong> · Урок 14 хв · Практика 10 хв</p>
+<h2 id="що-ви-зможете-після-уроку">Що ви зможете після уроку</h2>
+<ul>
+<li>Назвати п'ять категорій обладнання Sunell і коротко пояснити, за що
+відповідає кожна.</li>
+<li>Пояснити собі і замовнику, чому логіка налаштування камери та NVR
+Sunell не відрізняється від того обладнання, до якого ви вже
+звикли.</li>
+<li>Визначити, до якої категорії екосистеми Sunell належить конкретна
+задача замовника.</li>
+<li>Прочитати назву моделі і зняти з неї тип корпуса, роздільну
+здатність і наявність зуму.</li>
+<li>Обрати серію під об'єкт і пояснити замовнику, чим Ultra
+відрізняється від Lite.</li>
+</ul>
+<p>Перший виїзд на новий для вас бренд рідко ламає щось технічно - він
+ламає впевненість. Відкриваєте веб-інтерфейс камери, а там усе те саме,
+що ви й так знаєте: мережа, потік, запис. Тільки розкладка інша, і
+пункт, який завжди лежав ліворуч, тепер чомусь праворуч.</p>
+<h2 id="приклад-перший-виїзд-на-новий-бренд">Приклад: перший виїзд на
+новий бренд</h2>
+<p>У мене такий об'єкт був рік тому. Замовник тримає невеликий склад
+запчастин, дзвонить і каже прямо: "У сусіда через дорогу вже другий рік
+стоїть Sunell, жодного разу не барахлило. Хочу так само." Раніше я з цим
+брендом не працював узагалі - ставив зовсім інше обладнання, і про
+Sunell знав тільки назву з прайсу постачальника.</p>
+<p>Приїхав, розкрив коробку з камерою, підключив кабель - і на секунду
+завис перед веб-інтерфейсом. Не тому, що не розумів, що там має бути. А
+тому, що звик шукати мережеві налаштування в одному місці, а тут вони
+виявились в іншому. Розгубленість тривала хвилин зо три, поки я не
+зрозумів головне: шукати треба не нову логіку, а знайомі поняття під
+новими назвами.</p>
+<h2 id="коротко-про-компанію">Коротко про компанію</h2>
+<p>Sunell заснували 1997 року, головний офіс у Шеньчжені. Обладнання
+постачається більш ніж у 130 країн. Виробництво рознесене по кількох
+країнах - Китай, В'єтнам, Тайвань, Японія, - і виробник окремо називає
+це способом не залежати від однієї виробничої майданчика. У розробку
+компанія вкладає близько десятої частини обороту щороку.</p>
+<p>Для вас як інсталятора з цього випливають три практичні речі.</p>
+<p><strong>Лінійка закриває об'єкт цілком.</strong> Камери, тепловізійні
+камери, поворотні, реєстратори, домофонія, СКД, PoE-комутатори,
+монітори, програмне забезпечення, мережеве аудіо. Це означає, що на
+невеликому об'єкті можна не збирати систему з п'яти різних брендів, які
+потім треба мирити між собою.</p>
+<p><strong>Є сертифікована лінія під вимоги держзамовника.</strong>
+Частина моделей проходить окрему сертифікацію відповідності
+американським вимогам до обладнання для держустанов. Пересічному
+замовнику це байдуже, але на об'єкті, де є вимоги до походження
+обладнання, наявність такої лінійки вирішує допуск до тендера.</p>
+<p><strong>Є напрямки, яких у масових брендів немає.</strong>
+Тепловізійні камери, вибухозахищені й антикорозійні корпуси, радари
+периметра, камери машинного зору. Це не те, що ви поставите в магазині,
+але саме через це бренд приходить на промислові об'єкти: заправку,
+котельню, склад хімії.</p>
+<p>Що з цього казати замовнику. Не історію компанії - вона його не
+цікавить. Казати треба так: "обладнання цього виробника працює в 130
+країнах з 1997 року, і під ваш об'єкт у нього є вся лінійка від камери
+до домофона, тому я не збиратиму вам систему з різних брендів".</p>
+<h2 id="пять-частин-з-яких-складається-екосистема">П'ять частин, з яких
+складається екосистема</h2>
+<p>Як і в будь-якого великого виробника обладнання безпеки, у Sunell є
+свій набір категорій. Тримати в голові саме ці п'ять - і ви завжди
+зможете сказати замовнику, яким шматком системи закривається його
+прохання.</p>
+<ul>
+<li><strong>Камери</strong> - IP-камери різних форм-факторів: купольні
+для приміщень, циліндричні для вулиці, поворотні із зумом для великих
+територій. Влаштовані так само, як будь-яка сучасна IP-камера:
+перетворюють картинку на цифровий сигнал і женуть його по мережі.</li>
+<li><strong>NVR</strong> - мережевий відеореєстратор. Приймає потік від
+камер по мережі, пише його на диск, віддає архів на запит. У нього є
+канали, режими запису і той самий архів, з яким ви вже вмієте
+працювати.</li>
+<li><strong>ПЗ та мобільний застосунок</strong> - програма для
+комп'ютера і застосунок для телефону. Через них дивляться камери одразу
+з кількох об'єктів, шукають записи в архіві, керують списком пристроїв -
+віддалено, без заходу у веб-інтерфейс кожної камери окремо.</li>
+<li><strong>Аналітика</strong> - функції, які самі реагують на подію в
+кадрі, а не просто пишуть картинку: детекція руху, розпізнавання номера
+машини, розпізнавання обличчя.</li>
+<li><strong>СКД</strong> - зчитувачі, контролери, замки. У Sunell СКД
+зазвичай піднімається через те саме або пов'язане програмне
+забезпечення, що й відео, тому подію допуску і кадр з тих самих дверей
+часто дивляться в одному вікні.</li>
+</ul>
+<p>Крім цих п'яти категорій, у лінійці є те, що знадобиться на менш
+звичних об'єктах: тепловізійні камери, вибухозахищені та антикорозійні
+корпуси, радари охорони периметра, мережеві гучномовці, PoE-комутатори,
+монітори й декодери, а також камери машинного зору для виробництва.
+Тримати це в голові в деталях не треба - достатньо знати, що воно є, і
+не казати замовнику "такого немає", коли він питає про котельню або
+АЗС.</p>
+<p>Замовнику ці назви ні про що не кажуть, і не повинні. Ваша робота -
+почувши "хочу бачити, хто заїжджає вночі", одразу розкласти фразу на
+потрібні категорії: камера з ІЧ-підсвічуванням плюс, можливо, аналітика
+розпізнавання номера. Замовник каже задачами, ви відповідаєте
+категоріями.</p>
+<h2 id="серії-чим-ultra-відрізняється-від-lite">Серії: чим Ultra
+відрізняється від Lite</h2>
+<p>Камери всередині лінійки поділені на серії, і це перше, на що варто
+дивитися в прайсі. Серії йдуть від простішої до складнішої:
+<strong>Lite</strong>, <strong>Eco</strong>, <strong>Pro</strong>,
+<strong>Ultra</strong>.</p>
+<p>Логіка та сама, що в будь-якого виробника: чим вища серія, тим краще
+працює вночі, тим більше аналітики на борту і тим ширший вибір
+об'єктивів. Lite ставлять туди, де потрібна просто картинка, Ultra -
+туди, де від картинки залежить рішення.</p>
+<p>Окремо стоять серії під конкретну задачу, і саме їх варто знати на
+пам'ять:</p>
+<ul>
+<li><strong>ANPR</strong> - камери під розпізнавання номерів. Саме з
+такої знято емулятор у цьому курсі.</li>
+<li><strong>Active Deterrence</strong> - камери з сиреною і прожектором,
+які реагують на порушника, а не просто пишуть його.</li>
+<li><strong>NightHawk</strong> - лінійка під зйомку в дуже низькому
+освітленні.</li>
+<li><strong>Panoramic</strong> - панорамні та багатоматричні камери, що
+закривають широкий кут однією точкою встановлення.</li>
+</ul>
+<p>Такий самий поділ на серії є і в реєстраторів: Lite, Eco, Pro.
+Реєстратор підбирають не тільки за кількістю каналів, а й за серією:
+молодша серія може не потягнути потрібну кількість потоків у високій
+роздільній здатності.</p>
+<h2 id="як-читати-назву-моделі">Як читати назву моделі</h2>
+<p>Назви виглядають страшно тільки перший раз. Розберемо на прикладі
+камери, з якої знято емулятор цього курсу, і на прикладі з каталогу.</p>
+<p>Модель із каталогу: <strong>SN-IPR8041DQAN-Z</strong>.</p>
+<ul>
+<li><strong>SN</strong> - префікс виробника, стоїть на всіх
+моделях.</li>
+<li><strong>IPR / IPV / IPS / IPP</strong> - тип корпуса. IPR -
+циліндричні та купольні камери фіксованої форми, IPV - куполи й
+турельні, IPS - поворотні та спеціальні корпуси, IPP - багатоматричні
+панорамні. NVR і DVR у назві реєстраторів стоять прямо.</li>
+<li><strong>8041</strong> - платформа і роздільна здатність. Середні
+цифри дають мегапікселі: 804x це 4 Мп, 805x це 5 Мп, 808x це 8 Мп.</li>
+<li><strong>DQAN</strong> - внутрішнє позначення виконання: тип матриці,
+підсвічування, додаткові функції. Розшифровувати напам'ять не треба, це
+дивляться в специфікації.</li>
+<li><strong>-Z</strong> у кінці - варіофокальний об'єктив із
+моторизованим зумом. <strong>-B</strong> у кінці - фіксований
+об'єктив.</li>
+</ul>
+<p>Практичний висновок: назву не треба вчити напам'ять. Треба вміти
+зняти з неї три речі за секунду - тип корпуса, мегапікселі і чи є зум.
+Решту дивіться в специфікації на сторінці моделі.</p>
+<p>Модель камери з емулятора цього курсу записана в іншому, старішому
+форматі: <strong>IPR57/20AKDN/T/Z2.7-12/13</strong>. Тут теж видно IPR
+на початку і діапазон об'єктива 2,7-12 мм у кінці. Це нормально: у
+виробника з довгою історією співіснують кілька поколінь позначень, і
+орієнтуватися варто на специфікацію, а не на здогадки за назвою.</p>
+<h2 id="чому-логіка-та-сама-яку-ви-вже-знаєте">Чому логіка та сама, яку
+ви вже знаєте</h2>
+<p>Камера Sunell отримує живлення по <strong>PoE</strong> - живлення
+прямо по мережевому кабелю, точно так само, як будь-яка інша сучасна
+IP-камера. Заходите в браузер за IP-адресою пристрою - і потрапляєте в
+той самий тип веб-інтерфейсу, який ви бачили десятки разів: вкладка з
+мережею, вкладка з відео і потоком, вкладка з датою й часом.</p>
+<p>У NVR кожна камера так само займає окремий канал. Логіка додавання
+камери на канал не змінюється від бренду до бренду: вказуєте адресу
+камери, реєстратор підтягує потік, канал стає активним. Той об'єкт зі
+складом запчастин я закрив за той самий час, що й закрив би на звичному
+обладнанні, - просто перші двадцять хвилин пішли на те, щоб звикнути, де
+що лежить на екрані.</p>
+<p>Був ще випадок показовіший. Колега, який до Sunell узагалі не
+торкався, налаштовував NVR на об'єкті сам, без мене поруч, і по телефону
+питав тільки одне: "А тут як воно називається - «канал» чи якось
+інакше?" Назва картинки на екрані трохи відрізнялась, суть - ні. Він
+додав чотири камери за пів години, жодного разу не відкривши інструкцію
+бренду.</p>
+<h2 id="де-насправді-буде-різниця">Де насправді буде різниця</h2>
+<p>Різниця не в тому, що ви налаштовуєте, а в тому, як це виглядає на
+екрані. Три речі варто тримати в голові заздалегідь:</p>
+<ul>
+<li><strong>Назви пунктів меню</strong> - той самий параметр може
+називатися трохи іншим словом, ніж на звичному вам обладнанні.</li>
+<li><strong>Розташування розділів</strong> - мережа може виявитися не на
+першій вкладці, а на другій чи третій.</li>
+<li><strong>Різниця між моделями й прошивками</strong> - навіть
+усередині одного бренду один пристрій може мати на один розділ більше чи
+менше за інший.</li>
+</ul>
+<p>Це той момент, де новачки на бренді втрачають хвилини, а не суть
+роботи. Ви не вчите нову дисципліну - ви звикаєте до нового розташування
+дверей у знайомій квартирі.</p>
+<h2 id="як-фраза-замовника-розкладається-на-категорії">Як фраза
+замовника розкладається на категорії</h2>
+<p>Замовник каже: "Хочу з телефону бачити, хто вночі підійшов до воріт,
+і самому відкрити йому замок, не виходячи з будинку." У фразі немає
+жодного технічного слова, але за нею одразу три категорії. Потрібна
+камера з ІЧ-підсвічуванням, бо вночі без неї на екрані буде просто
+чорний прямокутник. Потрібен мобільний застосунок, бо саме через нього
+замовник дивиться картинку з телефону і натискає кнопку відкриття
+здалеку, а не сидячи біля комп'ютера. І потрібна СКД - замок, який
+фізично вміє відкритися за командою, а не тільки за карткою на самій
+точці проходу.</p>
+<p>Прибрати з розбору хоч одну категорію - і задача не закриється. Без
+застосунку замовник побачить картинку тільки вдома біля монітора, а не з
+дивана чи з відрядження. Без СКД камера покаже, хто стоїть під дверима,
+але відкрити їх дистанційно буде нічим. Тому коли замовник ставить одну
+фразу, а ви бачите в ній кілька шарів системи - це нормально, і саме так
+і має бути. У практиці цього модуля, навпаки, кожна фраза замовника
+закривається однією категорією - там завдання інше: навчитися бачити
+межу, а не змішувати все в одну відповідь.</p>
+<h2 id="що-відповісти-замовнику-про-зміну-бренду">Що відповісти
+замовнику про зміну бренду</h2>
+<p>Замовники часто бояться зміни бренду більше, ніж інсталятори. "А воно
+точно буде так само зручно, як старе?" - питання, яке я чую майже
+щоразу, коли пропоную обладнання, з яким замовник раніше не стикався.
+Відповідь чесна: зручність визначає не бренд, а те, чи вміє інсталятор
+налаштувати систему під конкретну задачу. Логіка настройки камери, NVR і
+СКД в Sunell та сама, що й у решти сучасного мережевого обладнання
+безпеки - міняється тільки обгортка.</p>
+<h2 id="чого-не-варто-боятися">Чого не варто боятися</h2>
+<p>Незнайомий інтерфейс - це не незнайома логіка. Під іншим оформленням
+екрана ховаються ті самі налаштування мережі, відео й запису, які ви й
+так вмієте знаходити. Помилитися на етапі освоєння майже завжди
+безпечно: неправильний параметр повертається назад одним кліком, фізично
+при цьому нічого не ламається.</p>
+<p>Єдина реальна складність першого разу - звикнути, де саме на екрані
+лежить потрібна кнопка. Це питання практики, а не розуміння.
+Розібравшись один раз, ви будете знаходити потрібні налаштування в
+Sunell так само швидко, як в обладнанні, до якого вже звикли, - я на
+другому об'єкті зі Sunell вже не гальмував ні секунди.</p>
+<h2 id="головне">Головне</h2>
+<ol type="1">
+<li>Екосистема Sunell складається з п'яти категорій: камери, NVR, ПЗ та
+мобільний застосунок, аналітика, СКД - і замовник описує задачі, а не
+категорії, тому розкладати фразу на категорії доводиться вам.</li>
+<li>Логіка налаштування не змінюється від бренду до бренду: PoE,
+веб-інтерфейс, канали NVR працюють за тими самими принципами, які ви вже
+знаєте.</li>
+<li>Різниця Sunell від звичного вам обладнання - у назвах пунктів меню
+та розташуванні розділів на екрані, а не в суті того, що
+налаштовується.</li>
+</ol>
+<p><strong>Далі:</strong> <a href="practice.html">Практика модуля 1</a> -
+5 хвилин.</p>
+<hr />
+<p><a href="../../00-course-overview.html">До огляду курсу</a> · <a
+href="../02-camera-setup/lesson.html">Наступний модуль</a></p>
+<div class="pager"><a href="../../../course-2-sunell/00-course-overview.html"><small>← Назад</small>Курс 2: Sunell</a><a class="n" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html"><small>Далі →</small>Практика: Модуль 1</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>

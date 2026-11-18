@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Модуль 5: Смарт-функції | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Модуль 5: Смарт-функції</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../../../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="" href="../../../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../../../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../../../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details open><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="cur" href="../../../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details><summary>Додаткові матеріали</summary><ul><li><a class="" href="../../../shared/glossary.html">Глосарій</a></li><li><a class="" href="../../../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../../../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../../../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../../../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../../../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1 id="модуль-5-смарт-функції">Модуль 5: Смарт-функції</h1>
+<p><strong>Модуль 5 з 8</strong> · Урок 12 хв · Практика 20 хв</p>
+<h2 id="що-ви-зможете-після-уроку">Що ви зможете після уроку</h2>
+<ul>
+<li>Обрати під задачу замовника потрібну смарт-функцію з тих, що є в
+камері, і пояснити, чому саме її.</li>
+<li>Заповнити калібрування камери перед тим, як задавати зону, і
+сказати, що станеться, якщо цього не зробити.</li>
+<li>Назвати умови, за яких функція не витягне, і проговорити їх із
+замовником до монтажу.</li>
+</ul>
+<p>У курсі 1 ви вже знаєте головне правило: смарт-функція працює, поки
+об'єкт достатньо великий у кадрі, камера бачить його силует, а в
+налаштуваннях вписані висота й кут встановлення. Тут ви побачите, як це
+виглядає в камері Sunell і які саме поля треба заповнити.</p>
+<p>Історія з об'єкта. Інсталятор увімкнув вторгнення в периметр на
+складі, обвів двір, здав роботу. Через три дні дзвінок: "Ваша камера
+присилає тривоги щопівгодини цілу ніч, а коли справді зайшли -
+промовчала". Розбір показав просту річ: розділ калібрування залишили з
+нулями. Камера не знала, з якої висоти дивиться, тому фільтр за розміром
+об'єкта не працював взагалі - вона однаково реагувала і на кота, і на
+тінь, а людину в дальньому кутку не зараховувала.</p>
+<h2 id="що-є-в-камері">Що є в камері</h2>
+<p>Смарт-функції живуть у розділі <strong>Відеоаналітика</strong>.
+Список залежить від моделі: у цій камері їх одинадцять, у камери з іншим
+набором функцій перелік буде інший.</p>
+<table>
+<thead>
+<tr>
+<th>Функція в меню</th>
+<th>Що ловить</th>
+<th>Типова задача</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Вторгнення у периметр</td>
+<td>Поява об'єкта всередині обведеної зони</td>
+<td>Двір, майданчик, склад просто неба</td>
+</tr>
+<tr>
+<td>Перетин лінії</td>
+<td>Перетин однієї лінії в заданому напрямку</td>
+<td>Паркан, ворота, межа ділянки</td>
+</tr>
+<tr>
+<td>Перетин подвійної лінії</td>
+<td>Перетин двох ліній поспіль</td>
+<td>Той самий периметр, але менше хибних спрацювань</td>
+</tr>
+<tr>
+<td>Вештання</td>
+<td>Об'єкт затримався в зоні довше заданого часу</td>
+<td>Під'їзд, банкомат, службовий вхід</td>
+</tr>
+<tr>
+<td>Групове вештання</td>
+<td>Кілька об'єктів затрималися разом</td>
+<td>Місця, де збирається компанія</td>
+</tr>
+<tr>
+<td>Залишені предмети</td>
+<td>З'явився предмет і лишився в кадрі</td>
+<td>Хол, вестибюль, перон</td>
+</tr>
+<tr>
+<td>Втрачені предмети</td>
+<td>Предмет зник із кадру</td>
+<td>Стелаж, вітрина, обладнання на місці</td>
+</tr>
+<tr>
+<td>Порушення швидкісного режиму</td>
+<td>Об'єкт рухається швидше або повільніше заданого</td>
+<td>Двір, проїзд, внутрішня дорога</td>
+</tr>
+<tr>
+<td>Напрямок руху</td>
+<td>Рух не в той бік</td>
+<td>В'їзд, турнікет, односторонній проїзд</td>
+</tr>
+<tr>
+<td>Порушення паркування</td>
+<td>Машина стоїть там, де не можна, довше заданого часу</td>
+<td>Пожежний проїзд, розвантаження</td>
+</tr>
+<tr>
+<td>Поганий сигнал</td>
+<td>Камеру закрили, розвернули або засвітили</td>
+<td>Захист самої камери від саботажу</td>
+</tr>
+</tbody>
+</table>
+<p>Розпізнавання номера стоїть окремим розділом меню - воно не в
+«Відеоаналітиці». Про нього окремо в модулі 6.</p>
+<p>Подвійна лінія варта уваги, коли периметр дає багато хибних. Одна
+лінія спрацьовує на будь-що, що її торкнулося: гілку, тінь, птаха. Дві
+лінії вимагають, щоб об'єкт перетнув обидві поспіль у правильному
+порядку - випадковий рух так майже не поводиться.</p>
+<h2 id="спочатку-калібрування-потім-зона">Спочатку калібрування, потім
+зона</h2>
+<p>У меню це розділ <strong>Відеоаналітика - Додатково</strong>.
+Заходьте туди першим, до того як обводити зони.</p>
+<p>Що там заповнюється:</p>
+<ul>
+<li><strong>Сцена</strong> - у приміщенні чи на вулиці. Від цього
+залежить, як камера ставиться до тіней, відблисків і змін
+освітлення.</li>
+<li><strong>Висота установки</strong> - з якої висоти камера
+дивиться.</li>
+<li><strong>Кут установки</strong> - нахил камери вниз.</li>
+<li><strong>Поле зору</strong> - кут огляду об'єктива.</li>
+<li><strong>Реальний розмір сцени (10-10000 см)</strong> - який відрізок
+сцени вміщується в кадр.</li>
+</ul>
+<p>Навіщо це все. Розмір об'єкта в налаштуваннях функцій задається не в
+пікселях, а в квадратних сантиметрах реального світу. Щоб перевести
+пікселі в сантиметри, камері потрібні висота, кут і поле зору - інакше
+перерахунок робити нема з чого.</p>
+<p>На камері, з якої знято емулятор, ці поля стоять у нулях. Так буває
+майже завжди: пристрій приїхав із заводу, аналітику ніхто не вмикав.
+Тому перше, що ви робите на об'єкті, - вимірюєте висоту й нахил і
+вписуєте їх.</p>
+<p>Виміряти нескладно. Висота - рулеткою від землі до кронштейна. Нахил
+- за транспортиром або застосунком-рівнем у телефоні, приклавши його до
+корпуса. Поле зору береться з характеристик об'єктива, реальний розмір
+сцени - прикинути по кадру: станьте на дальню межу зони і на ближню,
+зміряйте відстань кроками або далекоміром.</p>
+<p>Хвилина з рулеткою тут економить день повторного виїзду.</p>
+<h2 id="чотири-перемикачі-під-погані-умови">Чотири перемикачі під погані
+умови</h2>
+<p>У тому ж розділі є чотири вимикачі, які кажуть камері, з чим їй
+доведеться мати справу:</p>
+<ul>
+<li><strong>Тремтіння камери</strong> - вмикайте, якщо камера на стовпі
+або довгому кронштейні й на вітрі кадр гойдається.</li>
+<li><strong>Високий шум</strong> - для темних сцен, де вночі картинка
+зерниста.</li>
+<li><strong>Низький контраст</strong> - туман, дощ, сірий фон, на якому
+об'єкт погано виділяється.</li>
+<li><strong>Періодичний рух</strong> - коли в кадрі є щось, що рухається
+постійно й однаково: гілка, прапор, вода, вентилятор. Поруч задається
+період у секундах.</li>
+</ul>
+<p>Це не чарівні кнопки. Вони допомагають камері не рахувати відомий
+заважаючий рух за подію, але жорстке кріплення і правильний кут дають
+більше, ніж будь-який із цих перемикачів.</p>
+<h2 id="що-налаштовується-в-кожній-функції">Що налаштовується в кожній
+функції</h2>
+<p>Усі одинадцять функцій влаштовані однаково, тому розібравшись з
+однією, ви розберетеся з рештою.</p>
+<ul>
+<li><strong>Включено</strong> - сама функція ввімкнена чи ні.</li>
+<li><strong>Лінія малювання</strong> - мишею на кадрі задається зона або
+лінія.</li>
+<li><strong>Чутливість</strong> - наскільки охоче камера зараховує
+подію.</li>
+<li><strong>Тип об'єкту</strong> - людина, автомобіль або обидва.
+Найкорисніше поле в усьому наборі: паркан уздовж дороги перестає
+реагувати на машини, щойно ви поставите «Людина».</li>
+<li><strong>Розмір об'єкту</strong> - мінімальний і максимальний у
+квадратних сантиметрах. Відсікає котів і птахів знизу, вантажівки й тіні
+від хмар зверху.</li>
+<li><strong>Інтервал (1-1800 с)</strong> - скільки камера мовчить після
+спрацювання, перш ніж повідомити знову.</li>
+<li><strong>Відображення об'єкту</strong> - малювати рамку навколо
+знайденого об'єкта на картинці.</li>
+</ul>
+<p>Інтервал недооцінюють. Поставили 1 секунду - і одна людина, що йде
+вздовж паркану двадцять секунд, дасть двадцять сповіщень. Замовник
+відкриє перші три і вимкне решту. Десять-тридцять секунд на периметрі
+зазвичай достатньо.</p>
+<h2 id="що-камера-робить-при-спрацюванні">Що камера робить при
+спрацюванні</h2>
+<p>У нижній частині сторінки кожної функції - список реакцій. Вмикається
+кілька одночасно:</p>
+<ul>
+<li><strong>Тривожний вихід</strong> - замикається контакт, до якого
+можна підключити сирену або лампу.</li>
+<li><strong>Аудіо сповіщення</strong> - камера програє голосове
+попередження через динамік. У пам'яті лежать готові файли: «Keep out»,
+«Private domain no entry allowed», «You have entered the monitoring
+area» та інші.</li>
+<li><strong>Тривога ліхтаря</strong> - вмикається світло на камері.</li>
+<li><strong>Запис по тривозі</strong> - подія лягає в архів позначеною,
+її потім легко знайти.</li>
+<li><strong>SMTP</strong> - лист на пошту.</li>
+<li><strong>FTP</strong> - знімок відвантажується на сервер.</li>
+</ul>
+<p>Тут корисно заздалегідь спитати замовника, як він хоче дізнаватися
+про подію. Відповідь «просто щоб працювало» означає, що через тиждень
+він скаже «а чому мені ніхто не повідомив».</p>
+<h2 id="коли-функція-не-витягне">Коли функція не витягне</h2>
+<p>Скажіть це замовнику до монтажу, а не після:</p>
+<ul>
+<li><strong>Об'єкт замалий у кадрі.</strong> Правило з курсу 1: людина
+має займати хоча б десяту частину висоти кадру. На дальній межі великої
+території одна камера цього не дасть.</li>
+<li><strong>Камера дивиться згори вниз майже прямовисно.</strong> Видно
+маківки, силуету немає, класифікація не працює.</li>
+<li><strong>Прохідне місце.</strong> Залишені та втрачені предмети
+розраховані на спокійну сцену. У коридорі з людьми вони дадуть суцільні
+хибні.</li>
+<li><strong>Скло між камерою та зоною.</strong> Відблиски й відображення
+камера теж вважає рухом.</li>
+<li><strong>Ніч без нормального світла.</strong> Вночі картинка плоска й
+чорно-біла, класифікація гірша. Мошкара біля ІЧ-прожектора дає тривоги
+щоночі.</li>
+</ul>
+<p>І технічне: процесор камери не безмежний. Вмикати всі одинадцять
+функцій одразу немає сенсу - подивіться в характеристики моделі, скільки
+правил працює одночасно, і залиште ті одну-дві, що вирішують реальну
+задачу.</p>
+<h2 id="головне">Головне</h2>
+<ol type="1">
+<li>Спочатку «Відеоаналітика - Додатково»: сцена, висота, кут, поле
+зору, реальний розмір сцени. Поки там нулі, фільтр за розміром об'єкта
+не працює, і функція поводиться незрозуміло.</li>
+<li>Тип об'єкта і розмір у сантиметрах прибирають більшість хибних
+спрацювань, а інтервал тривоги рятує замовника від лавини
+сповіщень.</li>
+<li>Умови об'єкта вирішують більше за налаштування: замалий об'єкт у
+кадрі, погляд згори на маківки, скло чи прохідне місце не лікуються ні
+чутливістю, ні перемикачами.</li>
+</ol>
+<p><strong>Далі:</strong> <a href="practice.html">Практика модуля 5</a> -
+20 хвилин в емуляторі камери.</p>
+<hr />
+<p><a href="../../00-course-overview.html">До огляду курсу</a> · <a
+href="../04-software-and-mobile-app/lesson.html">Попередній модуль</a> ·
+<a href="../06-analytics/lesson.html">Наступний модуль</a></p>
+<div class="pager"><a href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html"><small>← Назад</small>Чек-лист самоперевірки: Модуль 4</a><a class="n" href="../../../course-2-sunell/modules/05-smart-functions/practice.html"><small>Далі →</small>Практика: Модуль 5</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>

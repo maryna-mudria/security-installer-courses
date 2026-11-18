@@ -1,0 +1,280 @@
+<!doctype html>
+<html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Модуль 5: Віддалений доступ і безпека | Курси для інсталяторів</title><style>
+:root{--bg:#fff;--fg:#1d2330;--mut:#5a6577;--bd:#e2e6ee;--side:#f5f7fb;--acc:#1b5fd1;--accbg:#e8f0fd;--note:#fff7e0;--code:#f1f3f8}
+@media (prefers-color-scheme:dark){:root{--bg:#14171d;--fg:#e6e9f0;--mut:#9aa5b8;--bd:#2a303c;--side:#1a1e26;--acc:#7fb0ff;--accbg:#1f2b44;--note:#2b2614;--code:#1f242e}}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:17px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+a{color:var(--acc)}
+.top{display:none;position:sticky;top:0;z-index:5;background:var(--side);border-bottom:1px solid var(--bd);padding:10px 16px;align-items:center;gap:12px}
+.top button{font:inherit;background:var(--accbg);color:var(--acc);border:0;border-radius:8px;padding:6px 12px;cursor:pointer}
+.layout{display:flex;min-height:100vh}
+nav.side{width:310px;flex:none;background:var(--side);border-right:1px solid var(--bd);padding:18px 14px;position:sticky;top:0;height:100vh;overflow:auto;font-size:15px;line-height:1.4}
+nav.side .home{display:block;font-weight:700;font-size:16px;text-decoration:none;margin-bottom:14px;color:var(--fg)}
+nav.side details{margin:2px 0}
+nav.side summary{cursor:pointer;padding:6px 8px;border-radius:8px;font-weight:600;list-style-position:inside}
+nav.side summary:hover{background:var(--accbg)}
+nav.side .grp{font-size:12px;text-transform:uppercase;letter-spacing:.05em;color:var(--mut);margin:16px 8px 4px}
+nav.side ul{list-style:none;margin:0;padding:0 0 4px 14px}
+nav.side li a{display:block;padding:4px 8px;border-radius:6px;text-decoration:none;color:var(--fg)}
+nav.side li a:hover{background:var(--accbg)}
+nav.side li a.cur{background:var(--accbg);color:var(--acc);font-weight:700}
+main{flex:1;min-width:0;padding:32px 40px 80px}
+article{max-width:780px;margin:0 auto}
+h1{font-size:2rem;line-height:1.25;margin:.2em 0 .6em}h2{margin-top:2em;border-top:1px solid var(--bd);padding-top:1em}h3{margin-top:1.6em}
+table{border-collapse:collapse;display:block;overflow-x:auto;margin:1em 0}th,td{border:1px solid var(--bd);padding:8px 12px;text-align:left;vertical-align:top}th{background:var(--side)}
+blockquote{margin:1em 0;padding:.6em 1em;border-left:4px solid var(--acc);background:var(--accbg);border-radius:0 8px 8px 0}blockquote p{margin:.3em 0}
+code{background:var(--code);padding:.1em .35em;border-radius:4px;font-size:.92em}pre{background:var(--code);padding:12px 14px;border-radius:8px;overflow:auto}pre code{padding:0;background:none}
+img{max-width:100%}
+.pager{display:flex;justify-content:space-between;gap:12px;margin-top:3em;padding-top:1.2em;border-top:1px solid var(--bd)}
+.pager a{flex:1;border:1px solid var(--bd);border-radius:10px;padding:10px 14px;text-decoration:none;color:var(--fg);font-size:15px}
+.pager a:hover{background:var(--accbg)}.pager small{display:block;color:var(--mut)}.pager .n{text-align:right}
+.lead{font-size:1.15rem;color:var(--mut)}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin:1.5em 0}
+.card{display:block;border:1px solid var(--bd);border-radius:14px;padding:18px 20px;text-decoration:none;color:var(--fg);background:var(--side)}
+.card:hover{border-color:var(--acc)}.card h2{margin:0;border:0;padding:0;font-size:1.1rem;color:var(--mut)}.card p{margin:.4em 0}.card span{color:var(--acc);font-weight:700}
+.note{background:var(--note);border-radius:10px;padding:10px 14px;font-size:.95rem}
+.emu{list-style:none;padding:0}.emu li{border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin:12px 0;background:var(--side)}.emu span{color:var(--mut)}
+mark.todo{background:#ffd54a;color:#000;padding:0 .25em;border-radius:3px}
+@media (max-width:900px){.top{display:flex}nav.side{position:fixed;left:0;top:0;z-index:10;transform:translateX(-100%);transition:transform .2s;width:min(86vw,320px)}body.open nav.side{transform:none;box-shadow:0 0 40px #0006}main{padding:20px 16px 60px}h1{font-size:1.6rem}}
+@media print{nav.side,.top,.pager{display:none}main{padding:0}}
+</style></head>
+<body><div class="top"><button id="menu" aria-label="Меню">☰ Зміст</button><strong>Модуль 5: Віддалений доступ і безпека</strong></div>
+<div class="layout"><nav class="side"><a class="home" href="../../../index.html">Курси для інсталяторів</a>
+<div class="grp">Курс 1: Базовий інсталятор СБ</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-1-basics/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Вступ до професії</summary><ul><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/01-intro-profession/self-test.html">Самотест</a></li></ul></details>
+<details><summary>Модуль 2: Базові мережі для інсталятора</summary><ul><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/02-networking-basics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: Камера - що обрати</summary><ul><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/03-video-surveillance/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: Запис, потік і архів</summary><ul><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html">Чек-лист</a></li></ul></details>
+<details open><summary>Модуль 5: Віддалений доступ і безпека</summary><ul><li><a class="cur" href="../../../course-1-basics/modules/05-remote-access-and-security/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/05-remote-access-and-security/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: СКД (система контролю доступу)</summary><ul><li><a class="" href="../../../course-1-basics/modules/06-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/06-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: Домофонія</summary><ul><li><a class="" href="../../../course-1-basics/modules/07-intercoms/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/07-intercoms/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Підбір обладнання та практика монтажу</summary><ul><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/08-equipment-and-installation-practice/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 9: Підсумковий проєкт</summary><ul><li><a class="" href="../../../course-1-basics/modules/09-final-project/lesson.html">Урок</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/practice.html">Практика</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/checklist.html">Чек-лист</a></li><li><a class="" href="../../../course-1-basics/modules/09-final-project/next-steps.html">Що далі</a></li></ul></details>
+<div class="grp">Курс 2: Обладнання Sunell</div>
+<ul style='padding-left:0'><li><a class="" href="../../../course-2-sunell/00-course-overview.html">Огляд курсу</a></li></ul>
+<details><summary>Модуль 1: Екосистема Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/01-sunell-ecosystem/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 2: Камера Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/02-camera-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 3: NVR Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/03-nvr-setup/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 4: ПЗ та мобільний застосунок</summary><ul><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/04-software-and-mobile-app/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 5: Смарт-функції</summary><ul><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/05-smart-functions/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 6: Аналітика Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/06-analytics/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/06-analytics/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 7: СКД Sunell</summary><ul><li><a class="" href="../../../course-2-sunell/modules/07-access-control/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/07-access-control/checklist.html">Чек-лист</a></li></ul></details>
+<details><summary>Модуль 8: Практикум з діагностики</summary><ul><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/lesson.html">Урок</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/practice.html">Практика</a></li><li><a class="" href="../../../course-2-sunell/modules/08-troubleshooting-practicum/checklist.html">Чек-лист</a></li></ul></details>
+<div class="grp">Для обох курсів</div>
+<details><summary>Додаткові матеріали</summary><ul><li><a class="" href="../../../shared/glossary.html">Глосарій</a></li><li><a class="" href="../../../shared/integration-pitfalls.html">Підводні камені протоколів: що перевірити, поки не здали об&#x27;єкт</a></li><li><a class="" href="../../../shared/first-object-checklist.html">Перший реальний об&#x27;єкт: чек-лист</a></li><li><a class="" href="../../../shared/portfolio-template.html">Шаблон портфоліо учня курсу 1</a></li><li><a class="" href="../../../shared/certificate-template.html">Шаблон сертифіката курсу 1</a></li></ul></details>
+<details><summary>Емулятори</summary><ul><li><a class="" href="../../../emulators.html">Відкрити емулятори</a></li></ul></details></nav>
+<main><article><h1 id="модуль-5-віддалений-доступ-і-безпека">Модуль 5: Віддалений
+доступ і безпека</h1>
+<p><strong>Модуль 5 з 9</strong> · Урок 16 хв · Практика 25 хв</p>
+<h2 id="що-ви-зможете-після-уроку">Що ви зможете після уроку</h2>
+<ul>
+<li>Пояснити замовнику, чому його камери не видно з телефона, і назвати
+два способи це виправити.</li>
+<li>Прокинути порт на роутері і розуміти, що саме ви при цьому відкрили
+назовні.</li>
+<li>Здати об'єкт так, щоб на ньому не лишилося заводських паролів і
+відкритих назовні зайвих портів.</li>
+</ul>
+<p>Система зібрана, камери пишуть, замовник задоволений. Через день
+дзвінок: "я в дорозі, відкрив застосунок - нічого не показує". Ви на
+об'єкті все перевіряли з ноутбука, підключеного до тієї самої мережі, і
+там працювало.</p>
+<p>Так і буває майже завжди. Усередині мережі об'єкта все бачить усе.
+Ззовні - нічого, і це не поломка, а те, як влаштований інтернет.</p>
+<h2 id="чому-ззовні-нічого-не-видно">Чому ззовні нічого не видно</h2>
+<p>Інтернет-провайдер дає об'єкту одну адресу. Пристроїв за роутером
+десятки: камери, реєстратор, комп'ютери, телефони, телевізор. Усі вони
+сидять на приватних адресах - тих самих <code>192.168.x.x</code>, які ви
+задавали камерам.</p>
+<p>Приватні адреси однакові в мільйонів людей одночасно. Адреса
+<code>192.168.1.50</code> є і у вашого замовника, і в сусідньому
+будинку, і в офісі на іншому континенті. Тому в інтернеті вони не
+маршрутизуються: пакет з такою адресою просто нема куди відправити.</p>
+<p>Три діапазони, які зарезервовані під приватні мережі і ніколи не
+зустрічаються в інтернеті:</p>
+<ul>
+<li><code>10.0.0.0</code> - <code>10.255.255.255</code></li>
+<li><code>172.16.0.0</code> - <code>172.31.255.255</code></li>
+<li><code>192.168.0.0</code> - <code>192.168.255.255</code></li>
+</ul>
+<p>Будь-який із них можна брати на об'єкті. <code>192.168</code>
+прижився просто тому, що на ньому за замовчуванням працює більшість
+побутових роутерів.</p>
+<h2 id="nat-чому-один-зовнішній-адрес-обслуговує-всіх">NAT: чому один
+зовнішній адрес обслуговує всіх</h2>
+<p>NAT розшифровується як трансляція мережевих адрес. Простіше так:
+роутер працює як вахтер у бізнес-центрі з одним поштовим ящиком на всю
+будівлю.</p>
+<p>Коли камера всередині звертається в інтернет, роутер підміняє її
+приватну адресу на свою зовнішню, записує в зошит "цей запит пішов від
+камери 192.168.1.50" і відправляє далі. Відповідь приходить на зовнішню
+адресу роутера, той дивиться в зошит і віддає її потрібному
+пристрою.</p>
+<p>Це працює чудово, поки ініціатива йде зсередини назовні. Але коли
+ззовні приходить пакет, якого ніхто не замовляв, у зошиті про нього
+запису немає. Роутер не знає, кому це віддати, і викидає пакет.</p>
+<p>Ось чому застосунок замовника з вулиці не бачить реєстратор: він
+стукає ззовні, а роутер не знає, що йому потрібен пристрій
+<code>192.168.1.200</code>.</p>
+<h2 id="прокидання-порту">Прокидання порту</h2>
+<p>Прокидання порту - це запис у тому самому зошиті, зроблений
+заздалегідь і вручну: "усе, що прийде ззовні на порт 8000, віддавай на
+192.168.1.200, порт 80".</p>
+<p>Правило складається з чотирьох частин:</p>
+<ul>
+<li><strong>зовнішній порт</strong> - у які двері стукають ззовні;</li>
+<li><strong>внутрішня адреса</strong> - якому пристрою віддати;</li>
+<li><strong>внутрішній порт</strong> - у які двері стукати
+всередині;</li>
+<li><strong>протокол</strong> - TCP або UDP, зазвичай TCP.</li>
+</ul>
+<p>Порядок дій на об'єкті:</p>
+<ol type="1">
+<li>Зафіксуйте пристрою постійну внутрішню адресу. Якщо реєстратор
+отримує адресу автоматично, після перезавантаження роутера вона
+зміниться, і правило вестиме в нікуди.</li>
+<li>Дізнайтеся, які порти потрібні пристрою. Зазвичай це веб-інтерфейс і
+окремий порт під відеопотік для застосунку - точні номери дивіться в
+налаштуваннях самого пристрою.</li>
+<li>Створіть правило на роутері в розділі прокидання портів.</li>
+<li>Перевірте ззовні, а не з мережі об'єкта. З мережі об'єкта правило
+часто не працює, і це нормально - здається, що зламано, а насправді
+перевіряти треба з мобільного інтернету з вимкненим wifi.</li>
+</ol>
+<h3 id="чому-зовнішній-порт-краще-змінити">Чому зовнішній порт краще
+змінити</h3>
+<p>Спокуса лишити зовнішній порт таким самим, як внутрішній, велика. Не
+робіть цього.</p>
+<p>Стандартні порти скануються ботами цілодобово. Пристрій, що висить на
+очікуваному порту, знайдуть протягом доби після підключення, і далі
+почнеться перебір паролів. Зовнішній порт на кшталт 39271 не рятує від
+цілеспрямованої атаки, але прибирає весь масовий фон.</p>
+<h3 id="коли-прокинути-порт-не-вийде">Коли прокинути порт не вийде</h3>
+<p>Провайдер може не давати білу адресу. Тоді замовник сидить за
+спільним NAT провайдера разом із сотнями абонентів, зовнішньої адреси в
+нього немає, і прокидати нема на чому.</p>
+<p>Перевіряється просто: подивіться зовнішню адресу роутера в його
+статусі і порівняйте з тим, що показує будь-який сайт "мій IP" з мережі
+об'єкта. Збіглися - адреса біла. Різні - ви за NAT провайдера.</p>
+<p>Що робити: замовити білу адресу в провайдера окремою послугою або
+піти другим шляхом, через хмару.</p>
+<h2 id="хмара-замість-прокидання">Хмара замість прокидання</h2>
+<p>Другий спосіб працює навпаки: не ви відкриваєте двері ззовні, а сам
+реєстратор постійно тримає з'єднання з сервером виробника. Застосунок
+теж підключається до цього сервера, і вони зустрічаються посередині.</p>
+<p>Плюси: працює без білої адреси, налаштовується за хвилину - увімкнути
+хмару в реєстраторі і відсканувати код у застосунку, нічого не відкрито
+назовні.</p>
+<p>Мінуси: відео замовника йде через чужий сервер, і якщо сервер
+виробника ляже, віддалений доступ пропаде разом з ним, хоча система на
+об'єкті працюватиме як і раніше.</p>
+<p>Що обирати. Приватний будинок, невеликий магазин - хмара, це швидше і
+дешевше. Об'єкт, де служба безпеки замовника проти передачі відео
+назовні, - прокидання порту або VPN.</p>
+<h2 id="vpn-коли-в-мережу-треба-зайти-цілком">VPN: коли в мережу треба
+зайти цілком</h2>
+<p>VPN робить те, чого не робить прокидання порту: він не відкриває один
+пристрій назовні, а впускає віддалений комп'ютер усередину мережі
+об'єкта, ніби той підключений кабелем у сусідній кімнаті.</p>
+<p>Уявіть службовий коридор між двома будівлями: усередині нього ходять
+тільки свої, а з вулиці до нього не дістатися.</p>
+<p>Для інсталятора це виглядає так: замовник запускає VPN-клієнт,
+підключається, і далі для нього камери видно за їхніми звичайними
+адресами <code>192.168.x.x</code>, наче він на об'єкті.</p>
+<p>Коли це доречно: коли потрібен доступ не до одного реєстратора, а до
+всієї системи, включно з веб-інтерфейсами камер. Або коли політика
+замовника забороняє відкривати щось назовні взагалі.</p>
+<p>Чому це не варіант за замовчуванням: VPN треба підняти на роутері або
+окремому пристрої, роздати ключі кожному, хто підключається, і
+підтримувати. На приватному будинку це надмірно. На об'єкті з
+IT-відділом це часто вже є, і тоді ваша задача - просто попросити
+доступ, а не прокидати порти самотужки.</p>
+<h2 id="vlan-окрема-мережа-на-тому-самому-кабелі">VLAN: окрема мережа на
+тому самому кабелі</h2>
+<p>У Модулі 2 ви вже знаєте, що камери краще тримати в окремій підмережі
+від комп'ютерів замовника. VLAN - спосіб зробити це, не тягнучи другий
+кабель і не ставлячи другий комутатор.</p>
+<p>Керований комутатор уміє поділити свої порти на групи. Порти в групі
+"камери" бачать одне одного і не бачать портів групи "офіс", навіть якщо
+це фізично один пристрій. Виходить дві незалежні мережі на одному
+залізі.</p>
+<p>Навіщо це інсталятору. По-перше, заражений ноутбук бухгалтера не
+дотягнеться до камер. По-друге, файл на сто гігабайт, який хтось копіює
+по офісній мережі, не з'їсть смугу в камер. По-третє, служба безпеки
+замовника часто прямо вимагає, щоб відео жило окремо.</p>
+<p>Що від вас потрібно на практиці: сказати IT-відділу замовника, що
+камерам потрібен окремий VLAN, і назвати, скільки портів і на яких
+комутаторах. Налаштовує VLAN зазвичай їхній адміністратор. На об'єкті
+без IT-відділу простіше поставити окремий комутатор під камери -
+результат той самий, розбиратися з налаштуванням не треба.</p>
+<h2 id="пароль-за-замовчуванням---це-ваша-відповідальність">Пароль за
+замовчуванням - це ваша відповідальність</h2>
+<p>Камера з заводським паролем і прокинутим портом знаходиться ботом за
+кілька годин. Далі варіанти: чужі люди дивляться відео з будинку
+замовника, камера стає учасником атак на інші сайти, або запис просто
+стирають.</p>
+<p>Відповідати за це будете ви. Замовник не знав, що пароль треба міняти
+- це знали ви.</p>
+<p>Порядок, який має стати звичкою:</p>
+<ol type="1">
+<li><strong>Змініть пароль адміністратора на кожному пристрої</strong> -
+на кожній камері окремо, не тільки на реєстраторі. Сучасні пристрої
+вимагають задати пароль при першому підключенні, старі мовчки працюють
+із заводським.</li>
+<li><strong>Пароль складний і різний.</strong> Один пароль на всі камери
+об'єкта означає, що зламали одну - зламали всі. Вісім символів мінімум,
+великі й малі літери, цифри, спецсимволи.</li>
+<li><strong>Заведіть окремого користувача для замовника</strong> з
+правом перегляду, без права міняти налаштування. Адміністратора лишіть
+собі і передайте пароль замовнику письмово при здачі.</li>
+<li><strong>Перевірте обмеження на кількість спроб входу.</strong>
+Більшість пристроїв блокують доступ після кількох невдалих спроб -
+переконайтеся, що це увімкнено.</li>
+<li><strong>Запишіть паролі в документацію об'єкта</strong> і віддайте
+замовнику. Пароль, який знає тільки інсталятор, зникне разом з
+інсталятором.</li>
+</ol>
+<p>Окремо про скидання: якщо пароль до пристрою втрачено, заводським
+скиданням через кнопку це вирішується не завжди. У багатьох виробників
+процедура інша - через файл, отриманий у технічній підтримці за серійним
+номером. Дізнайтеся цю процедуру для обладнання, з яким працюєте, до
+того як вона знадобиться.</p>
+<h2 id="ще-три-налаштування-які-варто-ввімкнути">Ще три налаштування,
+які варто ввімкнути</h2>
+<ul>
+<li><strong>HTTPS замість HTTP.</strong> Веб-інтерфейс без шифрування
+передає пароль відкритим текстом. Усередині мережі об'єкта це ще
+терпимо, при доступі ззовні - ні.</li>
+<li><strong>Фільтр IP-адрес.</strong> Пристрій можна навчити приймати
+підключення тільки з перелічених адрес. Зручно, коли доступ потрібен з
+однієї конкретної точки, наприклад з офісу замовника.</li>
+<li><strong>Вимкніть те, чим не користуєтесь.</strong> Автоматичне
+прокидання портів роутером, зайві мережеві служби, невикористані
+облікові записи. Кожна ввімкнена служба - ще одні двері.</li>
+</ul>
+<h2 id="головне">Головне</h2>
+<ol type="1">
+<li>Ззовні мережу об'єкта не видно через NAT: роутер не знає, кому
+віддати непроханий пакет. Прокидання порту - це правило, яке заздалегідь
+каже йому, кому саме.</li>
+<li>Без білої адреси прокидати нема чого: перевірте адресу роутера і
+порівняйте з тим, що показує сайт "мій IP". Немає білої - хмара або біла
+адреса окремою послугою.</li>
+<li>Заводський пароль на пристрої з доступом ззовні знайдуть за години.
+Змінити пароль на кожній камері, завести замовнику окремого користувача
+і віддати паролі письмово - частина здачі об'єкта, а не додаткова
+послуга.</li>
+</ol>
+<p><strong>Далі:</strong> <a href="practice.html">Практика модуля 5</a> -
+25 хвилин в емуляторах роутера і камери.</p>
+<hr />
+<p><a href="../../00-course-overview.html">До огляду курсу</a> · <a
+href="../04-recording-and-archive/lesson.html">Попередній модуль</a> · <a
+href="../06-access-control/lesson.html">Наступний модуль</a></p>
+<div class="pager"><a href="../../../course-1-basics/modules/04-recording-and-archive/checklist.html"><small>← Назад</small>Чек-лист самоперевірки: Модуль 4</a><a class="n" href="../../../course-1-basics/modules/05-remote-access-and-security/practice.html"><small>Далі →</small>Практика: віддалений доступ і здача без заводських паролів</a></div></article></main></div><script>
+document.getElementById('menu').onclick=function(){document.body.classList.toggle('open')};
+document.querySelector('main').addEventListener('click',function(){document.body.classList.remove('open')});
+var c=document.querySelector('nav.side a.cur');if(c){c.scrollIntoView({block:'center'})}
+</script></body></html>
